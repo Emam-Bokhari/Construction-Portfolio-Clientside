@@ -5,6 +5,7 @@ import Navbar from "./components/Header/Navbar";
 import Banner from "./components/Header/Banner";
 import ServiceSection from "./components/ServiceSection";
 import WorkProcessSection from "./components/WorkProcessSection";
+import GetFreeConsultation from "./components/GetFreeConsultation";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <AboutUsSection />
         <ServiceSection />
         <WorkProcessSection />
+        <GetFreeConsultation/>
       </main>
     </Fragment>
   );
