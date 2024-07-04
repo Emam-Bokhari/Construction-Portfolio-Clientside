@@ -9,6 +9,7 @@ import GetFreeConsultation from "./components/GetFreeConsultation";
 import ProjectCompletationCount from "./components/ProjectCompletationCounte";
 import ProjectSection from "./components/ProjectSection";
 import TeamMemberSection from "./components/TeamMemberSection";
+import WhyChooseUsSection from "./components/WhyChooseUsSection";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         </div>
         <ProjectSection />
         <TeamMemberSection />
+        <WhyChooseUsSection />
       </main>
     </Fragment>
   );
