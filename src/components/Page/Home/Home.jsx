@@ -71,7 +71,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ProjectCompletationCount />
+
+       <div className="absolute top-[90%] lg:top-[85%] left-2/4 -translate-x-2/4 w-full">
+       <ProjectCompletationCount />
+       </div>
+
       </div>
 
       {/* project section */}

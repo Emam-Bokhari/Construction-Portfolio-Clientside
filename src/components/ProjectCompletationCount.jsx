@@ -3,8 +3,11 @@ import { Fragment } from "react";
 export default function ProjectCompletationCount(){
     return(
         <Fragment>
+              
+           
+
             <div
-                className="max-w-[425px] sm:max-w-screen-sm md:max-w[768px] xl:max-w-[1218px]  mx-auto p-8  bg-[#F68A0A] absolute top-[90%] lg:top-[85%] left-2/4 -translate-x-2/4 w-full ">
+                className="max-w-[425px] sm:max-w-screen-sm md:max-w[768px] xl:max-w-[1218px]  mx-auto p-8  bg-[#F68A0A] ">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
@@ -31,6 +34,8 @@ export default function ProjectCompletationCount(){
                 </div>
 
             </div>
+
+           
         </Fragment>
     )
 }
