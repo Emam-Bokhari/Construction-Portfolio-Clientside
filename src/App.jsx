@@ -4,6 +4,7 @@ import TopNavbar from "./components/Header/TopNavbar";
 import Navbar from "./components/Header/Navbar";
 import Banner from "./components/Header/Banner";
 import ServiceSection from "./components/ServiceSection";
+import WorkProcessSection from "./components/WorkProcessSection";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <main>
         <AboutUsSection />
         <ServiceSection />
+        <WorkProcessSection />
       </main>
     </Fragment>
   );

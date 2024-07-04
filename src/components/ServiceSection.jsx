@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import construction from "../assets/construction.png"
+import { FaArrowRight } from "react-icons/fa";
 
 export default function ServiceSection(){
     return(
@@ -23,7 +24,7 @@ export default function ServiceSection(){
                         <button
                             className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
                             VIEW ALL
-                            <i className="fa-solid fa-arrow-right text-sm"></i>
+                            <FaArrowRight className="text-sm" />
                         </button>
                     </div>
 
@@ -52,7 +53,7 @@ export default function ServiceSection(){
                         <button
                             className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
                             READ MORE
-                            <i className="fa-solid fa-arrow-right text-sm"></i>
+                            <FaArrowRight className="text-sm" />
                         </button>
 
                     </div>
@@ -78,7 +79,7 @@ export default function ServiceSection(){
                         <button
                             className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
                             READ MORE
-                            <i className="fa-solid fa-arrow-right text-sm"></i>
+                            <FaArrowRight className="text-sm" />
                         </button>
 
                     </div>
@@ -104,7 +105,7 @@ export default function ServiceSection(){
                         <button
                             className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
                             READ MORE
-                            <i className="fa-solid fa-arrow-right text-sm"></i>
+                            <FaArrowRight className="text-sm" />
                         </button>
 
                     </div>
