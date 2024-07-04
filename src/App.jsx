@@ -6,6 +6,7 @@ import Banner from "./components/Header/Banner";
 import ServiceSection from "./components/ServiceSection";
 import WorkProcessSection from "./components/WorkProcessSection";
 import GetFreeConsultation from "./components/GetFreeConsultation";
+import ProjectCompletationCount from "./components/ProjectCompletationCounte";
 
 export default function App() {
   return (
@@ -19,7 +20,10 @@ export default function App() {
         <AboutUsSection />
         <ServiceSection />
         <WorkProcessSection />
-        <GetFreeConsultation/>
+        <div className="relative">
+          <GetFreeConsultation />
+          <ProjectCompletationCount />
+        </div>
       </main>
     </Fragment>
   );
