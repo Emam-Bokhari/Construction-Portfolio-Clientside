@@ -13,6 +13,7 @@ import WhyChooseUsSection from "./components/WhyChooseUsSection";
 import FaqSection from "./components/FaqSection";
 import TestimonialSection from "./components/TestimonialSection";
 import ContactUsSection from "./components/ContactUsSection";
+import BlogSection from "./components/BlogSection";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
         <FaqSection />
         <TestimonialSection />
         <ContactUsSection />
+        <BlogSection />
       </main>
     </Fragment>
   );
