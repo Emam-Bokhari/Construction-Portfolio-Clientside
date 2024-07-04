@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Logo from "../assets/logo/logo.png"
+import Logo from "../../assets/logo/logo.png"
 import { FaDownload } from "react-icons/fa";
 
 export default function Navbar(){

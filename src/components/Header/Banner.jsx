@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import background from "../assets/banner-image/background.png"
-import bannerImage from "../assets/banner-image/banner-image.jpg"
+import background from "../../assets/banner-image/background.png"
+import bannerImage from "../../assets/banner-image/banner-image.jpg"
 
 export default function Banner(){
     const backgroundImage={
