@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Logo from "../assets/logo/logo.png"
+import { FaDownload } from "react-icons/fa";
 
 export default function Navbar(){
     return(
@@ -49,7 +50,8 @@ export default function Navbar(){
                     <button
                         className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-3 sm:px-7 py-2 sm:py-4 flex items-center gap-1">
                         GET A QUOTE
-                        <i className="fa-solid fa-arrow-right-to-bracket hidden md:block"></i>
+                        <i ></i>
+                        <FaDownload  className="hidden md:block" />
                     </button>
                     <ion-icon onclick="onToggleMenu(this)" name="menu"
                         class="text-3xl cursor-pointer lg:hidden"></ion-icon>
