@@ -10,6 +10,7 @@ import ProjectCompletationCount from "./components/ProjectCompletationCounte";
 import ProjectSection from "./components/ProjectSection";
 import TeamMemberSection from "./components/TeamMemberSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
+import FaqSection from "./components/FaqSection";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <ProjectSection />
         <TeamMemberSection />
         <WhyChooseUsSection />
+        <FaqSection />
       </main>
     </Fragment>
   );
