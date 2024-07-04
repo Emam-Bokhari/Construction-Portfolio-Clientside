@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Logo from "../../assets/logo/logo.png"
 import { FaDownload } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Navbar(){
     return(
@@ -22,23 +23,23 @@ export default function Navbar(){
                         <ul className="flex flex-col lg:flex-row lg:items-center  gap-10">
                             <li
                                 className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                                <a href="./index.html">HOME</a>
+                                <Link to="/">HOME</Link>
                             </li>
                             <li
                                 className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                                <a href="./about.html">ABOUT US</a>
+                                <Link to="/aboutUs">ABOUT US</Link>
                             </li>
                             <li
                                 className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                                <a href="./service.html">SERVICE</a>
+                                <Link to="/service">SERVICE</Link>
                             </li>
                             <li
                                 className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                                <a href="./blog.html">BLOG</a>
+                                <Link to="/blog">BLOG</Link>
                             </li>
                             <li
                                 className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                                <a href="./contactUs.html">CONTACT US</a>
+                                <Link to="/contactUs">CONTACT US</Link>
                             </li>
                         </ul>
                     </div>

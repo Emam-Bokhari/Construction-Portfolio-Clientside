@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import logo from "../assets/logo/logo.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaClock, FaEnvelope, FaFacebook, FaGithub, FaPhoneAlt } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -270,13 +270,13 @@ export default function Footer() {
                   className="text-white"
                   href="https://github.com/Emam-Bokhari"
                 >
-                  <i className="fa-brands fa-github text-xl "></i>
+                  <FaGithub className="text-xl" />
                 </a>
                 <a
                   className="text-[#0866FF]"
                   href="https://www.facebook.com/emambokhari99"
                 >
-                  <i className="fa-brands fa-facebook text-xl "></i>
+                    <FaFacebook className="text-xl" />
                 </a>
               </div>
             </div>
@@ -284,7 +284,7 @@ export default function Footer() {
             {/* copyright  */}
             <div>
               <p className="text-sm font-[archivo] text-[#F68A0A]">
-                &copy; Dreams Construction. All Right Reserved 2024
+                &copy; GoldenPeachLtd. All Right Reserved 2024
               </p>
             </div>
           </div>
