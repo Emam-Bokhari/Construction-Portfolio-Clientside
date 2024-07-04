@@ -14,11 +14,14 @@ import FaqSection from "./components/FaqSection";
 import TestimonialSection from "./components/TestimonialSection";
 import ContactUsSection from "./components/ContactUsSection";
 import BlogSection from "./components/BlogSection";
+import CallForSupportSection from "./components/CallForSupporSection";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <Fragment>
-      <header>
+     <body>
+     <header>
         <TopNavbar />
         <Navbar />
         <Banner />
@@ -38,7 +41,10 @@ export default function App() {
         <TestimonialSection />
         <ContactUsSection />
         <BlogSection />
+        <CallForSupportSection />
       </main>
+      <Footer />
+     </body>
     </Fragment>
   );
 }

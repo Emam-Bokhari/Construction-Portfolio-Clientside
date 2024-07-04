@@ -16,7 +16,7 @@ export default function ContactUsSection(){
                 </div>
 
                 <h3 className="text-[36px] lg:text-[48px] font-[titillium] font-[700] text-[#0E121D] text-center">
-                    Let's Build a Better Future, Together</h3>
+                    Lets Build a Better Future, Together</h3>
 
                 <div className=" flex flex-col lg:flex-row gap-10 justify-between">
 
