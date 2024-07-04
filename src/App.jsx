@@ -11,6 +11,7 @@ import ProjectSection from "./components/ProjectSection";
 import TeamMemberSection from "./components/TeamMemberSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
 import FaqSection from "./components/FaqSection";
+import TestimonialSection from "./components/TestimonialSection";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <TeamMemberSection />
         <WhyChooseUsSection />
         <FaqSection />
+        <TestimonialSection />
       </main>
     </Fragment>
   );
