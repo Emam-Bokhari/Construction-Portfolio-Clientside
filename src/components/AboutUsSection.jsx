@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import aboutUsImage from "../assets/aboutUs-image/aboutus-profile.jpg"
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 export default function AboutUsSection(){
     return(
@@ -40,12 +41,12 @@ export default function AboutUsSection(){
                             <div className="flex flex-col lg:flex-row lg:items-center gap-5">
 
                                 <div className="flex items-center gap-2 w-[250px]">
-                                    <i className="fa-solid fa-circle-check text-[#F68A0A] text-2xl"></i>
+                                    <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
                                     <span className="text-lg font-[600] font-[archivo]">We provide 24/7 service</span>
                                 </div>
 
                                 <div className="flex items-center gap-2  w-[250px]">
-                                    <i className="fa-solid fa-circle-check text-[#F68A0A] text-2xl"></i>
+                                <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
                                     <span className="text-lg font-[600] font-[archivo]">Greate Technology</span>
                                 </div>
 
@@ -55,12 +56,12 @@ export default function AboutUsSection(){
                             <div className="flex flex-col lg:flex-row lg:items-center gap-5 ">
 
                                 <div className="flex items-center gap-2  w-[250px]">
-                                    <i className="fa-solid fa-circle-check text-[#F68A0A] text-2xl"></i>
+                                <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
                                     <span className="text-lg font-[600] font-[archivo]">Qualified Agents</span>
                                 </div>
 
                                 <div className="flex items-center gap-2  w-[250px]">
-                                    <i className="fa-solid fa-circle-check text-[#F68A0A] text-2xl"></i>
+                                <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
                                     <span className="text-lg font-[600] font-[archivo]">11 Years Experiance</span>
                                 </div>
 
