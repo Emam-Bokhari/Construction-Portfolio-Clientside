@@ -9,6 +9,7 @@ export default function Service() {
   const {services}=useService()
   return (
     <Fragment>
+
       <CommonPageBanner heading="Service" tittle="Home | Service" />
       {/* service */}
       <div className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20">

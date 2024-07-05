@@ -15,8 +15,6 @@ import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import projectBackgroundImage from "../../../assets/background-effects/latest-projects-bg-effect.png";
 import projectImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
 import teamMemberBackgroundImage from "../../../assets/background-effects/our-team-bg-effect.jpg";
-import teamMemberImage from "../../../assets/our-team-member-images/team-01.jpg";
-import construction from "../../../assets/construction.png";
 import Banner from "../../Header/Banner";
 import AboutUsSection from "../../AboutUsSection";
 import WorkProcessSection from "../../WorkProcessSection";
@@ -28,11 +26,13 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import MoreAboutUsButton from "../../MoreAboutUsButton";
 import { Link } from "react-router-dom";
 import useService from "../../../hooks/useService";
-
+import useTeamMember from "../../../hooks/useTeamMember";
 
 export default function Home() {
-  // fetch service data
-  const {services}=useService()
+  // fetch data
+  const { services } = useService();
+  const { teamMembers } = useTeamMember();
+ 
   const projectBackground = {
     backgroundImage: `url(${projectBackgroundImage})`,
   };
@@ -153,7 +153,10 @@ export default function Home() {
             </h3>
 
             <div className="flex justify-end">
-              <Link to="/service" className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
+              <Link
+                to="/service"
+                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]"
+              >
                 VIEW ALL
                 <FaArrowRight className="text-sm" />
               </Link>
@@ -162,36 +165,38 @@ export default function Home() {
 
           {/* start card  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-           {services.slice(0,3)?.map((service,_id)=>(
+            {services.slice(0, 3)?.map((service, _id) => (
+              <div
+                key={_id}
+                className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6"
+              >
+                <div className="flex items-center justify-between">
+                  {/* icon  */}
+                  <img className="w-12 h-12" src={service.imageUrl} alt="" />
+                  <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
+                    {service.serviceNo}
+                  </span>
+                </div>
 
-            <div key={_id} className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={service.imageUrl} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  {service.serviceNo}
-                </span>
+                <div>
+                  <hr className="border-[1px] border-[#E4E4E4]" />
+                </div>
+
+                {/* text  */}
+                <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
+                  {service.serviceName}
+                </h2>
+                <p className="font-[archivo] text-base text-[#4D5765]">
+                  {service.shortDescription}
+                </p>
+                {/* read more button */}
+                <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
+                  READ MORE
+                  <FaArrowRight className="text-sm" />
+                </button>
               </div>
+            ))}
 
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                {service.serviceName}
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-              {service.shortDescription}
-              </p>
-              {/* read more button */}
-              <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </button>
-            </div>
-           ))}
-           
             {/* end card 03  */}
           </div>
           {/* end card  */}
@@ -274,206 +279,59 @@ export default function Home() {
 
           {/* start cards  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-            {/* card 01  */}
-            <div className="w-full  space-y-2 pb-4 bg-white shadow-sm">
-              {/* image  */}
-              <img
-                className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
-                src={teamMemberImage}
-                alt=""
-              />
+            {teamMembers.slice(0, 4)?.map((teamMember, _id) => (
+              <div
+                key={_id}
+                className="w-full  space-y-2 pb-4 bg-white shadow-sm"
+              >
+                {/* image  */}
+                <img
+                  className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
+                  src={teamMember?.imageUrl}
+                  alt=""
+                />
 
-              {/* text  */}
-              <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                Michel Richard
-              </h2>
-              <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                Founder
-              </p>
+                {/* text  */}
+                <h2 className="font-[titillium] text-[24px] font-[600] text-center">
+                  {teamMember?.name}
+                </h2>
+                <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                  {teamMember?.designation}
+                </p>
 
-              {/* social icons  */}
-              <div className="flex items-center justify-center gap-3">
-                {/* facebook  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaFacebook className="text-base" />
-                  </div>
-                </a>
+                {/* social icons  */}
+                <div className="flex items-center justify-center gap-3">
+                  {/* facebook  */}
+                  <a href={teamMember?.facebookSocialLink}>
+                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
+                      <FaFacebook className="text-base" />
+                    </div>
+                  </a>
 
-                {/* twitter */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaTwitter className="text-base" />
-                  </div>
-                </a>
+                  {/* twitter */}
+                  <a href={teamMember?.twitterSocialLink}>
+                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
+                      <FaTwitter className="text-base" />
+                    </div>
+                  </a>
 
-                {/* instagram  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                    <FaInstagram className="text-base" />
-                  </div>
-                </a>
+                  {/* instagram  */}
+                  <a href={teamMember?.instagramSocialLink}>
+                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
+                      <FaInstagram className="text-base" />
+                    </div>
+                  </a>
 
-                {/* linkedin  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                    <FaLinkedin className="text-base" />
-                  </div>
-                </a>
+                  {/* linkedin  */}
+                  <a href={teamMember?.linkedinSocialLink}>
+                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
+                      <FaLinkedin className="text-base" />
+                    </div>
+                  </a>
+                </div>
+                {/* end social icon  */}
               </div>
-              {/* end social icon  */}
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="w-full  space-y-2 pb-4 bg-white shadow-sm">
-              {/* image  */}
-              <img
-                className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
-                src={teamMemberImage}
-                alt=""
-              />
-
-              {/* text  */}
-              <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                Michel Richard
-              </h2>
-              <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                Founder
-              </p>
-
-              {/* social icons  */}
-              <div className="flex items-center justify-center gap-3">
-                {/* facebook  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaFacebook className="text-base" />
-                  </div>
-                </a>
-
-                {/* twitter */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaTwitter className="text-base" />
-                  </div>
-                </a>
-
-                {/* instagram  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                    <FaInstagram className="text-base" />
-                  </div>
-                </a>
-
-                {/* linkedin  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                    <FaLinkedin className="text-base" />
-                  </div>
-                </a>
-              </div>
-              {/* end social icon  */}
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="w-full  space-y-2 pb-4 bg-white shadow-sm">
-              {/* image  */}
-              <img
-                className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
-                src={teamMemberImage}
-                alt=""
-              />
-
-              {/* text  */}
-              <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                Michel Richard
-              </h2>
-              <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                Founder
-              </p>
-
-              {/* social icons  */}
-              <div className="flex items-center justify-center gap-3">
-                {/* facebook  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaFacebook className="text-base" />
-                  </div>
-                </a>
-
-                {/* twitter */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaTwitter className="text-base" />
-                  </div>
-                </a>
-
-                {/* instagram  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                    <FaInstagram className="text-base" />
-                  </div>
-                </a>
-
-                {/* linkedin  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                    <FaLinkedin className="text-base" />
-                  </div>
-                </a>
-              </div>
-              {/* end social icon  */}
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="w-full  space-y-2 pb-4 bg-white shadow-sm">
-              {/* image  */}
-              <img
-                className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
-                src={teamMemberImage}
-                alt=""
-              />
-
-              {/* text  */}
-              <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                Michel Richard
-              </h2>
-              <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                Founder
-              </p>
-
-              {/* social icons  */}
-              <div className="flex items-center justify-center gap-3">
-                {/* facebook  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaFacebook className="text-base" />
-                  </div>
-                </a>
-
-                {/* twitter */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                    <FaTwitter className="text-base" />
-                  </div>
-                </a>
-
-                {/* instagram  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                    <FaInstagram className="text-base" />
-                  </div>
-                </a>
-
-                {/* linkedin  */}
-                <a href="#">
-                  <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                    <FaLinkedin className="text-base" />
-                  </div>
-                </a>
-              </div>
-              {/* end social icon  */}
-            </div>
-            {/* end card 01  */}
+            ))}
           </div>
           {/* ends cards  */}
         </div>
@@ -559,7 +417,10 @@ export default function Home() {
                 <div className="flex space-y-3 md:space-y-4 lg:space-y-0 lg:gap-10 flex-col lg:flex-row">
                   {/* more about us button  */}
                   <div>
-                    <Link to="/aboutUs" className="bg-[#F68A0A] block hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
+                    <Link
+                      to="/aboutUs"
+                      className="bg-[#F68A0A] block hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase"
+                    >
                       MORE ABOUT Us
                     </Link>
                   </div>
@@ -886,7 +747,7 @@ export default function Home() {
               </a>
 
               <button className="border-[1px] border-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-[#0E121D] uppercase flex items-center gap-2">
-                <FaPhone/>
+                <FaPhone />
                 16513
               </button>
             </div>
