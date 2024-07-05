@@ -9,6 +9,7 @@ import NotFound from "./components/Page/NotFount/NotFound";
 import Navbar from "./components/Header/Navbar";
 import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
+import BLogDetails from "./components/Page/Blog/BlogDetails";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route element={<Service />} path="/service" />
         <Route element={<Blog />} path="/blog" />
         <Route element={<ContactUs />} path="/contactUs" />
+        <Route element={<BLogDetails />} path="/blogDetails" />
         <Route element={<NotFound />} path="*" />
       </Routes>
       <Footer />

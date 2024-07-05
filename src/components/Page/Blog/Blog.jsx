@@ -53,7 +53,7 @@ export default function Blog() {
                             Browned Butter And Brown Sugar Caramelly Oodness Crispy Edgesthick And Soft Centers And Melty Little Puddles Of Chocolate Y First Favorite.
                         </p>
 
-                        <a href="./blogDetails.html"
+                        <a href="/blogDetails"
                             className="uppercase text-sm font-[archivo] border-[1px] border-[#E4E4E4] px-3 py-2 rounded-md font-[600] text-[#0E121D] hover:bg-[#F68A0A] hover:text-white transform transition-all duration-200 flex items-center w-[140px] gap-2">
                             READ MORE
                             <i className="fa-solid fa-arrow-right text-sm"></i>
