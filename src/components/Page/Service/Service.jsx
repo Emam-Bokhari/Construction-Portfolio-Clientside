@@ -54,7 +54,7 @@ export default function Service() {
               </p>
               {/* read more button  */}
               <a
-                href="./serviceDetails.html"
+                href="/serviceDetails"
                 className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
               >
                 READ MORE
