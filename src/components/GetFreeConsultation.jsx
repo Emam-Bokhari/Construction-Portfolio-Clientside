@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import getFreeConsultationBackgroundImage from "../assets/get-a-free-consultation/bg-01.png";
 import getFreeConsultationImage from "../assets/get-a-free-consultation/img-01.jpg";
+import { Link } from "react-router-dom";
 
 export default function GetFreeConsultation(){
     const getFreeConsultationBackground = {
@@ -27,9 +28,9 @@ export default function GetFreeConsultation(){
                 </h3>
                 {/* contact us button  */}
                 <div>
-                  <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
+                  <Link to="/contactUs" className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
                     CONTACT US
-                  </button>
+                  </Link>
                 </div>
               </div>
 

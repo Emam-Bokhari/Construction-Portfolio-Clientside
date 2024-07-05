@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg"
+import { FaCalendar, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSearch, FaTwitter, FaYoutube } from "react-icons/fa";
+
 
 export default function LeftSide() {
   return (
@@ -14,7 +16,7 @@ export default function LeftSide() {
               placeholder="Search here..."
             />
             <a href="#">
-              <i className="fa-solid fa-magnifying-glass text-xl text-white bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 rounded-md px-3 py-2"></i>
+            <FaSearch  className=" text-xl" />
             </a>
           </div>
         </div>
@@ -35,7 +37,7 @@ export default function LeftSide() {
           <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
             <a
               href="#"
-              className="text-[archivo] text-base inline-block w-full font-[500] text-[#0E121D] rounded-md bg-white hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4 "
+              className="text-[archivo] text-base inline-block w-full font-[500] text-[#0E121D] rounded-md bg-white hover:bg-[#F68A0A] hover:text-white  transition-all duration-300 shadow-sm p-4 "
             >
               Building Contracting
             </a>
@@ -96,7 +98,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-facebook-f text-lg"></i>
+                <FaFacebook className="text-lg"/>
                 <p>Facebook</p>
               </a>
 
@@ -104,7 +106,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-twitter text-lg"></i>
+                <FaTwitter className="text-lg" />
                 <p>Twitter</p>
               </a>
             </div>
@@ -114,7 +116,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-instagram text-lg"></i>
+                <FaInstagram className="text-lg" />
                 <p>Instagram</p>
               </a>
 
@@ -122,7 +124,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-youtube text-lg"></i>
+                <FaYoutube className="text-lg" />
                 <p>You Tube</p>
               </a>
             </div>
@@ -132,7 +134,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-linkedin text-lg"></i>
+                <FaLinkedin className="text-lg" />
                 <p>Linkedin</p>
               </a>
 
@@ -140,7 +142,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <i className="fa-brands fa-pinterest text-lg"></i>
+                <FaPinterest className="text-lg" />
                 <p>Pinterest</p>
               </a>
             </div>
@@ -177,7 +179,7 @@ export default function LeftSide() {
                 {/* text  */}
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center gap-2 ">
-                    <i className="fa-solid fa-calendar text-base text-[#F68A0A]"></i>
+                    <FaCalendar className="text-base text-[#F68A0A]"  />
                     <p className="font-[archivo] text-base text-[#4D5765]">
                       24 May 2024
                     </p>

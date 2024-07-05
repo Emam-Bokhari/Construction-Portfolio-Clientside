@@ -4,12 +4,14 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaPhone,
   FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
 import whyChooseUsImage from "../../../assets/why-choose-us-image/why-choose-us.jpg";
 import faqImage from "../../../assets/faq-image/faq-01.jpg";
 import blogImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
-
+import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import projectBackgroundImage from "../../../assets/background-effects/latest-projects-bg-effect.png";
 import projectImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
 import teamMemberBackgroundImage from "../../../assets/background-effects/our-team-bg-effect.jpg";
@@ -22,8 +24,15 @@ import ProjectCompletationCount from "../../ProjectCompletationCount";
 import TestimonialSection from "../../TestimonialSection";
 import ContactUsSection from "../../ContactUsSection";
 import GetFreeConsultation from "../../GetFreeConsultation";
+import { IoIosCheckmarkCircle } from "react-icons/io";
+import MoreAboutUsButton from "../../MoreAboutUsButton";
+import { Link } from "react-router-dom";
+import useService from "../../../hooks/useService";
+
 
 export default function Home() {
+  // fetch service data
+  const {services}=useService()
   const projectBackground = {
     backgroundImage: `url(${projectBackgroundImage})`,
   };
@@ -34,6 +43,97 @@ export default function Home() {
     <Fragment>
       <Banner />
       <AboutUsSection />
+      {/* About us section */}
+      <div className=" bg-white my-20">
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8  ">
+          <div className="flex gap-0 lg:gap-10 justify-between items-start lg:items-center flex-col lg:flex-row">
+            {/* image and text */}
+            <div className="flex-1">
+              <div>
+                <img
+                  className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
+                  src={aboutUsImage}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            {/* text */}
+            <div className=" flex-1">
+              <div className="space-y-3 md:space-y-4 ">
+                <div className="flex items-center gap-3 mt-10  lg:mt-0">
+                  <h2 className="text-base font-[titillium] font-[600] text-[#F68A0A] ">
+                    ABOUT US COMPANY
+                  </h2>
+                  <hr className="border-[1px] border-[#F68A0A] w-12" />
+                </div>
+
+                <h3 className="text-[36px] lg:text-[48px] font-[titillium] font-[700] text-[#0E121D]">
+                  We Are Always Think On Your Dream
+                </h3>
+
+                <p className="text-base font-[archivo] font-normal text-[#4D5765]">
+                  Many modern construction companies focus on sustainable
+                  building practices, incorporating eco-friendly material
+                  energy-efficient systems and environmental conscious designs
+                  to reduce the environmental impact of their projects.
+                </p>
+
+                {/* icon 1  */}
+                <div className="flex flex-col lg:flex-row lg:items-center gap-5">
+                  <div className="flex items-center gap-2 w-[250px]">
+                    <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
+                    <span className="text-lg font-[600] font-[archivo]">
+                      We provide 24/7 service
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2  w-[250px]">
+                    <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
+                    <span className="text-lg font-[600] font-[archivo]">
+                      Greate Technology
+                    </span>
+                  </div>
+                </div>
+
+                {/* icon 2  */}
+                <div className="flex flex-col lg:flex-row lg:items-center gap-5 ">
+                  <div className="flex items-center gap-2  w-[250px]">
+                    <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
+                    <span className="text-lg font-[600] font-[archivo]">
+                      Qualified Agents
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2  w-[250px]">
+                    <IoIosCheckmarkCircle className="fa-solid fa-circle-check text-[#F68A0A] text-2xl" />
+                    <span className="text-lg font-[600] font-[archivo]">
+                      11 Years Experiance
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex space-y-3 md:space-y-4 lg:space-y-0 lg:gap-10 flex-col lg:flex-row">
+                  {/* more about us button */}
+                  <MoreAboutUsButton />
+
+                  {/* founder text  */}
+                  <div className=" lg:border-[#C4C4C4]  lg:border-l-2 ">
+                    <div className="lg:ml-5">
+                      <p className=" text-[20px] font-[titillium] font-[600]">
+                        Emam Bokhari
+                      </p>
+                      <span className="font-[archivo] text-base  font-normal text-[#F68A0A]">
+                        Founder of Dreams Construction
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* service section */}
       <div className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20">
@@ -53,22 +153,23 @@ export default function Home() {
             </h3>
 
             <div className="flex justify-end">
-              <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
+              <Link to="/service" className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
                 VIEW ALL
                 <FaArrowRight className="text-sm" />
-              </button>
+              </Link>
             </div>
           </div>
 
           {/* start card  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
+           {services.slice(0,3)?.map((service,_id)=>(
+
+            <div key={_id} className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
               <div className="flex items-center justify-between">
                 {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
+                <img className="w-12 h-12" src={service.imageUrl} alt="" />
                 <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
+                  {service.serviceNo}
                 </span>
               </div>
 
@@ -78,12 +179,10 @@ export default function Home() {
 
               {/* text  */}
               <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
+                {service.serviceName}
               </h2>
               <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
+              {service.shortDescription}
               </p>
               {/* read more button */}
               <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
@@ -91,66 +190,8 @@ export default function Home() {
                 <FaArrowRight className="text-sm" />
               </button>
             </div>
-            {/* end card 01  */}
-            {/* card 02  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button */}
-              <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </button>
-            </div>
-            {/* end card 02  */}
-            {/* card 03  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button */}
-              <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </button>
-            </div>
+           ))}
+           
             {/* end card 03  */}
           </div>
           {/* end card  */}
@@ -518,9 +559,9 @@ export default function Home() {
                 <div className="flex space-y-3 md:space-y-4 lg:space-y-0 lg:gap-10 flex-col lg:flex-row">
                   {/* more about us button  */}
                   <div>
-                    <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
+                    <Link to="/aboutUs" className="bg-[#F68A0A] block hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
                       MORE ABOUT Us
-                    </button>
+                    </Link>
                   </div>
 
                   {/* founder text  */}
@@ -664,7 +705,7 @@ export default function Home() {
           <div className="flex justify-end">
             <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
               VIEW ALL
-              <i className="fa-solid fa-arrow-right text-sm"></i>
+              <FaArrowRight className="text-sm" />
             </button>
           </div>
 
@@ -841,11 +882,11 @@ export default function Home() {
                 className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4  text-[#0E121D] uppercase flex items-center gap-3"
               >
                 REQUEST A SERVICE
-                <i className="fa-brands fa-whatsapp text-3xl"></i>
+                <FaWhatsapp className="text-3xl" />
               </a>
 
               <button className="border-[1px] border-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-[#0E121D] uppercase flex items-center gap-2">
-                <i className="fa-solid fa-phone"></i>
+                <FaPhone/>
                 16513
               </button>
             </div>

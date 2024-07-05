@@ -1,11 +1,12 @@
 import { Fragment } from "react";
 import CommonPageBanner from "../../CommonPageBanner";
-import construction from "../../../assets/construction.png";
 import { FaArrowRight } from "react-icons/fa";
 import GetFreeConsultation from "../../GetFreeConsultation";
 import TestimonialSection from "../../TestimonialSection";
+import useService from "../../../hooks/useService";
 
 export default function Service() {
+  const {services}=useService()
   return (
     <Fragment>
       <CommonPageBanner heading="Service" tittle="Home | Service" />
@@ -29,13 +30,14 @@ export default function Service() {
 
           {/* start card  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
+           {services?.map((service,_id)=>(
+
+            <div key={_id} className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
               <div className="flex items-center justify-between">
                 {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
+                <img className="w-12 h-12" src={service.imageUrl} alt="" />
                 <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
+                  {service.serviceNo}
                 </span>
               </div>
 
@@ -45,12 +47,10 @@ export default function Service() {
 
               {/* text  */}
               <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
+                {service.serviceName}
               </h2>
               <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
+                {service.shortDescription}
               </p>
               {/* read more button  */}
               <a
@@ -61,172 +61,9 @@ export default function Service() {
                 <FaArrowRight className="text-sm" />
               </a>
             </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button  */}
-              <a
-                href="./serviceDetails.html"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
-              >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button  */}
-              <a
-                href="./serviceDetails.html"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
-              >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button  */}
-              <a
-                href="./serviceDetails.html"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
-              >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button  */}
-              <a
-                href="./serviceDetails.html"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
-              >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-            {/* end card 01  */}
-            {/* card 01  */}
-            <div className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={construction} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  01
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                Building Construction
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {" "}
-                We offer comprehensive construction solutions, ensuring quality,
-                efficiency, and adherence to deadlines
-              </p>
-              {/* read more button  */}
-              <a
-                href="./serviceDetails.html"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
-              >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-            {/* end card 01  */}
+           ))}
+            
+           
           </div>
           {/* end card  */}
         </div>

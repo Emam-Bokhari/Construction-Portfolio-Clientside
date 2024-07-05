@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
 import LeftSide from "./LeftSide";
 import CommonPageBanner from "../../CommonPageBanner";
+import { FaLayerGroup, FaUser } from "react-icons/fa";
+import { FaCalendarDays } from "react-icons/fa6";
 
 export default function BLogDetails() {
   return (
@@ -34,7 +36,7 @@ export default function BLogDetails() {
                       {/* author  */}
                       <div>
                         <span className="text-[#F69247] mr-1">
-                          <i className="fa-solid fa-user"></i>
+                          <FaUser className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
                           Admin
@@ -43,7 +45,7 @@ export default function BLogDetails() {
                       {/* publish date  */}
                       <div>
                         <span className="text-[#F69247] mr-1">
-                          <i className="fa-solid fa-calendar-days"></i>
+                          <FaCalendarDays className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
                           24-Jun-2024
@@ -52,7 +54,7 @@ export default function BLogDetails() {
                       {/* category  */}
                       <div>
                         <span className="text-[#F69247] mr-1">
-                          <i className="fa-solid fa-layer-group"></i>
+                          <FaLayerGroup className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
                           Building Construction

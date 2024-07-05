@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg"
 import CommonPageBanner from "../../CommonPageBanner";
 import LeftSide from "./LeftSide";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Blog() {
   return (
@@ -56,7 +57,7 @@ export default function Blog() {
                         <a href="/blogDetails"
                             className="uppercase text-sm font-[archivo] border-[1px] border-[#E4E4E4] px-3 py-2 rounded-md font-[600] text-[#0E121D] hover:bg-[#F68A0A] hover:text-white transform transition-all duration-200 flex items-center w-[140px] gap-2">
                             READ MORE
-                            <i className="fa-solid fa-arrow-right text-sm"></i>
+                            <FaArrowRight className="text-sm" />
                     </a>
 
                     </div>

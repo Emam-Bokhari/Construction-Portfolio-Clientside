@@ -1,6 +1,7 @@
 import { Fragment } from "react";
-import background from "../../assets/banner-image/background.png"
-import bannerImage from "../../assets/banner-image/banner-image.jpg"
+import background from "../../assets/banner-image/background.webp"
+import bannerImage from "../../assets/banner-image/banner-image.webp"
+import { Link } from "react-router-dom";
 
 export default function Banner(){
     const backgroundImage={
@@ -34,14 +35,14 @@ export default function Banner(){
 
                  {/* button  */}
                 <div className="flex items-center gap-10">
-                    <button
+                    <Link to="/aboutUs"
                         className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
                         DISCOVER MORE
-                    </button>
-                    <button
+                    </Link>
+                    <Link to="/service"
                         className="px-5 lg:px-7 py-3 lg:py-4 text-sm md:text-base font-[archivo] font-[600] text-white border-[1px] border-[#F68A0A] bg-transparent relative transition-transform uppercase before:top-0 before:left-0 before:w-full before:h-full before:-z-10 before:absolute before:duration-300 before:origin-top-left before:bg-white before:scale-x-0 hover:text-[#F68A0A] before:hover:scale-100 flex items-center gap-1">
                         OUR SERVICES
-                    </button>
+                    </Link>
                 </div>
 
             </div>
