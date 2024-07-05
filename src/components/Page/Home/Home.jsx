@@ -27,12 +27,16 @@ import MoreAboutUsButton from "../../MoreAboutUsButton";
 import { Link } from "react-router-dom";
 import useService from "../../../hooks/useService";
 import useTeamMember from "../../../hooks/useTeamMember";
+import useProject from "../../../hooks/useProject";
+import useBlog from "../../../hooks/useBlog";
 
 export default function Home() {
   // fetch data
   const { services } = useService();
   const { teamMembers } = useTeamMember();
- 
+  const { projects } = useProject();
+  const { blogs } = useBlog();
+
   const projectBackground = {
     backgroundImage: `url(${projectBackgroundImage})`,
   };
@@ -230,30 +234,15 @@ export default function Home() {
 
             {/* image  */}
             <div className=" flex justify-between gap-10">
-              {/* image 01  */}
-              <div>
-                <img
-                  className="w-[500px] h-[400px] object-cover"
-                  src={projectImage}
-                  alt=""
-                />
-              </div>
-              {/* image 01  */}
-              <div>
-                <img
-                  className="w-[500px] h-[400px] object-cover"
-                  src={projectImage}
-                  alt=""
-                />
-              </div>
-              {/* image 01  */}
-              <div>
-                <img
-                  className="w-[500px] h-[400px] object-cover"
-                  src={projectImage}
-                  alt=""
-                />
-              </div>
+              {projects?.map((project, _id) => (
+                <div key={_id}>
+                  <img
+                    className="w-[500px] h-[400px] object-cover"
+                    src={project.imageUrl}
+                    alt=""
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -572,150 +561,45 @@ export default function Home() {
 
           {/* blogs  */}
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-center">
-            {/* blog 01  */}
-            <div className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 ">
-              <a href="#">
-                <div className=" space-y-3 md:space-y-4">
-                  <div className="relative ">
-                    {/* image */}
-                    <img
-                      className="rounded-lg w-full  h-[185px]"
-                      src={blogImage}
-                      alt=""
-                    />
+            {blogs.slice(0, 4)?.map((blog, _id) => (
+              <div
+                key={_id}
+                className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 "
+              >
+                <a href="#">
+                  <div className=" space-y-3 md:space-y-4">
+                    <div className="relative ">
+                      {/* image */}
+                      <img
+                        className="rounded-lg w-full  h-[185px]"
+                        src={blog?.imageUrl}
+                        alt=""
+                      />
 
-                    <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
-                      Building Construction
-                    </h2>
-                  </div>
+                      <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
+                        {blog?.title}
+                      </h2>
+                    </div>
 
-                  <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                    We offer comprehensive construction solutions, ensuring
-                    quality
-                  </p>
-
-                  <div className="flex gap-10 items-center justify-center">
-                    <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                      By Admin
+                    <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
+                      {blog?.description.length>40?`${blog.description.substring(0,40)}...`:blog.description}
                     </p>
-                    <div className="flex gap-2 items-center">
-                      <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
+
+                    <div className="flex gap-10 items-center justify-center">
                       <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                        27 May 2024
+                        {blog?.author}
                       </p>
+                      <div className="flex gap-2 items-center">
+                        <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
+                        <p className="text-base font-[archivo] text-[#7d8794] font-normal">
+                          {blog?.publishedDate}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </div>
-            {/* blog 01  */}
-            <div className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 ">
-              <a href="#">
-                <div className=" space-y-3 md:space-y-4">
-                  <div className="relative ">
-                    {/* image */}
-                    <img
-                      className="rounded-lg w-full  h-[185px]"
-                      src={blogImage}
-                      alt=""
-                    />
-
-                    <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
-                      Building Construction
-                    </h2>
-                  </div>
-
-                  <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                    We offer comprehensive construction solutions, ensuring
-                    quality
-                  </p>
-
-                  <div className="flex gap-10 items-center justify-center">
-                    <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                      By Admin
-                    </p>
-                    <div className="flex gap-2 items-center">
-                      <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
-                      <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                        27 May 2024
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {/* blog 01  */}
-            <div className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 ">
-              <a href="#">
-                <div className=" space-y-3 md:space-y-4">
-                  <div className="relative ">
-                    {/* image */}
-                    <img
-                      className="rounded-lg w-full  h-[185px]"
-                      src={blogImage}
-                      alt=""
-                    />
-
-                    <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
-                      Building Construction
-                    </h2>
-                  </div>
-
-                  <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                    We offer comprehensive construction solutions, ensuring
-                    quality
-                  </p>
-
-                  <div className="flex gap-10 items-center justify-center">
-                    <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                      By Admin
-                    </p>
-                    <div className="flex gap-2 items-center">
-                      <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
-                      <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                        27 May 2024
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {/* blog 01  */}
-            <div className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 ">
-              <a href="#">
-                <div className=" space-y-3 md:space-y-4">
-                  <div className="relative ">
-                    {/* image */}
-                    <img
-                      className="rounded-lg w-full  h-[185px]"
-                      src={blogImage}
-                      alt=""
-                    />
-
-                    <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
-                      Building Construction
-                    </h2>
-                  </div>
-
-                  <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                    We offer comprehensive construction solutions, ensuring
-                    quality
-                  </p>
-
-                  <div className="flex gap-10 items-center justify-center">
-                    <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                      By Admin
-                    </p>
-                    <div className="flex gap-2 items-center">
-                      <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
-                      <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                        27 May 2024
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
