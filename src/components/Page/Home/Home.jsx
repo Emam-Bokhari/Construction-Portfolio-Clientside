@@ -10,10 +10,8 @@ import {
 } from "react-icons/fa";
 import whyChooseUsImage from "../../../assets/why-choose-us-image/why-choose-us.jpg";
 import faqImage from "../../../assets/faq-image/faq-01.jpg";
-import blogImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import projectBackgroundImage from "../../../assets/background-effects/latest-projects-bg-effect.png";
-import projectImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
 import teamMemberBackgroundImage from "../../../assets/background-effects/our-team-bg-effect.jpg";
 import Banner from "../../Header/Banner";
 import AboutUsSection from "../../AboutUsSection";
@@ -582,7 +580,9 @@ export default function Home() {
                     </div>
 
                     <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                      {blog?.description.length>40?`${blog.description.substring(0,40)}...`:blog.description}
+                      {blog?.description.length > 40
+                        ? `${blog.description.substring(0, 40)}...`
+                        : blog.description}
                     </p>
 
                     <div className="flex gap-10 items-center justify-center">

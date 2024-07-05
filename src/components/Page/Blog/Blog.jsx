@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
 import CommonPageBanner from "../../CommonPageBanner";
 import LeftSide from "./LeftSide";
 import { FaArrowRight } from "react-icons/fa";

@@ -21,7 +21,7 @@ export default function App() {
         <Route element={<Home />} path="/" exact />
         <Route element={<AboutUs />} path="/aboutUs" />
         <Route element={<Service />} path="/service" />
-        <Route element={<ServiceDetails />} path="/serviceDetails" />
+        <Route element={<ServiceDetails />} path="/serviceDetails/:serviceId" />
         <Route element={<Blog />} path="/blog" />
         <Route element={<BLogDetails />} path="/blogDetails" />
         <Route element={<ContactUs />} path="/contactUs" />

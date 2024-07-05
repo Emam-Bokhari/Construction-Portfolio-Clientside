@@ -6,6 +6,7 @@ import { FaLayerGroup, FaUser } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
 
 export default function BLogDetails() {
+  
   return (
     <Fragment>
       <CommonPageBanner heading="Blog Details" tittle="Blog | Blog Details" />

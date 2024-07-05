@@ -1,10 +1,20 @@
-import { Fragment } from "react";
-import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
+import { Fragment, useEffect, useState } from "react";
 import CommonPageBanner from "../../CommonPageBanner";
 import { FaFilePdf } from "react-icons/fa";
 import { BsFiletypeDoc } from "react-icons/bs";
+import { useParams } from "react-router-dom";
 
 export default function ServiceDetails() {
+  const { serviceId } = useParams(); // Get serviceId from route params
+  const [services, setServices] = useState();
+  useEffect(()=>{
+    fetch(`http://localhost:3000/api/v1/service-details/${serviceId}`)
+    .then((res)=>res.json())
+    .then((data)=>setServices(data))
+  },[serviceId])
+  console.log(services)
+  
+
   return (
     <Fragment>
       <CommonPageBanner
@@ -21,7 +31,7 @@ export default function ServiceDetails() {
                 <div>
                   <img
                     className="w-full h-[400px]  object-cover rounded-md"
-                    src={blogImage}
+                    src={services?.imageUrl}
                     alt=""
                   />
                 </div>
@@ -29,23 +39,11 @@ export default function ServiceDetails() {
                 {/* start description  */}
                 <div className="my-10">
                   <h2 className="text-[#0E121D] font-[titillium] text-4xl font-bold">
-                    Building Construction
+                    {services?.serviceName}
                   </h2>
 
                   <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-                    temporibus magnam perspiciatis quis iusto, minus ratione
-                    quia explicabo praesentium, consectetur cupiditate harum
-                    fuga quas illum mollitia, fugiat repudiandae natus dolorum.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eos voluptatem ipsum magni labore, accusantium a ad tempore
-                    aliquid, quibusdam molestiae delectus quae et expedita
-                    reprehenderit atque sint itaque possimus doloribus? Lorem,
-                    ipsum dolor sit amet consectetur adipisicing elit.
-                    Obcaecati, commodi id alias explicabo architecto mollitia
-                    cumque accusamus, assumenda atque praesentium reiciendis
-                    unde nemo! Quidem eligendi assumenda vitae esse, sint
-                    doloribus.
+                    {services?.serviceDescription}
                   </p>
                 </div>
                 {/* end description */}
@@ -57,19 +55,7 @@ export default function ServiceDetails() {
                   </h2>
 
                   <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-                    temporibus magnam perspiciatis quis iusto, minus ratione
-                    quia explicabo praesentium, consectetur cupiditate harum
-                    fuga quas illum mollitia, fugiat repudiandae natus dolorum.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eos voluptatem ipsum magni labore, accusantium a ad tempore
-                    aliquid, quibusdam molestiae delectus quae et expedita
-                    reprehenderit atque sint itaque possimus doloribus? Lorem,
-                    ipsum dolor sit amet consectetur adipisicing elit.
-                    Obcaecati, commodi id alias explicabo architecto mollitia
-                    cumque accusamus, assumenda atque praesentium reiciendis
-                    unde nemo! Quidem eligendi assumenda vitae esse, sint
-                    doloribus.
+                    {services?.serviceBenefitsDescription                    }
                   </p>
                 </div>
                 {/* end service benefits */}
@@ -155,7 +141,7 @@ export default function ServiceDetails() {
                     className="text-[archivo] text-base inline-block w-full font-[500] text-[#0E121D] rounded-md bg-white shadow-sm p-4"
                   >
                     <span className="text-[#F68A59] text-lg font-medium mr-1">
-                    <FaFilePdf className="inline" />
+                      <FaFilePdf className="inline" />
                     </span>
                     Download Brouchers
                   </a>
@@ -165,7 +151,7 @@ export default function ServiceDetails() {
                     className="text-[archivo] text-base inline-block w-full font-[500] text-[#0E121D] rounded-md bg-white shadow-sm p-4"
                   >
                     <span className="text-[#F68A59] text-lg font-medium mr-1">
-                    <BsFiletypeDoc className="inline" />
+                      <BsFiletypeDoc className="inline" />
                     </span>
                     Download Doc.
                   </a>

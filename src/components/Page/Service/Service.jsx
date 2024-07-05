@@ -4,13 +4,15 @@ import { FaArrowRight } from "react-icons/fa";
 import GetFreeConsultation from "../../GetFreeConsultation";
 import TestimonialSection from "../../TestimonialSection";
 import useService from "../../../hooks/useService";
+import { Link } from "react-router-dom";
 
 export default function Service() {
-  const {services}=useService()
+  // fetch service data
+  const { services } = useService();
+
   return (
     <Fragment>
-
-      <CommonPageBanner heading="Service" tittle="Home | Service" />
+      <CommonPageBanner heading="Service" title="Home | Service" />
       {/* service */}
       <div className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20">
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8">
@@ -31,46 +33,47 @@ export default function Service() {
 
           {/* start card  */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-           {services?.map((service,_id)=>(
-
-            <div key={_id} className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6">
-              <div className="flex items-center justify-between">
-                {/* icon  */}
-                <img className="w-12 h-12" src={service.imageUrl} alt="" />
-                <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                  {service.serviceNo}
-                </span>
-              </div>
-
-              <div>
-                <hr className="border-[1px] border-[#E4E4E4]" />
-              </div>
-
-              {/* text  */}
-              <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                {service.serviceName}
-              </h2>
-              <p className="font-[archivo] text-base text-[#4D5765]">
-                {service.shortDescription}
-              </p>
-              {/* read more button  */}
-              <a
-                href="/serviceDetails"
-                className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
+            {services?.map((service) => (
+              <div
+                key={service._id}
+                className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6"
               >
-                READ MORE
-                <FaArrowRight className="text-sm" />
-              </a>
-            </div>
-           ))}
-            
-           
+                <div className="flex items-center justify-between">
+                  {/* icon  */}
+                  <img className="w-12 h-12" src={service.iconUrl} alt="" />
+                  <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
+                    {service.serviceNo}
+                  </span>
+                </div>
+
+                <div>
+                  <hr className="border-[1px] border-[#E4E4E4]" />
+                </div>
+
+                {/* text  */}
+                <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
+                  {service.serviceName}
+                </h2>
+                <p className="font-[archivo] text-base text-[#4D5765]">
+                  {service.shortDescription}
+                </p>
+
+                {/* read more button  */}
+                <Link
+                  to={`/serviceDetails/${service._id}`} // Use service._id for the serviceId parameter in the URL
+                  className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
+                >
+                  READ MORE
+                  <FaArrowRight className="text-sm" />
+                </Link>
+              </div>
+            ))}
           </div>
           {/* end card  */}
         </div>
       </div>
       <GetFreeConsultation />
-      <TestimonialSection/>
+      <TestimonialSection />
     </Fragment>
   );
 }
