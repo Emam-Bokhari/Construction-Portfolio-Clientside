@@ -27,6 +27,9 @@ import useService from "../../../hooks/useService";
 import useTeamMember from "../../../hooks/useTeamMember";
 import useProject from "../../../hooks/useProject";
 import useBlog from "../../../hooks/useBlog";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   // fetch data
@@ -41,6 +44,75 @@ export default function Home() {
   const teamMemberBackground = {
     backgroundImage: `url(${teamMemberBackgroundImage})`,
   };
+  //  slider react slick
+  const teamMemberSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  const projectSliderSettings={
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
   return (
     <Fragment>
       <Banner />
@@ -231,16 +303,18 @@ export default function Home() {
             </h3>
 
             {/* image  */}
-            <div className=" flex justify-between gap-10">
+            <div >
+              <Slider {...projectSliderSettings} >
               {projects?.map((project, _id) => (
                 <div key={_id}>
                   <img
-                    className="w-[500px] h-[400px] object-cover"
+                    className="w-full h-[300px] lg:w-[500px] md:h-[400px] object-cover"
                     src={project.imageUrl}
                     alt=""
                   />
                 </div>
               ))}
+              </Slider>
             </div>
           </div>
         </div>
@@ -265,15 +339,16 @@ export default function Home() {
           </h3>
 
           {/* start cards  */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-            {teamMembers.slice(0, 4)?.map((teamMember, _id) => (
+          <div >
+          <Slider {...teamMemberSliderSettings}>
+            {teamMembers?.map((teamMember, _id) => (
               <div
                 key={_id}
                 className="w-full  space-y-2 pb-4 bg-white shadow-sm"
               >
                 {/* image  */}
                 <img
-                  className="w-full h-[420px] lg:h-[320px] xl:h-[265px] object-cover"
+                  className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
                   src={teamMember?.imageUrl}
                   alt=""
                 />
@@ -319,6 +394,7 @@ export default function Home() {
                 {/* end social icon  */}
               </div>
             ))}
+            </Slider>
           </div>
           {/* ends cards  */}
         </div>
