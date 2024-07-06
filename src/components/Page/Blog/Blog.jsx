@@ -3,6 +3,7 @@ import CommonPageBanner from "../../CommonPageBanner";
 import LeftSide from "./LeftSide";
 import { FaArrowRight } from "react-icons/fa";
 import useBlog from "../../../hooks/useBlog";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
     // fetch data
@@ -54,13 +55,13 @@ export default function Blog() {
                   {blog?.description.length>100?`${blog.description.substring(0,150)}...`:blog.description}
                  </p>
 
-                 <a
-                   href="/blogDetails"
+                 <Link
+                   to={`/blogDetails/${blog?._id}`}
                    className="uppercase text-sm font-[archivo] border-[1px] border-[#E4E4E4] px-3 py-2 rounded-md font-[600] text-[#0E121D] hover:bg-[#F68A0A] hover:text-white transform transition-all duration-200 flex items-center w-[140px] gap-2"
                  >
                    READ MORE
                    <FaArrowRight className="text-sm" />
-                 </a>
+                 </Link>
                </div>
              </div>
             ))}
