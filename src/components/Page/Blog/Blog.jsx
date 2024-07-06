@@ -41,7 +41,7 @@ export default function Blog() {
                  </h2>
 
                  <h3 className="font-[titillium] text-[#0E121D]  text-[24px] font-[600]">
-                   {blog?.title}
+                   {blog?.title.length>10?`${blog?.title.substring(0,35)}...`:blog?.title}
                  </h3>
 
                  <div className="flex items-center gap-2">
@@ -52,7 +52,7 @@ export default function Blog() {
                  </div>
 
                  <p className="text-base font-[archivo] text-[#4D5765]">
-                  {blog?.description.length>100?`${blog.description.substring(0,150)}...`:blog.description}
+                  {blog?.description.length>10?`${blog.description.substring(0,150)}...`:blog.description}
                  </p>
 
                  <Link

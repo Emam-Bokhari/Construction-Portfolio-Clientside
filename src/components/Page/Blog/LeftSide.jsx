@@ -188,7 +188,7 @@ export default function LeftSide() {
                 {/* image  */}
                 <div>
                   <img
-                    className="w-[150px] h-[100px] object-cover rounded-md"
+                    className="w-full h-[100px] object-cover rounded-md"
                     src={latestBlog?.imageUrl}
                     alt=""
                   />
@@ -211,7 +211,6 @@ export default function LeftSide() {
             </div>
             ))}
             
-
           </div>
         </div>
         {/* ends latest post  */}

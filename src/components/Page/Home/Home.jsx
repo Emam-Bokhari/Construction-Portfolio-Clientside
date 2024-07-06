@@ -61,27 +61,27 @@ export default function Home() {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  const projectSliderSettings={
+  const projectSliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -95,25 +95,25 @@ export default function Home() {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  }
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <Fragment>
@@ -248,9 +248,9 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between">
                   {/* icon  */}
-                  <img className="w-12 h-12" src={service.iconUrl} alt="" />
+                  <img className="w-12 h-12" src={service?.iconUrl} alt="" />
                   <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                    {service.serviceNo}
+                    {service?.serviceNo}
                   </span>
                 </div>
 
@@ -260,13 +260,16 @@ export default function Home() {
 
                 {/* text  */}
                 <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                  {service.serviceName}
+                  {service?.serviceName}
                 </h2>
                 <p className="font-[archivo] text-base text-[#4D5765]">
-                  {service.shortDescription}
+                  {service?.serviceDescription.length>10?`${service?.serviceDescription.substring(0,80)}...`:service?.serviceDescription}
                 </p>
                 {/* read more button */}
-                <Link to={`/serviceDetails/${service._id}`} className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
+                <Link
+                  to={`/serviceDetails/${service._id}`}
+                  className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
+                >
                   READ MORE
                   <FaArrowRight className="text-sm" />
                 </Link>
@@ -305,17 +308,17 @@ export default function Home() {
             </h3>
 
             {/* image  */}
-            <div >
-              <Slider {...projectSliderSettings} >
-              {projects?.map((project, _id) => (
-                <div key={_id}>
-                  <img
-                    className="w-full h-[300px] lg:w-[500px] md:h-[400px] object-cover"
-                    src={project.imageUrl}
-                    alt=""
-                  />
-                </div>
-              ))}
+            <div>
+              <Slider {...projectSliderSettings}>
+                {projects?.map((project, _id) => (
+                  <div key={_id}>
+                    <img
+                      className="w-full h-[300px] lg:w-[500px] md:h-[400px] object-cover"
+                      src={project.imageUrl}
+                      alt=""
+                    />
+                  </div>
+                ))}
               </Slider>
             </div>
           </div>
@@ -341,61 +344,61 @@ export default function Home() {
           </h3>
 
           {/* start cards  */}
-          <div >
-          <Slider {...teamMemberSliderSettings}>
-            {teamMembers?.map((teamMember, _id) => (
-              <div
-                key={_id}
-                className="w-full  space-y-2 pb-4 bg-white shadow-sm"
-              >
-                {/* image  */}
-                <img
-                  className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
-                  src={teamMember?.imageUrl}
-                  alt=""
-                />
+          <div>
+            <Slider {...teamMemberSliderSettings}>
+              {teamMembers?.map((teamMember, _id) => (
+                <div
+                  key={_id}
+                  className="w-full  space-y-2 pb-4 bg-white shadow-sm"
+                >
+                  {/* image  */}
+                  <img
+                    className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
+                    src={teamMember?.imageUrl}
+                    alt=""
+                  />
 
-                {/* text  */}
-                <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                  {teamMember?.name}
-                </h2>
-                <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                  {teamMember?.designation}
-                </p>
+                  {/* text  */}
+                  <h2 className="font-[titillium] text-[24px] font-[600] text-center">
+                    {teamMember?.name}
+                  </h2>
+                  <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                    {teamMember?.designation}
+                  </p>
 
-                {/* social icons  */}
-                <div className="flex items-center justify-center gap-3">
-                  {/* facebook  */}
-                  <a href={teamMember?.facebookSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                      <FaFacebook className="text-base" />
-                    </div>
-                  </a>
+                  {/* social icons  */}
+                  <div className="flex items-center justify-center gap-3">
+                    {/* facebook  */}
+                    <a href={teamMember?.facebookSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
+                        <FaFacebook className="text-base" />
+                      </div>
+                    </a>
 
-                  {/* twitter */}
-                  <a href={teamMember?.twitterSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                      <FaTwitter className="text-base" />
-                    </div>
-                  </a>
+                    {/* twitter */}
+                    <a href={teamMember?.twitterSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
+                        <FaTwitter className="text-base" />
+                      </div>
+                    </a>
 
-                  {/* instagram  */}
-                  <a href={teamMember?.instagramSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                      <FaInstagram className="text-base" />
-                    </div>
-                  </a>
+                    {/* instagram  */}
+                    <a href={teamMember?.instagramSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
+                        <FaInstagram className="text-base" />
+                      </div>
+                    </a>
 
-                  {/* linkedin  */}
-                  <a href={teamMember?.linkedinSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                      <FaLinkedin className="text-base" />
-                    </div>
-                  </a>
+                    {/* linkedin  */}
+                    <a href={teamMember?.linkedinSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
+                        <FaLinkedin className="text-base" />
+                      </div>
+                    </a>
+                  </div>
+                  {/* end social icon  */}
                 </div>
-                {/* end social icon  */}
-              </div>
-            ))}
+              ))}
             </Slider>
           </div>
           {/* ends cards  */}
@@ -640,42 +643,28 @@ export default function Home() {
             {blogs.slice(0, 4)?.map((blog, _id) => (
               <div
                 key={_id}
-                className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 "
+                className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
               >
-                <Link to={`/blogDetails/${blog._id}`}>
-                  <div className=" space-y-3 md:space-y-4">
-                    <div className="relative ">
-                      {/* image */}
-                      <img
-                        className="rounded-lg w-full  h-[185px]"
-                        src={blog?.imageUrl}
-                        alt=""
-                      />
-
-                      <h2 className="bg-[#F68A0A] px-2 py-1 inline absolute w-[180px] transform -translate-x-2/4 left-2/4 top-[95%]   text-white text-sm font-[archivo] font-[500] text-center">
-                        {blog?.title}
-                      </h2>
-                    </div>
-
-                    <p className="font-[titillium] text-[20px] font-[600]  text-[#0E121D] pt-3 text-center ">
-                      {blog?.description.length > 40
-                        ? `${blog.description.substring(0, 40)}...`
-                        : blog.description}
-                    </p>
-
-                    <div className="flex gap-10 items-center justify-center">
-                      <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                        {blog?.author}
-                      </p>
-                      <div className="flex gap-2 items-center">
-                        <i className="fa-regular fa-calendar text-[#7d8794] text-base"></i>
-                        <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                          {blog?.publishedDate}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <Link to={`blogDetails/${blog._id}`}>
+                  <img className="rounded-t-lg" src={blog?.imageUrl} alt="" />
                 </Link>
+                <div className="p-5">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {blog?.title.length>10?`${blog?.title.substring(0,35)}...`:blog?.title}
+                  </h5>
+
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {blog?.description}
+                  </p>
+
+                  <Link
+                    to={`blogDetails/${blog._id}`}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F68A0A] rounded-lg hover:bg-[#ee8404] focus:ring-4 focus:outline-none focus:ring-blue-300   "
+                  >
+                    Read more
+                    <FaArrowRight className="ml-2" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
