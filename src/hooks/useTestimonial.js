@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const useTestimonial = () => {
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [testimonials, setTestimonialLoading] = useState([]);
+  const [testimonialLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const fetchTestimonialData = async () => {
@@ -14,7 +14,7 @@ const useTestimonial = () => {
         throw new Error(errorMessage)
       }
       const data=await response.json()
-      setTestimonials(data)
+      setTestimonialLoading(data)
     } catch (err) {
         setError(err)
     } finally {
@@ -27,7 +27,7 @@ const useTestimonial = () => {
   },[])
   return{
     testimonials,
-    loading,
+    testimonialLoading,
     error
   }
 };

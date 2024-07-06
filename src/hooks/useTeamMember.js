@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 const useTeamMember = () => {
   const [teamMembers, setTeamMembers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [teamMemberLoading, setTeamMemberLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const fetchTeamMembersData = async () => {
     try {
-      setLoading(true);
+      setTeamMemberLoading(true);
       const response = await fetch(`http://localhost:3000/api/v1/show-all-team-members`);
       if (!response.ok) {
         const errorMessage = `Fetching team members data failed!${response.status}`;
@@ -18,16 +18,16 @@ const useTeamMember = () => {
     } catch (err) {
       setError(err);
     } finally {
-      setLoading(false);
+      setTeamMemberLoading(false);
     }
   };
   useEffect(() => {
-    setLoading(true);
+    setTeamMemberLoading(true);
     fetchTeamMembersData();
   }, []);
   return {
     teamMembers,
-    loading,
+    teamMemberLoading,
     error,
   };
 };

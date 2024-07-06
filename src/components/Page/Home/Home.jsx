@@ -14,7 +14,7 @@ import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import projectBackgroundImage from "../../../assets/background-effects/latest-projects-bg-effect.png";
 import teamMemberBackgroundImage from "../../../assets/background-effects/our-team-bg-effect.jpg";
 import Banner from "../../Header/Banner";
-import AboutUsSection from "../../AboutUsSection";
+
 import WorkProcessSection from "../../WorkProcessSection";
 import ProjectCompletationCount from "../../ProjectCompletationCount";
 import TestimonialSection from "../../TestimonialSection";
@@ -33,7 +33,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   // fetch data
-  const { services } = useService();
+  const { services} = useService();
   const { teamMembers } = useTeamMember();
   const { projects } = useProject();
   const { blogs } = useBlog();
@@ -118,7 +118,6 @@ export default function Home() {
   return (
     <Fragment>
       <Banner />
-      <AboutUsSection />
       {/* About us section */}
       <div className=" bg-white my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8  ">

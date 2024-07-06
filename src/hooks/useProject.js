@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 const useProject=()=>{
     const [projects,setProjects]=useState([])
-    const [loading,setLoading]=useState(false)
+    const [projectLoading,setProjectLoading]=useState(false)
     const [error,setError]=useState(null)
 
     const fetchProjectData=async()=>{
         try{
-            setLoading(true)
+            setProjectLoading(true)
             const response=await fetch(`http://localhost:3000/api/v1/show-all-projects`)
             if(!response.ok){
                 const errorMessage=`Fetching project data is failed!${response.status}`
@@ -18,16 +18,16 @@ const useProject=()=>{
         }catch(err){
             setError(err)
         }finally{
-            setLoading(false)
+            setProjectLoading(false)
         }
     }
     useEffect(()=>{
-        setLoading(true)
+        setProjectLoading(true)
         fetchProjectData()
     },[])
     return{
         projects,
-        loading,
+        projectLoading,
         error
     }
 };
