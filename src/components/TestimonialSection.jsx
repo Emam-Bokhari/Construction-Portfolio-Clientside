@@ -1,9 +1,22 @@
 import { Fragment } from "react";
 import useTestimonial from "../hooks/useTestimonial";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 export default function TestimonialSection() {
   // fetch data
   const { testimonials } = useTestimonial();
+
+  // react slick slider
+  const testimonialSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   return (
     <Fragment>
       <div className="bg-[#F8F8F8] w-full my-20">
@@ -21,28 +34,33 @@ export default function TestimonialSection() {
           </h3>
 
           {/* start cards  */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10">
-            {testimonials?.map((testimonial, _id) => (
-              <div key={_id} className="w-full  space-y-2 p-4 bg-white shadow-sm">
-                {/* image  */}
-                <div className="flex justify-center">
-                  <img
-                    className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
-                    src={testimonial.imageUrl}
-                    alt=""
-                  />
+          <div  >
+            <Slider {...testimonialSliderSettings}>
+              {testimonials?.map((testimonial, _id) => (
+                <div
+                  key={_id}
+                  className="w-full space-y-2 p-4 bg-white shadow-sm"
+                >
+                  {/* image  */}
+                  <div className="flex justify-center">
+                    <img
+                      className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
+                      src={testimonial.imageUrl}
+                      alt=""
+                    />
+                  </div>
+
+                  {/* text  */}
+                  <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D]">
+                    {testimonial.name}
+                  </h2>
+
+                  <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo]">
+                    {testimonial.review}
+                  </p>
                 </div>
-
-                {/* text  */}
-                <h2 className="font-[titillium] text-[20px] font-[600] text-center text-[#0E121D]">
-                  {testimonial.name}
-                </h2>
-
-                <p className="text-[#4D5765] text-base font-[500] font-[archivo]">
-                  {testimonial.review}
-                </p>
-              </div>
-            ))}
+              ))}
+            </Slider>
           </div>
           {/* ends cards */}
         </div>

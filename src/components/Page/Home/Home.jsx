@@ -80,6 +80,7 @@ export default function Home() {
       }
     ]
   };
+
   const projectSliderSettings={
     dots: true,
     infinite: true,
@@ -113,6 +114,7 @@ export default function Home() {
       }
     ]
   }
+
   return (
     <Fragment>
       <Banner />
