@@ -23,7 +23,7 @@ export default function App() {
         <Route element={<Service />} path="/service" />
         <Route element={<ServiceDetails />} path="/serviceDetails/:serviceId" />
         <Route element={<Blog />} path="/blog" />
-        <Route element={<BLogDetails />} path="/blogDetails" />
+        <Route element={<BLogDetails />} path="/blogDetails/:blogId" />
         <Route element={<ContactUs />} path="/contactUs" />
         <Route element={<NotFound />} path="*" />
       </Routes>

@@ -174,7 +174,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between">
                   {/* icon  */}
-                  <img className="w-12 h-12" src={service.imageUrl} alt="" />
+                  <img className="w-12 h-12" src={service.iconUrl} alt="" />
                   <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                     {service.serviceNo}
                   </span>
@@ -192,10 +192,10 @@ export default function Home() {
                   {service.shortDescription}
                 </p>
                 {/* read more button */}
-                <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
+                <Link to={`/serviceDetails/${service._id}`} className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2">
                   READ MORE
                   <FaArrowRight className="text-sm" />
-                </button>
+                </Link>
               </div>
             ))}
 
@@ -564,7 +564,7 @@ export default function Home() {
                 key={_id}
                 className="p-4 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500 "
               >
-                <a href="#">
+                <Link to={`/blogDetails/${blog._id}`}>
                   <div className=" space-y-3 md:space-y-4">
                     <div className="relative ">
                       {/* image */}
@@ -597,7 +597,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

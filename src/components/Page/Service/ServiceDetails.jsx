@@ -6,13 +6,31 @@ import { useParams } from "react-router-dom";
 
 export default function ServiceDetails() {
   const { serviceId } = useParams(); // Get serviceId from route params
-  const [services, setServices] = useState();
+  const [services, setServices] = useState({});
+// // 01
+//   useEffect(()=>{
+//     fetch(`http://localhost:3000/api/v1/service-details/${serviceId}`)
+//     .then((res)=>res.json())
+//     .then((data)=>setServices(data))
+//   },[serviceId])
+//   console.log(services)
+
   useEffect(()=>{
-    fetch(`http://localhost:3000/api/v1/service-details/${serviceId}`)
-    .then((res)=>res.json())
-    .then((data)=>setServices(data))
+    const fetchServiceDetailsData=async()=>{
+     try{
+      const response=await fetch(`http://localhost:3000/api/v1/service-details/${serviceId}`)
+      if(!response.ok){
+        const errorMessage=`Fetching service details is failed!${response.status}`
+        throw new Error(errorMessage)
+      }
+      const data=await response.json()
+      setServices(data)
+    }catch(err){
+      console.log(err)
+    }
+     }
+     fetchServiceDetailsData()
   },[serviceId])
-  console.log(services)
   
 
   return (

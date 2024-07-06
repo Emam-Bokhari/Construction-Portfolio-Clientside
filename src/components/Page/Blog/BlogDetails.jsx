@@ -1,12 +1,32 @@
-import { Fragment } from "react";
-import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg";
+import { Fragment, useEffect, useState } from "react";
 import LeftSide from "./LeftSide";
 import CommonPageBanner from "../../CommonPageBanner";
 import { FaLayerGroup, FaUser } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
+import { useParams } from "react-router-dom";
 
 export default function BLogDetails() {
+  const { blogId } = useParams();
+  const [blogDetails, setBlogDetails] = useState({});
+
+  useEffect(() => {
+    const fetchBlogDetailsData=async()=>{
+      try{
+        const response=await fetch(`http://localhost:3000/api/v1/blog-details/${blogId}`)
+        if(!response.ok){
+          const errorMessage=`Fetching blog details is failed!${response.status}`
+          throw new Error(errorMessage)
+        }
+        const data=await response.json()
+        setBlogDetails(data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    fetchBlogDetailsData()
+  }, [blogId]);
   
+
   return (
     <Fragment>
       <CommonPageBanner heading="Blog Details" tittle="Blog | Blog Details" />
@@ -25,7 +45,7 @@ export default function BLogDetails() {
                 <div>
                   <img
                     className="w-full h-[400px]  object-cover rounded-t-md"
-                    src={blogImage}
+                    src={blogDetails?.imageUrl}
                     alt=""
                   />
                 </div>
@@ -40,7 +60,7 @@ export default function BLogDetails() {
                           <FaUser className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
-                          Admin
+                          {blogDetails?.author}
                         </span>
                       </div>
                       {/* publish date  */}
@@ -49,7 +69,7 @@ export default function BLogDetails() {
                           <FaCalendarDays className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
-                          24-Jun-2024
+                          {blogDetails?.publishedDate}
                         </span>
                       </div>
                       {/* category  */}
@@ -58,60 +78,27 @@ export default function BLogDetails() {
                           <FaLayerGroup className="inline" />
                         </span>
                         <span className="font-[archivo] text-sm text-[#4D5765] ">
-                          Building Construction
+                          {blogDetails?.category}
                         </span>
                       </div>
                     </div>
 
                     <h2 className="text-[#0E121D] font-[titillium] text-3xl font-semibold">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      {blogDetails?.title}
                     </h2>
 
                     <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      At temporibus magnam perspiciatis quis iusto, minus
-                      ratione quia explicabo praesentium, consectetur cupiditate
-                      harum fuga quas illum mollitia, fugiat repudiandae natus
-                      dolorum. Lorem ipsum, dolor sit amet consectetur
-                      adipisicing elit. Eos voluptatem ipsum magni labore,
-                      accusantium a ad tempore aliquid, quibusdam molestiae
-                      delectus quae et expedita reprehenderit atque sint itaque
-                      possimus doloribus? Lorem, ipsum dolor sit amet
-                      consectetur adipisicing elit. Obcaecati, commodi id alias
-                      explicabo architecto mollitia cumque accusamus, assumenda
-                      atque praesentium reiciendis unde nemo! Quidem eligendi
-                      assumenda vitae esse, sint doloribus.
+                      {blogDetails?.description}
                     </p>
+
                     <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      At temporibus magnam perspiciatis quis iusto, minus
-                      ratione quia explicabo praesentium, consectetur cupiditate
-                      harum fuga quas illum mollitia, fugiat repudiandae natus
-                      dolorum. Lorem ipsum, dolor sit amet consectetur
-                      adipisicing elit. Eos voluptatem ipsum magni labore,
-                      accusantium a ad tempore aliquid, quibusdam molestiae
-                      delectus quae et expedita reprehenderit atque sint itaque
-                      possimus doloribus? Lorem, ipsum dolor sit amet
-                      consectetur adipisicing elit. Obcaecati, commodi id alias
-                      explicabo architecto mollitia cumque accusamus, assumenda
-                      atque praesentium reiciendis unde nemo! Quidem eligendi
-                      assumenda vitae esse, sint doloribus.
+                      {blogDetails?.paraOne}
                     </p>
-                    <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal pb-6">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      At temporibus magnam perspiciatis quis iusto, minus
-                      ratione quia explicabo praesentium, consectetur cupiditate
-                      harum fuga quas illum mollitia, fugiat repudiandae natus
-                      dolorum. Lorem ipsum, dolor sit amet consectetur
-                      adipisicing elit. Eos voluptatem ipsum magni labore,
-                      accusantium a ad tempore aliquid, quibusdam molestiae
-                      delectus quae et expedita reprehenderit atque sint itaque
-                      possimus doloribus? Lorem, ipsum dolor sit amet
-                      consectetur adipisicing elit. Obcaecati, commodi id alias
-                      explicabo architecto mollitia cumque accusamus, assumenda
-                      atque praesentium reiciendis unde nemo! Quidem eligendi
-                      assumenda vitae esse, sint doloribus.
+
+                    <p className="my-5 text-[#4D5765] text-base leading-7 font-[archivo] font-normal">
+                      {blogDetails?.paraTwo}
                     </p>
+
                   </div>
                   {/* end description  */}
                 </div>
