@@ -129,6 +129,7 @@ export default function Home() {
                 <img
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={aboutUsImage}
+                  loading="lazy"
                   alt=""
                 />
               </div>
@@ -248,7 +249,7 @@ export default function Home() {
               >
                 <div className="flex items-center justify-between">
                   {/* icon  */}
-                  <img className="w-12 h-12" src={service?.iconUrl} alt="" />
+                  <img className="w-12 h-12" src={service?.iconUrl} loading="lazy" alt="" />
                   <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                     {service?.serviceNo}
                   </span>
@@ -263,7 +264,9 @@ export default function Home() {
                   {service?.serviceName}
                 </h2>
                 <p className="font-[archivo] text-base text-[#4D5765]">
-                  {service?.serviceDescription.length>10?`${service?.serviceDescription.substring(0,80)}...`:service?.serviceDescription}
+                  {service?.serviceDescription.length > 10
+                    ? `${service?.serviceDescription.substring(0, 80)}...`
+                    : service?.serviceDescription}
                 </p>
                 {/* read more button */}
                 <Link
@@ -315,6 +318,7 @@ export default function Home() {
                     <img
                       className="w-full h-[300px] lg:w-[500px] md:h-[400px] object-cover"
                       src={project.imageUrl}
+                      loading="lazy"
                       alt=""
                     />
                   </div>
@@ -355,6 +359,7 @@ export default function Home() {
                   <img
                     className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
                     src={teamMember?.imageUrl}
+                    loading="lazy"
                     alt=""
                   />
 
@@ -369,32 +374,32 @@ export default function Home() {
                   {/* social icons  */}
                   <div className="flex items-center justify-center gap-3">
                     {/* facebook  */}
-                    <a href={teamMember?.facebookSocialLink}>
+                    <Link to={teamMember?.facebookSocialLink}>
                       <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
                         <FaFacebook className="text-base" />
                       </div>
-                    </a>
+                    </Link>
 
                     {/* twitter */}
-                    <a href={teamMember?.twitterSocialLink}>
+                    <Link to={teamMember?.twitterSocialLink}>
                       <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
                         <FaTwitter className="text-base" />
                       </div>
-                    </a>
+                    </Link>
 
                     {/* instagram  */}
-                    <a href={teamMember?.instagramSocialLink}>
+                    <Link to={teamMember?.instagramSocialLink}>
                       <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
                         <FaInstagram className="text-base" />
                       </div>
-                    </a>
+                    </Link>
 
                     {/* linkedin  */}
-                    <a href={teamMember?.linkedinSocialLink}>
+                    <Link to={teamMember?.linkedinSocialLink}>
                       <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
                         <FaLinkedin className="text-base" />
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   {/* end social icon  */}
                 </div>
@@ -519,6 +524,7 @@ export default function Home() {
                 <img
                   className=" w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={whyChooseUsImage}
+                  loading="lazy"
                   alt=""
                 />
               </div>
@@ -537,6 +543,7 @@ export default function Home() {
                 <img
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={faqImage}
+                  loading="lazy"
                   alt=""
                 />
               </div>
@@ -646,11 +653,16 @@ export default function Home() {
                 className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
               >
                 <Link to={`blogDetails/${blog._id}`}>
-                  <img className="rounded-t-lg" src={blog?.imageUrl} alt="" />
+                  <img className="rounded-t-lg" 
+                  src={blog?.imageUrl}
+                  loading="lazy"
+                  alt="" />
                 </Link>
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {blog?.title.length>10?`${blog?.title.substring(0,35)}...`:blog?.title}
+                    {blog?.title.length > 10
+                      ? `${blog?.title.substring(0, 35)}...`
+                      : blog?.title}
                   </h5>
 
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -689,13 +701,13 @@ export default function Home() {
 
             {/* button  */}
             <div className="flex items-center gap-5">
-              <a
-                href="https://wa.me/+8801886578726"
+              <Link
+                to="https://wa.me/+8801886578726"
                 className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4  text-[#0E121D] uppercase flex items-center gap-3"
               >
                 REQUEST A SERVICE
                 <FaWhatsapp className="text-3xl" />
-              </a>
+              </Link>
 
               <button className="border-[1px] border-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-[#0E121D] uppercase flex items-center gap-2">
                 <FaPhone />

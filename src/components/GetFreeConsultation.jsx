@@ -39,6 +39,7 @@ export default function GetFreeConsultation(){
                 <img
                   className="w-80 xl:w-96 h-60 xl:h-80 rounded-tl-[50%] 2xl:rounded-tl-[45%] rounded-bl-[50%] 2xl:rounded-bl-[45%] hidden lg:block"
                   src={getFreeConsultationImage}
+                  loading="lazy"
                   alt=""
                 />
               </div>

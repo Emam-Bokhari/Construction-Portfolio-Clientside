@@ -24,6 +24,7 @@ export default function AboutUs() {
                 <img
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={aboutUsImage}
+                  loading="lazy"
                   alt=""
                 />
               </div>
@@ -126,6 +127,7 @@ export default function AboutUs() {
                     <img
                       className="w-[80px] h-[80px] object-cover rounded-full ring-1 ring-[#F68A0A] ring-offset-2"
                       src={teamMember?.imageUrl}
+                      loading="lazy"
                       alt=""
                     />
                   </div>

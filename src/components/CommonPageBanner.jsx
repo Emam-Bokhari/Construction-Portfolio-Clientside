@@ -8,6 +8,7 @@ export default function CommonPageBanner({ heading, tittle }) {
         <img
           className="w-full h-[450px] object-cover"
           src={commonBannerImage}
+          loading="lazy"
           alt=""
         />
 

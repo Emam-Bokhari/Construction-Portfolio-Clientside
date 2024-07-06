@@ -53,7 +53,7 @@ export default function Banner(){
             {/* style=";" */}
                 <img style={{clipPath: "polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%)"}}
                     className="w-[350px] xl:w-[500px] 2xl:w-[600px] h-[350px] xl:h-[500px] 2xl:h-[600px] hidden lg:block top-1/2 -translate-y-2/4 absolute right-10 xl:right-20 2xl:right-28"
-                    src={bannerImage} alt="" />
+                    src={bannerImage} loading="lazy" alt="" />
             </div>
 
              

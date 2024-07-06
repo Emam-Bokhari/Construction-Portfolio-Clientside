@@ -46,6 +46,7 @@ export default function BLogDetails() {
                   <img
                     className="w-full h-[400px]  object-cover rounded-t-md"
                     src={blogDetails?.imageUrl}
+                    loading="lazy"
                     alt=""
                   />
                 </div>

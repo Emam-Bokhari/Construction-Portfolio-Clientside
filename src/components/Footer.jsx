@@ -67,6 +67,7 @@ export default function Footer() {
                       <img
                         className="w-60 lg:w-full h-32 object-contain"
                         src={logo}
+                        loading="lazy"
                         alt=""
                       />
                       <p className="text-base font-[archivo] text-[#7d8794] font-normal ">

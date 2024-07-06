@@ -30,6 +30,7 @@ export default function Blog() {
                  <img
                    className="w-full h-[300px] md:h-[400px] xl:h-[300px]   object-cover rounded-md"
                    src={blog?.imageUrl}
+                   loading="lazy"
                    alt=""
                  />
                </div>

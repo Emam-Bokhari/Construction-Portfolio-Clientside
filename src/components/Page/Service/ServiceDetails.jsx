@@ -50,6 +50,7 @@ export default function ServiceDetails() {
                   <img
                     className="w-full h-[400px]  object-cover rounded-md"
                     src={services?.imageUrl}
+                    loading="lazy"
                     alt=""
                   />
                 </div>

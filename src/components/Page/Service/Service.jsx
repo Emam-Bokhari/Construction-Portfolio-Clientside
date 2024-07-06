@@ -40,7 +40,10 @@ export default function Service() {
               >
                 <div className="flex items-center justify-between">
                   {/* icon  */}
-                  <img className="w-12 h-12" src={service?.iconUrl} alt="" />
+                  <img className="w-12 h-12" 
+                  src={service?.iconUrl}
+                  loading="lazy" 
+                  alt="" />
                   <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                     {service?.serviceNo}
                   </span>

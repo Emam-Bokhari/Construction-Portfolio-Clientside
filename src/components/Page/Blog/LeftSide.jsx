@@ -190,6 +190,7 @@ export default function LeftSide() {
                   <img
                     className="w-full h-[100px] object-cover rounded-md"
                     src={latestBlog?.imageUrl}
+                    loading="lazy"
                     alt=""
                   />
                 </div>

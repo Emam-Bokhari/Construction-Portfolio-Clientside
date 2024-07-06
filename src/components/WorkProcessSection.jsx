@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { FaFileAlt, FaHandshake, FaPenNib } from "react-icons/fa";
 import { FaHelmetSafety } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function WorkProcessSection() {
   return (
@@ -24,10 +25,10 @@ export default function WorkProcessSection() {
                 necessary permits, and establishing a construct.
               </p>
               {/* get in touch button */}
-              <div>
-                <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase">
+              <div className="bg-[#F68A0A] hover:bg-[#ee8404] w-[150px] py-4 text-center transform transition-all duration-300  text-sm md:text-base font-[archivo] font-[600]   text-white uppercase">
+                <Link to="/contactUs" >
                   GET IN TOUCH
-                </button>
+                </Link>
               </div>
             </div>
             {/* work step,icon  */}

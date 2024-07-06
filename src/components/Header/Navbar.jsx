@@ -14,6 +14,7 @@ export default function Navbar() {
               <img
                 className=" w-[120px] lg:w-[208px] h-[70px] lg:h-[100px] object-contain"
                 src={Logo}
+                loading="lazy"
                 alt=""
               />
               {/* <img src={logo} alt="" /> */}

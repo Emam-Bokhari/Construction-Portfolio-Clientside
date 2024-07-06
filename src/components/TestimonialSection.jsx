@@ -46,6 +46,7 @@ export default function TestimonialSection() {
                     <img
                       className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
                       src={testimonial.imageUrl}
+                      loading="lazy"
                       alt=""
                     />
                   </div>
