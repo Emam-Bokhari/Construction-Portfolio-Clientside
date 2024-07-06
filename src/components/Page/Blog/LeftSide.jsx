@@ -1,9 +1,27 @@
-import { Fragment } from "react";
-import blogImage from "../../../assets/latest-projects-image/projects-img-01.jpg"
+import { Fragment, useEffect, useState } from "react";
 import { FaCalendar, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSearch, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 export default function LeftSide() {
+  const [latestBlogs,setLatestBlogs]=useState([])
+  useEffect(()=>{
+    const fetchLatestBlogsData=async()=>{
+      try{
+        const response=await fetch(`http://localhost:3000/api/v1/latest-blogs`)
+        if(!response.ok){
+          const errorMessage=`Fetching latest blogs data is failed!${response.status}`
+          throw new Error(errorMessage)
+        }
+        const data=await response.json()
+        setLatestBlogs(data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    fetchLatestBlogsData()
+  },[])
+  
   return (
     <Fragment>
       <div className="  w-full lg:w-2/5  xl:w-1/3">
@@ -164,14 +182,14 @@ export default function LeftSide() {
 
           {/* start blog  */}
           <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
-            {/* blog 01 */}
-            <div>
-              <a href="#" className="flex items-center gap-3">
+            {latestBlogs?.map((latestBlog,_id)=>(
+              <div key={_id} >
+              <Link to={`/blogDetails/${latestBlog._id}`} className="flex items-center gap-3">
                 {/* image  */}
                 <div>
                   <img
                     className="w-[150px] h-[100px] object-cover rounded-md"
-                    src={blogImage}
+                    src={latestBlog?.imageUrl}
                     alt=""
                   />
                 </div>
@@ -181,16 +199,19 @@ export default function LeftSide() {
                   <div className="flex items-center gap-2 ">
                     <FaCalendar className="text-base text-[#F68A0A]"  />
                     <p className="font-[archivo] text-base text-[#4D5765]">
-                      24 May 2024
+                      {latestBlog?.publishedDate}
                     </p>
                   </div>
 
                   <h2 className="font-[titillium] text-[20px] font-[600] text-[#0E121D] ">
-                    Where Vision Meets Concrete Reality
+                    {latestBlog?.title.length>10?`${latestBlog?.title.substring(0,30)}...`:latestBlog?.title}
                   </h2>
                 </div>
-              </a>
+              </Link>
             </div>
+            ))}
+            
+
           </div>
         </div>
         {/* ends latest post  */}

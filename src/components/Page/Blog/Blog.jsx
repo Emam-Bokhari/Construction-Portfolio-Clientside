@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function Blog() {
     // fetch data
   const { blogs } = useBlog();
-  console.log(blogs)
+  
   return (
     <Fragment>
       <CommonPageBanner heading="Blog" tittle="Home | Blog" />
@@ -66,8 +66,6 @@ export default function Blog() {
              </div>
             ))}
             </div>   
-            
-              
 
             </div>
             {/* Ends right side  */}
