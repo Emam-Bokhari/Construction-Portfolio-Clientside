@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import commonBannerImage from "../assets/banner-image/common-banner-image.jpg";
+import commonBannerImage from "../assets/banner-image/common-banner-image.webp";
 
 export default function CommonPageBanner({ heading, tittle }) {
   return (
