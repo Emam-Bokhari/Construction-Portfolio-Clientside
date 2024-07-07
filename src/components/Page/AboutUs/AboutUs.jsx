@@ -6,10 +6,11 @@ import ProjectCompletationCount from "../../ProjectCompletationCount";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import useTeamMember from "../../../hooks/useTeamMember";
+import AboutUsTeamMemberSkeleton from "../../skeleton/AboutUsTeamMemberSkeleton";
 
 export default function AboutUs() {
   // fetch data
-  const { teamMembers } = useTeamMember();
+  const { teamMembers, teamMemberLoading } = useTeamMember();
 
   return (
     <Fragment>
@@ -99,8 +100,6 @@ export default function AboutUs() {
         </div>
       </div>
 
-      
-
       <WorkProcessSection />
       <ProjectCompletationCount />
 
@@ -120,11 +119,22 @@ export default function AboutUs() {
           </h3>
 
           {/* start cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {teamMembers?.map((teamMember, _id) => (
-              <div key={_id} className="w-full  space-y-2 bg-white shadow-sm p-4 rounded-md">
-                {/* image  */}
-                <div>
+          {teamMemberLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <AboutUsTeamMemberSkeleton />
+              <AboutUsTeamMemberSkeleton />
+              <AboutUsTeamMemberSkeleton />
+              <AboutUsTeamMemberSkeleton />
+              <AboutUsTeamMemberSkeleton />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {teamMembers?.map((teamMember, _id) => (
+                <div
+                  key={_id}
+                  className="w-full  space-y-2 bg-white shadow-sm p-4 rounded-md"
+                >
+                  {/* image  */}
                   <div className="flex justify-center">
                     <img
                       className="w-[80px] h-[80px] object-cover rounded-full ring-1 ring-[#F68A0A] ring-offset-2"
@@ -133,52 +143,53 @@ export default function AboutUs() {
                       alt=""
                     />
                   </div>
+
+                  <div>
+                    {/* text  */}
+                    <h2 className="font-[titillium] text-[20px] font-[600] text-center">
+                      {teamMember?.name}
+                    </h2>
+                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                      {teamMember?.designation}
+                    </p>
+                  </div>
+
+                  {/* social icons  */}
+                  <div className="flex justify-center items-center gap-3">
+                    {/* facebook  */}
+                    <a href={teamMember?.facebookSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
+                        <FaFacebook className="text-base" />
+                      </div>
+                    </a>
+
+                    {/* twitter  */}
+                    <a href={teamMember?.twitterSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
+                        <FaTwitter className="text-base" />
+                      </div>
+                    </a>
+
+                    {/* instagram  */}
+                    <a href={teamMember?.instagramSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
+                        <FaInstagram className="text-base" />
+                      </div>
+                    </a>
+
+                    {/* linkedin  */}
+                    <a href={teamMember?.linkedinSocialLink}>
+                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
+                        <FaLinkedin className="text-base" />
+                      </div>
+                    </a>
+                  </div>
+                  {/* end social icon  */}
                 </div>
+              ))}
+            </div>
+          )}
 
-                <div>
-                  {/* text  */}
-                  <h2 className="font-[titillium] text-[20px] font-[600] text-center">
-                   {teamMember?.name}
-                  </h2>
-                  <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                   {teamMember?.designation}
-                  </p>
-                </div>
-
-                {/* social icons  */}
-                <div className="flex justify-center items-center gap-3">
-                  {/* facebook  */}
-                  <a href={teamMember?.facebookSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                      <FaFacebook className="text-base" />
-                    </div>
-                  </a>
-
-                  {/* twitter  */}
-                  <a href={teamMember?.twitterSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                      <FaTwitter className="text-base" />
-                    </div>
-                  </a>
-
-                  {/* instagram  */}
-                  <a href={teamMember?.instagramSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                      <FaInstagram className="text-base" />
-                    </div>
-                  </a>
-
-                  {/* linkedin  */}
-                  <a href={teamMember?.linkedinSocialLink}>
-                    <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                      <FaLinkedin className="text-base" />
-                    </div>
-                  </a>
-                </div>
-                {/* end social icon  */}
-              </div>
-            ))}
-          </div>
           {/* ends cards  */}
         </div>
       </div>
