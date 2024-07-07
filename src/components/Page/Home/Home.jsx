@@ -29,12 +29,14 @@ import useBlog from "../../../hooks/useBlog";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ServiceSkeleton from "../../skeleton/ServiceSkeleton";
+import ProjectSkeleton from "../../skeleton/ProjectSkeleton";
 
 export default function Home() {
   // fetch data
-  const { services} = useService();
+  const { services, serviceLoading } = useService();
   const { teamMembers } = useTeamMember();
-  const { projects } = useProject();
+  const { projects, projectLoading } = useProject();
   const { blogs } = useBlog();
 
   const projectBackground = {
@@ -211,9 +213,10 @@ export default function Home() {
       </div>
 
       {/* service section */}
-      <div 
-      className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20" 
-      loading="lazy" >
+      <div
+        className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20"
+        loading="lazy"
+      >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8">
           {/* text  */}
           <div className="space-y-3 md:space-y-4">
@@ -241,46 +244,58 @@ export default function Home() {
           </div>
 
           {/* start card  */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-            {services.slice(0, 3)?.map((service, _id) => (
-              <div
-                key={_id}
-                className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6"
-              >
-                <div className="flex items-center justify-between">
-                  {/* icon  */}
-                  <img className="w-12 h-12" src={service?.iconUrl} loading="lazy" alt="" />
-                  <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
-                    {service?.serviceNo}
-                  </span>
-                </div>
-
-                <div>
-                  <hr className="border-[1px] border-[#E4E4E4]" />
-                </div>
-
-                {/* text  */}
-                <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
-                  {service?.serviceName}
-                </h2>
-                <p className="font-[archivo] text-base text-[#4D5765]">
-                  {service?.serviceDescription.length > 10
-                    ? `${service?.serviceDescription.substring(0, 80)}...`
-                    : service?.serviceDescription}
-                </p>
-                {/* read more button */}
-                <Link
-                  to={`/serviceDetails/${service._id}`}
-                  className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
+          {serviceLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
+              {services.slice(0, 3)?.map((service, _id) => (
+                <div
+                  key={_id}
+                  className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6"
                 >
-                  READ MORE
-                  <FaArrowRight className="text-sm" />
-                </Link>
-              </div>
-            ))}
+                  <div className="flex items-center justify-between">
+                    {/* icon  */}
+                    <img
+                      className="w-12 h-12"
+                      src={service?.iconUrl}
+                      loading="lazy"
+                      alt=""
+                    />
+                    <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
+                      {service?.serviceNo}
+                    </span>
+                  </div>
 
-            {/* end card 03  */}
-          </div>
+                  <div>
+                    <hr className="border-[1px] border-[#E4E4E4]" />
+                  </div>
+
+                  {/* text  */}
+                  <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
+                    {service?.serviceName}
+                  </h2>
+                  <p className="font-[archivo] text-base text-[#4D5765]">
+                    {service?.serviceDescription.length > 10
+                      ? `${service?.serviceDescription.substring(0, 80)}...`
+                      : service?.serviceDescription}
+                  </p>
+                  {/* read more button */}
+                  <Link
+                    to={`/serviceDetails/${service._id}`}
+                    className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:text-[#F68A0A] transform transition-all duration-200 flex items-center gap-2"
+                  >
+                    READ MORE
+                    <FaArrowRight className="text-sm" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* end card  */}
         </div>
       </div>
@@ -291,10 +306,12 @@ export default function Home() {
           <ProjectCompletationCount />
         </div>
       </div>
-
       {/* project section */}
-      <div style={projectBackground} className=" bg-no-repeat bg-cover w-full " 
-      loading="lazy" >
+      <div
+        style={projectBackground}
+        className="bg-no-repeat bg-cover w-full "
+        loading="lazy"
+      >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
           <div className="mt-[585px] md:mt-[280px] lg:mt-[200px]  xl:mt-40 space-y-3 md:space-y-4">
             <div className="flex items-center gap-3 justify-center">
@@ -313,18 +330,27 @@ export default function Home() {
 
             {/* image  */}
             <div>
-              <Slider {...projectSliderSettings}>
-                {projects?.map((project, _id) => (
-                  <div key={_id}>
-                    <img
-                      className="w-full h-[300px] lg:w-[500px] md:h-[400px] object-cover"
-                      src={project.imageUrl}
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </Slider>
+              {projectLoading ? (
+                <Slider {...projectSliderSettings}>
+                  <ProjectSkeleton />
+                  <ProjectSkeleton />
+                  <ProjectSkeleton />
+                  <ProjectSkeleton />
+                </Slider>
+              ) : (
+                <Slider {...projectSliderSettings}>
+                  {projects?.map((project, _id) => (
+                    <div key={_id}>
+                      <img
+                        className="w-full h-[300px] md:h-[400px] lg:w-[350px]  object-cover"
+                        src={project.imageUrl}
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              )}
             </div>
           </div>
         </div>
@@ -332,7 +358,7 @@ export default function Home() {
 
       {/* team member section */}
       <div
-        style={teamMemberBackground} 
+        style={teamMemberBackground}
         loading="lazy"
         className=" bg-no-repeat bg-cover w-full my-20"
       >
@@ -655,10 +681,12 @@ export default function Home() {
                 className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
               >
                 <Link to={`blogDetails/${blog._id}`}>
-                  <img className="rounded-t-lg" 
-                  src={blog?.imageUrl}
-                  loading="lazy"
-                  alt="" />
+                  <img
+                    className="rounded-t-lg"
+                    src={blog?.imageUrl}
+                    loading="lazy"
+                    alt=""
+                  />
                 </Link>
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
