@@ -3,10 +3,11 @@ import useTestimonial from "../hooks/useTestimonial";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import TestimonialSkeleton from "./skeleton/TestimonialSkeleton";
 
 export default function TestimonialSection() {
   // fetch data
-  const { testimonials } = useTestimonial();
+  const { testimonials, testimonialLoading } = useTestimonial();
 
   // react slick slider
   const testimonialSliderSettings = {
@@ -15,6 +16,31 @@ export default function TestimonialSection() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -34,34 +60,43 @@ export default function TestimonialSection() {
           </h3>
 
           {/* start cards  */}
-          <div  >
-            <Slider {...testimonialSliderSettings}>
-              {testimonials?.map((testimonial, _id) => (
-                <div
-                  key={_id}
-                  className="w-full space-y-2 p-4 bg-white shadow-sm"
-                >
-                  {/* image  */}
-                  <div className="flex justify-center">
-                    <img
-                      className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
-                      src={testimonial.imageUrl}
-                      loading="lazy"
-                      alt=""
-                    />
+          <div>
+            {testimonialLoading ? (
+              // skeleton
+              <Slider {...testimonialSliderSettings} >
+                <TestimonialSkeleton />
+                <TestimonialSkeleton />
+                <TestimonialSkeleton />
+              </Slider>
+            ) : (
+              <Slider {...testimonialSliderSettings}>
+                {testimonials?.map((testimonial, _id) => (
+                  <div
+                    key={_id}
+                    className="w-full space-y-2 p-4 bg-white shadow-sm"
+                  >
+                    {/* image  */}
+                    <div className="flex justify-center">
+                      <img
+                        className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
+                        src={testimonial.imageUrl}
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+
+                    {/* text  */}
+                    <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D]">
+                      {testimonial.name}
+                    </h2>
+
+                    <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo]">
+                      {testimonial.review}
+                    </p>
                   </div>
-
-                  {/* text  */}
-                  <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D]">
-                    {testimonial.name}
-                  </h2>
-
-                  <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo]">
-                    {testimonial.review}
-                  </p>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </Slider>
+            )}
           </div>
           {/* ends cards */}
         </div>

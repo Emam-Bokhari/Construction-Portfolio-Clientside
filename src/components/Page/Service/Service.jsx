@@ -40,10 +40,12 @@ export default function Service() {
               >
                 <div className="flex items-center justify-between">
                   {/* icon  */}
-                  <img className="w-12 h-12" 
-                  src={service?.iconUrl}
-                  loading="lazy" 
-                  alt="" />
+                  <img
+                    className="w-12 h-12"
+                    src={service?.iconUrl}
+                    loading="lazy"
+                    alt=""
+                  />
                   <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                     {service?.serviceNo}
                   </span>
@@ -58,7 +60,9 @@ export default function Service() {
                   {service?.serviceName}
                 </h2>
                 <p className="font-[archivo] text-base text-[#4D5765]">
-                  {service?.serviceDescription.length>10?`${service?.serviceDescription.substring(0,80)}...`:service?.serviceDescription}
+                  {service?.serviceDescription.length > 10
+                    ? `${service?.serviceDescription.substring(0, 80)}...`
+                    : service?.serviceDescription}
                 </p>
 
                 {/* read more button  */}
@@ -76,6 +80,8 @@ export default function Service() {
         </div>
       </div>
       <GetFreeConsultation />
+      {/* skeleton */}
+      
       <TestimonialSection />
     </Fragment>
   );
