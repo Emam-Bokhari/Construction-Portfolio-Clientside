@@ -31,13 +31,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ServiceSkeleton from "../../skeleton/ServiceSkeleton";
 import ProjectSkeleton from "../../skeleton/ProjectSkeleton";
+import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
+import BlogSkeleton from "../../skeleton/BlogSkeleton";
 
 export default function Home() {
   // fetch data
   const { services, serviceLoading } = useService();
-  const { teamMembers } = useTeamMember();
+  const { teamMembers, teamMemberLoading } = useTeamMember();
   const { projects, projectLoading } = useProject();
-  const { blogs } = useBlog();
+  const { blogs, blogLoading } = useBlog();
 
   const projectBackground = {
     backgroundImage: `url(${projectBackgroundImage})`,
@@ -377,62 +379,72 @@ export default function Home() {
 
           {/* start cards  */}
           <div>
-            <Slider {...teamMemberSliderSettings}>
-              {teamMembers?.map((teamMember, _id) => (
-                <div
-                  key={_id}
-                  className="w-full  space-y-2 pb-4 bg-white shadow-sm"
-                >
-                  {/* image  */}
-                  <img
-                    className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
-                    src={teamMember?.imageUrl}
-                    loading="lazy"
-                    alt=""
-                  />
+            {teamMemberLoading ? (
+              <Slider {...teamMemberSliderSettings}>
+                <TeamMemberSkeleton />
+                <TeamMemberSkeleton />
+                <TeamMemberSkeleton />
+                <TeamMemberSkeleton />
+                <TeamMemberSkeleton />
+              </Slider>
+            ) : (
+              <Slider {...teamMemberSliderSettings}>
+                {teamMembers?.map((teamMember, _id) => (
+                  <div
+                    key={_id}
+                    className="w-full  space-y-2 pb-4 bg-white shadow-sm"
+                  >
+                    {/* image  */}
+                    <img
+                      className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
+                      src={teamMember?.imageUrl}
+                      loading="lazy"
+                      alt=""
+                    />
 
-                  {/* text  */}
-                  <h2 className="font-[titillium] text-[24px] font-[600] text-center">
-                    {teamMember?.name}
-                  </h2>
-                  <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
-                    {teamMember?.designation}
-                  </p>
+                    {/* text  */}
+                    <h2 className="font-[titillium] text-[24px] font-[600] text-center">
+                      {teamMember?.name}
+                    </h2>
+                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                      {teamMember?.designation}
+                    </p>
 
-                  {/* social icons  */}
-                  <div className="flex items-center justify-center gap-3">
-                    {/* facebook  */}
-                    <Link to={teamMember?.facebookSocialLink}>
-                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
-                        <FaFacebook className="text-base" />
-                      </div>
-                    </Link>
+                    {/* social icons  */}
+                    <div className="flex items-center justify-center gap-3">
+                      {/* facebook  */}
+                      <Link to={teamMember?.facebookSocialLink}>
+                        <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
+                          <FaFacebook className="text-base" />
+                        </div>
+                      </Link>
 
-                    {/* twitter */}
-                    <Link to={teamMember?.twitterSocialLink}>
-                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
-                        <FaTwitter className="text-base" />
-                      </div>
-                    </Link>
+                      {/* twitter */}
+                      <Link to={teamMember?.twitterSocialLink}>
+                        <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
+                          <FaTwitter className="text-base" />
+                        </div>
+                      </Link>
 
-                    {/* instagram  */}
-                    <Link to={teamMember?.instagramSocialLink}>
-                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
-                        <FaInstagram className="text-base" />
-                      </div>
-                    </Link>
+                      {/* instagram  */}
+                      <Link to={teamMember?.instagramSocialLink}>
+                        <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
+                          <FaInstagram className="text-base" />
+                        </div>
+                      </Link>
 
-                    {/* linkedin  */}
-                    <Link to={teamMember?.linkedinSocialLink}>
-                      <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
-                        <FaLinkedin className="text-base" />
-                      </div>
-                    </Link>
+                      {/* linkedin  */}
+                      <Link to={teamMember?.linkedinSocialLink}>
+                        <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
+                          <FaLinkedin className="text-base" />
+                        </div>
+                      </Link>
+                    </div>
+                    {/* end social icon  */}
                   </div>
-                  {/* end social icon  */}
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </Slider>
+            )}
           </div>
           {/* ends cards  */}
         </div>
@@ -674,42 +686,51 @@ export default function Home() {
           </div>
 
           {/* blogs  */}
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-center">
-            {blogs.slice(0, 4)?.map((blog, _id) => (
-              <div
-                key={_id}
-                className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
-              >
-                <Link to={`blogDetails/${blog._id}`}>
-                  <img
-                    className="rounded-t-lg"
-                    src={blog?.imageUrl}
-                    loading="lazy"
-                    alt=""
-                  />
-                </Link>
-                <div className="p-5">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {blog?.title.length > 10
-                      ? `${blog?.title.substring(0, 35)}...`
-                      : blog?.title}
-                  </h5>
-
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {blog?.description}
-                  </p>
-
-                  <Link
-                    to={`blogDetails/${blog._id}`}
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F68A0A] rounded-lg hover:bg-[#ee8404] focus:ring-4 focus:outline-none focus:ring-blue-300   "
-                  >
-                    Read more
-                    <FaArrowRight className="ml-2" />
+          {blogLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-center">
+              <BlogSkeleton />
+              <BlogSkeleton />
+              <BlogSkeleton />
+              <BlogSkeleton />
+            </div>
+          ) : (
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-center">
+              {blogs.slice(0, 4)?.map((blog, _id) => (
+                <div
+                  key={_id}
+                  className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
+                >
+                  <Link to={`blogDetails/${blog._id}`}>
+                    <img
+                      className="rounded-t-lg h-[200px] object-cover"
+                      src={blog?.imageUrl}
+                      loading="lazy"
+                      alt=""
+                    />
                   </Link>
+                  <div className="p-5">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0E121D]">
+                      {blog?.title.length > 10
+                        ? `${blog?.title.substring(0, 35)}...`
+                        : blog?.title}
+                    </h5>
+
+                    <p className="mb-3 font-normal text-[#4D5765]">
+                      {blog?.description}
+                    </p>
+
+                    <Link
+                      to={`blogDetails/${blog._id}`}
+                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#F68A0A] rounded-lg hover:bg-[#ee8404] focus:ring-4 focus:outline-none focus:ring-blue-300"
+                    >
+                      Read more
+                      <FaArrowRight className="ml-2" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
