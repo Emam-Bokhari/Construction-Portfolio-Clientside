@@ -1,6 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   FaArrowRight,
+  FaArrowUp,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -35,6 +36,30 @@ import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
 import BlogSkeleton from "../../skeleton/BlogSkeleton";
 
 export default function Home() {
+  const [showButton, setShowButton] = useState(false);
+
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 2000 ||
+      document.documentElement.scrollTop > 2000
+    ) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+  const backToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll",scrollFunction)
+    
+    // clean
+    return()=>{
+      window.removeEventListener("scroll",scrollFunction)
+    }
+  }, []);
+
   // fetch data
   const { services, serviceLoading } = useService();
   const { teamMembers, teamMemberLoading } = useTeamMember();
@@ -767,6 +792,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* scroll to top button */}
+      <div className="fixed bottom-10 right-10 z-10">
+        <button onClick={backToTop} className={`bg-[#DC2626] hover:bg-[#B82222] transition-all  w-9 h-9 rounded-full flex justify-center items-center ${showButton?"":"hidden"}`}>
+          <FaArrowUp className="text-white" />
+        </button>
       </div>
     </Fragment>
   );
