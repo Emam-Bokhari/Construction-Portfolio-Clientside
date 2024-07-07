@@ -14,7 +14,6 @@ import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
 import projectBackgroundImage from "../../../assets/background-effects/latest-projects-bg-effect.png";
 import teamMemberBackgroundImage from "../../../assets/background-effects/our-team-bg-effect.jpg";
 import Banner from "../../Header/Banner";
-
 import WorkProcessSection from "../../WorkProcessSection";
 import ProjectCompletationCount from "../../ProjectCompletationCount";
 import TestimonialSection from "../../TestimonialSection";
@@ -212,7 +211,9 @@ export default function Home() {
       </div>
 
       {/* service section */}
-      <div className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20">
+      <div 
+      className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20" 
+      loading="lazy" >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8">
           {/* text  */}
           <div className="space-y-3 md:space-y-4">
@@ -292,7 +293,8 @@ export default function Home() {
       </div>
 
       {/* project section */}
-      <div style={projectBackground} className=" bg-no-repeat bg-cover w-full ">
+      <div style={projectBackground} className=" bg-no-repeat bg-cover w-full " 
+      loading="lazy" >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
           <div className="mt-[585px] md:mt-[280px] lg:mt-[200px]  xl:mt-40 space-y-3 md:space-y-4">
             <div className="flex items-center gap-3 justify-center">
@@ -330,7 +332,8 @@ export default function Home() {
 
       {/* team member section */}
       <div
-        style={teamMemberBackground}
+        style={teamMemberBackground} 
+        loading="lazy"
         className=" bg-no-repeat bg-cover w-full my-20"
       >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 space-y-3 md:space-y-4">

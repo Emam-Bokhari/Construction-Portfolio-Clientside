@@ -5,7 +5,6 @@ import NotFound from "./components/Page/NotFount/NotFound";
 import Navbar from "./components/Header/Navbar";
 import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
-
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));

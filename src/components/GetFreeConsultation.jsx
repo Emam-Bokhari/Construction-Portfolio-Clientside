@@ -11,6 +11,7 @@ export default function GetFreeConsultation(){
         <Fragment>
             <div
           style={getFreeConsultationBackground}
+          loading="lazy"
           className=" bg-no-repeat bg-cover w-full  "
         >
           <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
