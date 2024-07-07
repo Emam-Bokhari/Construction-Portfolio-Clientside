@@ -1,27 +1,42 @@
 import { Fragment, useEffect, useState } from "react";
-import { FaCalendar, FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaSearch, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaCalendar,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+  FaSearch,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import LatestBlogSkeleton from "../../skeleton/LatestBlogSkeleton";
 
 export default function LeftSide() {
-  const [latestBlogs,setLatestBlogs]=useState([])
-  useEffect(()=>{
-    const fetchLatestBlogsData=async()=>{
-      try{
-        const response=await fetch(`http://localhost:3000/api/v1/latest-blogs`)
-        if(!response.ok){
-          const errorMessage=`Fetching latest blogs data is failed!${response.status}`
-          throw new Error(errorMessage)
+  const [latestBlogs, setLatestBlogs] = useState([]);
+  const [latestBlogLoading, setLatestBlogLoading] = useState(false);
+  useEffect(() => {
+    const fetchLatestBlogsData = async () => {
+      try {
+        setLatestBlogLoading(true);
+        const response = await fetch(
+          `http://localhost:3000/api/v1/latest-blogs`
+        );
+        if (!response.ok) {
+          const errorMessage = `Fetching latest blogs data is failed!${response.status}`;
+          throw new Error(errorMessage);
         }
-        const data=await response.json()
-        setLatestBlogs(data)
-      }catch(err){
-        console.log(err)
+        const data = await response.json();
+        setLatestBlogs(data);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLatestBlogLoading(false);
       }
-    }
-    fetchLatestBlogsData()
-  },[])
-  
+    };
+    fetchLatestBlogsData();
+  }, []);
+
   return (
     <Fragment>
       <div className="  w-full lg:w-2/5  xl:w-1/3">
@@ -34,7 +49,7 @@ export default function LeftSide() {
               placeholder="Search here..."
             />
             <a href="#">
-            <FaSearch  className=" text-xl" />
+              <FaSearch className=" text-xl" />
             </a>
           </div>
         </div>
@@ -116,7 +131,7 @@ export default function LeftSide() {
                 href="#"
                 className="flex gap-2 justify-center items-center bg-white w-full text-[archivo] text-base font-[500] text-[#0E121D] rounded-md hover:bg-[#F68A0A] hover:text-white transition-all duration-300 shadow-sm p-4"
               >
-                <FaFacebook className="text-lg"/>
+                <FaFacebook className="text-lg" />
                 <p>Facebook</p>
               </a>
 
@@ -168,7 +183,7 @@ export default function LeftSide() {
         </div>
         {/* ends subscribe  */}
 
-        {/* start latest post  */}
+        {/* start latest blog post  */}
         <div className="bg-[#F8F8F8] p-4 my-10 rounded-md">
           <div>
             <h2 className="font-[titillium] text-[24px] font-[600] text-[#0E121D] ">
@@ -181,40 +196,52 @@ export default function LeftSide() {
           </div>
 
           {/* start blog  */}
-          <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
-            {latestBlogs?.map((latestBlog,_id)=>(
-              <div key={_id} >
-              <Link to={`/blogDetails/${latestBlog._id}`} className="flex items-center gap-3">
-                {/* image  */}
-                <div>
-                  <img
-                    className="w-full h-[100px] object-cover rounded-md"
-                    src={latestBlog?.imageUrl}
-                    loading="lazy"
-                    alt=""
-                  />
-                </div>
-
-                {/* text  */}
-                <div className="space-y-3 md:space-y-4">
-                  <div className="flex items-center gap-2 ">
-                    <FaCalendar className="text-base text-[#F68A0A]"  />
-                    <p className="font-[archivo] text-base text-[#4D5765]">
-                      {latestBlog?.publishedDate}
-                    </p>
-                  </div>
-
-                  <h2 className="font-[titillium] text-[20px] font-[600] text-[#0E121D] ">
-                    {latestBlog?.title.length>10?`${latestBlog?.title.substring(0,30)}...`:latestBlog?.title}
-                  </h2>
-                </div>
-              </Link>
+          {latestBlogLoading ? (
+            <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
+              <LatestBlogSkeleton />
+              <LatestBlogSkeleton />
+              <LatestBlogSkeleton />
             </div>
-            ))}
-            
-          </div>
+          ) : (
+            <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
+              {latestBlogs?.map((latestBlog, _id) => (
+                <div key={_id}>
+                  <Link
+                    to={`/blogDetails/${latestBlog._id}`}
+                    className="flex items-center gap-3 p-2 "
+                  >
+                    {/* image  */}
+                    <div>
+                      <img
+                        className="w-[150px] h-[100px] object-cover rounded-md"
+                        src={latestBlog?.imageUrl}
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+
+                    {/* text  */}
+                    <div className="space-y-3 md:space-y-4">
+                      <div className="flex items-center gap-2 ">
+                        <FaCalendar className="text-base text-[#F68A0A]" />
+                        <p className="font-[archivo] text-base text-[#4D5765]">
+                          {latestBlog?.publishedDate}
+                        </p>
+                      </div>
+
+                      <h2 className="font-[titillium] text-[20px] font-[600] text-[#0E121D] ">
+                        {latestBlog?.title.length > 10
+                          ? `${latestBlog?.title.substring(0, 30)}...`
+                          : latestBlog?.title}
+                      </h2>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        {/* ends latest post  */}
+        {/* ends latest blog post  */}
       </div>
     </Fragment>
   );
