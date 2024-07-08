@@ -704,10 +704,10 @@ export default function Home() {
           </h3>
 
           <div className="flex justify-end">
-            <button className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
+            <Link to="/blog" className="uppercase text-sm font-[archivo] font-[600] text-[#0E121D] hover:bg-[#F68A0A] px-3 py-2 hover:text-white transform transition-all duration-300 flex items-center gap-2 border-[1px] hover:border-transparent border-[#4D5765]">
               VIEW ALL
               <FaArrowRight className="text-sm" />
-            </button>
+            </Link>
           </div>
 
           {/* blogs  */}

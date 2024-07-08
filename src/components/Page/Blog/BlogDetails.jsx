@@ -35,7 +35,7 @@ export default function BLogDetails() {
 
   return (
     <Fragment>
-      <CommonPageBanner heading="Blog Details" tittle="Blog | Blog Details" />
+      <CommonPageBanner heading="Blog Details" title="Blog | Blog Details" />
       {/* start blog details */}
       <div className=" bg-white my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8  ">

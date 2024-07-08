@@ -1,9 +1,15 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Logo from "../../assets/logo/logo.png";
 import { FaDownload } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { IoMenuSharp } from "react-icons/io5";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export default function Navbar() {
+  const [showMenubar, setShowMenubar] = useState(false);
+  const onToggleMenu = () => {
+    setShowMenubar(!showMenubar);
+  };
   return (
     <Fragment>
       <div className="bg-[#FFEBDE] w-full ">
@@ -22,31 +28,61 @@ export default function Navbar() {
             {/* Ends logo  */}
 
             {/* navlink */}
-            <div className="z-10 nav-links transition-all duration-700  lg:static absolute bg-white lg:bg-transparent lg:min-h-fit min-h-[50vh] left-0 top-[-100%] lg:w-auto  w-full flex items-center px-5">
+            <div
+              className={`z-10  transition-all duration-700  lg:static absolute bg-white lg:bg-transparent lg:min-h-fit min-h-[50vh] left-0  lg:w-auto  w-full flex items-center px-5 ${
+                showMenubar ? "top-[15%] md:top-[11%]" : "top-[-100%]"
+              }`}
+            >
               <ul className="flex flex-col lg:flex-row lg:items-center  gap-10">
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
                   <NavLink
                     to="/"
                     className={({ isActive }) =>
-                      isActive
-                        ? "text-[#F68A0A]"
-                        :""
+                      isActive ? "text-[#F68A0A]" : ""
                     }
                   >
                     HOME
                   </NavLink>
                 </li>
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                  <NavLink to="/aboutUs" className={({isActive})=>isActive?"text-[#F68A0A]":""}>ABOUT US</NavLink>
+                  <NavLink
+                    to="/aboutUs"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#F68A0A]" : ""
+                    }
+                  >
+                    ABOUT US
+                  </NavLink>
                 </li>
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                  <NavLink to="/service" className={({isActive})=>isActive?"text-[#F68A0A]":""}>SERVICE</NavLink>
+                  <NavLink
+                    to="/service"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#F68A0A]" : ""
+                    }
+                  >
+                    SERVICE
+                  </NavLink>
                 </li>
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                  <NavLink to="/blog" className={({isActive})=>isActive?"text-[#F68A0A]":""}>BLOG</NavLink>
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#F68A0A]" : ""
+                    }
+                  >
+                    BLOG
+                  </NavLink>
                 </li>
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
-                  <NavLink to="/contactUs" className={({isActive})=>isActive?"text-[#F68A0A]":""}>CONTACT US</NavLink>
+                  <NavLink
+                    to="/contactUs"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#F68A0A]" : ""
+                    }
+                  >
+                    CONTACT US
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -60,11 +96,18 @@ export default function Navbar() {
               <i></i>
               <FaDownload className="hidden md:block" />
             </button>
-            <ion-icon
+            {/* <ion-icon
               onclick="onToggleMenu(this)"
               name="menu"
               class="text-3xl cursor-pointer lg:hidden"
-            ></ion-icon>
+            ></ion-icon> */}
+            {/*  */}
+            <button
+              onClick={onToggleMenu}
+              className="text-3xl cursor-pointer lg:hidden"
+            >
+              {showMenubar ? <IoMdCloseCircleOutline /> : <IoMenuSharp />}
+            </button>
           </div>
           {/* Ends get a quote button */}
         </div>

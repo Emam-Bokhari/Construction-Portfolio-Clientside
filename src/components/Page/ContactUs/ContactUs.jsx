@@ -5,7 +5,7 @@ import ContactUsSection from "../../ContactUsSection";
 export default function ContactUs() {
   return (
     <Fragment>
-      <CommonPageBanner heading="Contact Us" tittle="Home | Contact Us" />
+      <CommonPageBanner heading="Contact Us" title="Home | Contact Us" />
       <ContactUsSection />
       {/* Start google map  */}
       <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8 my-20 ">

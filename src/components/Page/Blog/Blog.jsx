@@ -12,7 +12,7 @@ export default function Blog() {
 
   return (
     <Fragment>
-      <CommonPageBanner heading="Blog" tittle="Home | Blog" />
+      <CommonPageBanner heading="Blog" title="Home | Blog" />
       {/*start blog */}
       <div className=" bg-white my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8  ">

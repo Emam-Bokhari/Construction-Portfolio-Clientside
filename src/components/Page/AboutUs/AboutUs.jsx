@@ -14,7 +14,7 @@ export default function AboutUs() {
 
   return (
     <Fragment>
-      <CommonPageBanner heading="About Us" tittle="Home | About Us" />
+      <CommonPageBanner heading="About Us" title="Home | About Us" />
       {/* about us section */}
       <div className=" bg-white my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8  ">

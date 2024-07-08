@@ -26,7 +26,6 @@ const DefaultLayout=({children})=>{
   )
 }
 
-
 export default function App() {
   return (
     <Fragment>
@@ -94,8 +93,8 @@ export default function App() {
           path="/contactUs"
         />
         <Route element={<NotFound />} path="*" />
+        
       </Routes>
-     
     </Fragment>
   );
 }

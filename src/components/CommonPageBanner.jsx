@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import commonBannerImage from "../assets/banner-image/common-banner-image.webp";
 
-export default function CommonPageBanner({ heading, tittle }) {
+export default function CommonPageBanner({ heading, title }) {
   return (
     <Fragment>
       <div className="relative">
@@ -20,7 +20,7 @@ export default function CommonPageBanner({ heading, tittle }) {
             {heading}
           </h2>
           <p className="font-[titillium] text-[18px] font-[600] text-[#F68A0A] ">
-            {tittle}
+            {title}
           </p>
         </div>
       </div>
