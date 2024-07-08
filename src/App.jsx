@@ -4,6 +4,7 @@ import Home from "./components/Page/Home/Home";
 import Navbar from "./components/Header/Navbar";
 import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
+import NotFound from "./components/Page/NotFound/NotFound";
 import LoadingAnimation from "./components/LoadingAnimation";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
@@ -13,73 +14,88 @@ const BlogDetails = lazy(() => import("./components/Page/Blog/BlogDetails"));
 const ServiceDetails = lazy(() =>
   import("./components/Page/Service/ServiceDetails")
 );
-const NotFound = lazy(() => "./components/Page/NotFount/NotFound");
+
+const DefaultLayout=({children})=>{
+  return(
+    <Fragment>
+      <TopNavbar/>
+      <Navbar/>
+      {children}
+      <Footer/>
+    </Fragment>
+  )
+}
+
 
 export default function App() {
   return (
     <Fragment>
-      <TopNavbar />
-      <Navbar />
+      
       <Routes>
-        <Route element={<Home />} path="/" exact />
+        <Route element={<DefaultLayout><Home /></DefaultLayout>} path="/" exact />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <AboutUs />
             </Suspense>
+            </DefaultLayout>
           }
           path="/aboutUs"
         />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <Service />
             </Suspense>
+            </DefaultLayout>
           }
           path="/service"
         />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <ServiceDetails />
             </Suspense>
+            </DefaultLayout>
           }
           path="/serviceDetails/:serviceId"
         />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <Blog />
             </Suspense>
+            </DefaultLayout>
           }
           path="/blog"
         />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <BlogDetails />
             </Suspense>
+            </DefaultLayout>
           }
           path="/blogDetails/:blogId"
         />
         <Route
           element={
-            <Suspense fallback={<LoadingAnimation />}>
+            <DefaultLayout>
+              <Suspense fallback={<LoadingAnimation />}>
               <ContactUs />
             </Suspense>
+            </DefaultLayout>
           }
           path="/contactUs"
         />
-        <Route
-          element={
-            <Suspense fallback={<LoadingAnimation />}>
-              <NotFound />
-            </Suspense>
-          }
-          path="*"
-        />
+        <Route element={<NotFound />} path="*" />
       </Routes>
-      <Footer />
+     
     </Fragment>
   );
 }
