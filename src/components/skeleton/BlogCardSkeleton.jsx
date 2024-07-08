@@ -3,7 +3,7 @@ import { Fragment } from "react";
 export default function BlogCardSkeleton(){
     return(
         <Fragment>
-            <div className="bg-white space-y-4 shadow animate-pulse" >
+            <div className="bg-white space-y-4 shadow animate-pulse p-2" >
                 <div className="flex flex-col xl:flex-row  gap-5" >
                 <div className=" flex-1">
                  <div className="w-full bg-slate-200 h-[300px] md:h-[400px] xl:h-[300px] rounded-md"></div>

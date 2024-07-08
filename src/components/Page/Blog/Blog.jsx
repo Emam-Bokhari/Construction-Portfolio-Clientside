@@ -36,7 +36,7 @@ export default function Blog() {
               ) : (
                 <div className="space-y-3 md:space-y-4">
                   {blogs?.map((blog, _id) => (
-                    <div key={_id} className="flex flex-col xl:flex-row gap-5">
+                    <div key={_id} className="flex flex-col xl:flex-row gap-5 p-2">
                       {/* image  */}
                       <div className="  flex-1">
                         <img
