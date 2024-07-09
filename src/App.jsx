@@ -6,6 +6,7 @@ import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
 import NotFound from "./components/Page/NotFound/NotFound";
 import LoadingAnimation from "./components/LoadingAnimation";
+import DashboardHome from "./components/Page/DashboardPage/DashboardHome";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -15,29 +16,36 @@ const ServiceDetails = lazy(() =>
   import("./components/Page/Service/ServiceDetails")
 );
 
-const DefaultLayout=({children})=>{
-  return(
+const DefaultLayout = ({ children }) => {
+  return (
     <Fragment>
-      <TopNavbar/>
-      <Navbar/>
+      <TopNavbar />
+      <Navbar />
       {children}
-      <Footer/>
+      <Footer />
     </Fragment>
-  )
-}
+  );
+};
 
 export default function App() {
   return (
     <Fragment>
-      
       <Routes>
-        <Route element={<DefaultLayout><Home /></DefaultLayout>} path="/" exact />
+        <Route
+          element={
+            <DefaultLayout>
+              <Home />
+            </DefaultLayout>
+          }
+          path="/"
+          exact
+        />
         <Route
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <AboutUs />
-            </Suspense>
+                <AboutUs />
+              </Suspense>
             </DefaultLayout>
           }
           path="/aboutUs"
@@ -46,8 +54,8 @@ export default function App() {
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <Service />
-            </Suspense>
+                <Service />
+              </Suspense>
             </DefaultLayout>
           }
           path="/service"
@@ -56,8 +64,8 @@ export default function App() {
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <ServiceDetails />
-            </Suspense>
+                <ServiceDetails />
+              </Suspense>
             </DefaultLayout>
           }
           path="/serviceDetails/:serviceId"
@@ -66,8 +74,8 @@ export default function App() {
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <Blog />
-            </Suspense>
+                <Blog />
+              </Suspense>
             </DefaultLayout>
           }
           path="/blog"
@@ -76,8 +84,8 @@ export default function App() {
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <BlogDetails />
-            </Suspense>
+                <BlogDetails />
+              </Suspense>
             </DefaultLayout>
           }
           path="/blogDetails/:blogId"
@@ -86,14 +94,14 @@ export default function App() {
           element={
             <DefaultLayout>
               <Suspense fallback={<LoadingAnimation />}>
-              <ContactUs />
-            </Suspense>
+                <ContactUs />
+              </Suspense>
             </DefaultLayout>
           }
           path="/contactUs"
         />
+        <Route element={<DashboardHome />} path="/dashboard" />
         <Route element={<NotFound />} path="*" />
-        
       </Routes>
     </Fragment>
   );

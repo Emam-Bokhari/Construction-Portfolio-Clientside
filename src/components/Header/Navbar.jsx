@@ -23,7 +23,6 @@ export default function Navbar() {
                 loading="lazy"
                 alt=""
               />
-              {/* <img src={logo} alt="" /> */}
             </div>
             {/* Ends logo  */}
 
@@ -82,6 +81,16 @@ export default function Navbar() {
                     }
                   >
                     CONTACT US
+                  </NavLink>
+                </li>
+                <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
+                  <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#F68A0A]" : ""
+                    }
+                  >
+                    Dashboard
                   </NavLink>
                 </li>
               </ul>
