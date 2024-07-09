@@ -136,17 +136,17 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <DashboardHome 
-              servicesData={services}
-              serviceLoading={serviceLoading}
-              projectsData={projects}
-              projectLoading={projectLoading} 
-              blogsData={blogs} 
-              blogLoading={blogLoading} 
-              teamMembersData={teamMembers}
-              teamMemberLoading={teamMemberLoading}
-              testimonialsData={testimonials}
-              testimonialLoading={testimonialLoading}
+              <DashboardHome
+                servicesData={services}
+                serviceLoading={serviceLoading}
+                projectsData={projects}
+                projectLoading={projectLoading}
+                blogsData={blogs}
+                blogLoading={blogLoading}
+                teamMembersData={teamMembers}
+                teamMemberLoading={teamMemberLoading}
+                testimonialsData={testimonials}
+                testimonialLoading={testimonialLoading}
               />
             </DashboardDefaultLayout>
           }
@@ -163,7 +163,10 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageService servicesData={services} serviceLoading={serviceLoading} />
+              <ManageService
+                servicesData={services}
+                serviceLoading={serviceLoading}
+              />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageService"
@@ -179,7 +182,10 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageTeamMember />
+              <ManageTeamMember
+                teamMembersData={teamMembers}
+                teamMemberLoading={teamMemberLoading}
+              />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTeamMember"
