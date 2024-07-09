@@ -4,6 +4,7 @@ import AddButton from "../../../../Dashboard/AddButton";
 import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function ManageProject() {
   return (
@@ -18,7 +19,9 @@ export default function ManageProject() {
           <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
            <Searchbar/>
 
+            <Link to="/dashboard/addProject" >
             <AddButton button="Add Project" />
+            </Link>
           </div>
 
           <div className="overflow-auto">
