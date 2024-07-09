@@ -6,7 +6,7 @@ import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-export default function ManageBlog() {
+export default function ManageBlog({ blogsData, blogLoading }) {
   return (
     <Fragment>
       <WrapStyle>
@@ -19,9 +19,9 @@ export default function ManageBlog() {
             <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
               <Searchbar />
 
-             <Link to="/dashboard/addBlog" >
-             <AddButton button={"Add Blog"} />
-             </Link>
+              <Link to="/dashboard/addBlog">
+                <AddButton button={"Add Blog"} />
+              </Link>
             </div>
 
             <div className="overflow-auto">
@@ -53,466 +53,56 @@ export default function ManageBlog() {
                 </thead>
 
                 <tbody>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
+                  {blogsData?.map((blog, _id) => (
+                    <tr
+                      key={_id}
+                      className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200"
+                    >
+                      <td className="align-middle p-3">
+                        <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
+                          <img
+                            className="w-10 h-12 object-cover rounded-lg"
+                            src={blog?.imageUrl}
+                            alt=""
+                          />
+                        </div>
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
+                        {blog?.title}
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
+                        {blog?.category}
+                      </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
+                        {blog?.description}
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
+                        {blog?.publishedDate}
+                      </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
+                        {blog?.author}
+                      </td>
 
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <FaPen />
-                          </a>
-                        </span>
+                      <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
+                        <div className="flex justify-center gap-3">
+                          <span className="text-[#22C7A1] font-extrabold">
+                            <a href="#">
+                              <FaPen />
+                            </a>
+                          </span>
 
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <FaTrashCan />
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      How to identify best breaks?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      Building Construction
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Saepe, illum...
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
-                      24-Jun-2024
-                    </td>
-                    <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                      Moshfiqur Rahman
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex justify-center gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
+                          <span className="text-[#FF5200] font-extrabold">
+                            <a href="#">
+                              <FaTrashCan />
+                            </a>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

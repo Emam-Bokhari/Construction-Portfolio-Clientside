@@ -233,7 +233,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageBlog />
+              <ManageBlog blogsData={blogs} blogLoading={blogLoading} />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageBlog"
