@@ -19,6 +19,11 @@ import AddTestimonial from "./components/Page/DashboardPage/DashboardTestimonial
 import ManageTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/ManageTestimonial";
 import AddBlog from "./components/Page/DashboardPage/DashboardBlog/AddBlog/AddBlog";
 import ManageBlog from "./components/Page/DashboardPage/DashboardBlog/ManageBlog/ManageBlog";
+import useBlog from "./hooks/useBlog";
+import useProject from "./hooks/useProject";
+import useService from "./hooks/useService";
+import useTeamMember from "./hooks/useTeamMember";
+import useTestimonial from "./hooks/useTestimonial";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -50,6 +55,12 @@ const DashboardDefaultLayout = ({ children }) => {
 };
 
 export default function App() {
+  // fetch data
+  const { blogs, blogLoading } = useBlog();
+  const { projects, projectLoading } = useProject();
+  const { services, serviceLoading } = useService();
+  const { teamMembers, teamMemberLoading } = useTeamMember();
+  const { testimonials, testimonialLoading } = useTestimonial();
   return (
     <Fragment>
       <Routes>
@@ -125,7 +136,18 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <DashboardHome />
+              <DashboardHome 
+              servicesData={services}
+              serviceLoading={serviceLoading}
+              projectsData={projects}
+              projectLoading={projectLoading} 
+              blogsData={blogs} 
+              blogLoading={blogLoading} 
+              teamMembersData={teamMembers}
+              teamMemberLoading={teamMemberLoading}
+              testimonialsData={testimonials}
+              testimonialLoading={testimonialLoading}
+              />
             </DashboardDefaultLayout>
           }
           path="/dashboard"
@@ -141,7 +163,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageService />
+              <ManageService servicesData={services} serviceLoading={serviceLoading} />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageService"

@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import WrapStyle from "../../../../Dashboard/WrapStyle";
 import AddButton from "../../../../Dashboard/AddButton";
 import Searchbar from "../../../../Dashboard/Searchbar";
+import { FaPen } from "react-icons/fa";
+import { FaTrashCan } from "react-icons/fa6";
 
 export default function ManageTeamMember() {
   return (
@@ -107,13 +109,13 @@ export default function ManageTeamMember() {
                       <div className="flex justify-center gap-3">
                         <span className="text-[#22C7A1] font-extrabold">
                           <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
+                            <FaPen/>
                           </a>
                         </span>
 
                         <span className="text-[#FF5200] font-extrabold">
                           <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
+                            <FaTrashCan/>
                           </a>
                         </span>
                       </div>

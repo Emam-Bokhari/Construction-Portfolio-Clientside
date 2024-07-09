@@ -5,49 +5,50 @@ import TeamMembersTable from "./TeamMembersTable";
 import ProjectsTable from "./ProjectsTable";
 import BlogsTable from "./BlogsTable";
 import TestimonialsTable from "./TestimonialsTable";
-import useBlog from "../../../../hooks/useBlog";
-import useProject from "../../../../hooks/useProject";
-import useService from "../../../../hooks/useService";
-import useTeamMember from "../../../../hooks/useTeamMember";
-import useTestimonial from "../../../../hooks/useTestimonial";
 import WrapStyle from "../../../Dashboard/WrapStyle";
 
-export default function DashboardHome() {
-  const { blogs, blogLoading } = useBlog();
-  const { projects, projectLoading } = useProject();
-  const { services, serviceLoading } = useService();
-  const { teamMembers, teamMemberLoading } = useTeamMember();
-  const { testimonials, testimonialLoading } = useTestimonial();
+export default function DashboardHome({
+  blogsData,
+  blogLoading,
+  projectsData,
+  projectLoading,
+  servicesData,
+  serviceLoading,
+  testimonialsData,
+  testimonialLoading,
+  teamMembersData,
+  teamMemberLoading,
+}) {
   return (
     <Fragment>
       <WrapStyle>
         <TotalCards
-          totalBlogs={blogs}
-          totalServices={services}
-          totalProjects={projects}
-          totalTeamMembers={teamMembers}
+          totalBlogs={blogsData}
+          totalServices={servicesData}
+          totalProjects={projectsData}
+          totalTeamMembers={teamMembersData}
         />
         {/* start service,team members,projects gallery  */}
         <div className="my-5 flex flex-col 2xl:flex-row  gap-5">
           <ServicesTable
-            servicesData={services}
+            servicesData={servicesData}
             serviceLoading={serviceLoading}
           />
           <TeamMembersTable
-            teamMembersData={teamMembers}
+            teamMembersData={teamMembersData}
             teamMemberLoading={teamMemberLoading}
           />
           <ProjectsTable
-            projectsData={projects}
+            projectsData={projectsData}
             projectLoading={projectLoading}
           />
         </div>
         {/* end service,team members,projects gallery  */}
         {/* start blogs and testimonials  */}
         <div className=" flex flex-col 2xl:flex-row gap-5">
-          <BlogsTable blogsData={blogs} blogLoading={blogLoading} />
+          <BlogsTable blogsData={blogsData} blogLoading={blogLoading} />
           <TestimonialsTable
-            testimonialsData={testimonials}
+            testimonialsData={testimonialsData}
             testimonialLoading={testimonialLoading}
           />
         </div>
