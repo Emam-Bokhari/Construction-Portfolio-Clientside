@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import logo from "../../assets/logo/logo.png";
 import { IoGridSharp, IoSettingsSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -19,6 +19,18 @@ import {
 } from "react-icons/fa";
 
 export default function DashboardHeader() {
+  const [showSubMenu, SetShowSubMenu] = useState({
+    service: false,
+    teamMember: false,
+    project: false,
+    testimonial: false,
+    blog: false,
+  });
+  const onToggleSubMenu = (menu) => {
+    SetShowSubMenu({
+      [menu]: !showSubMenu[menu],
+    });
+  };
   return (
     <Fragment>
       <header>
@@ -101,7 +113,7 @@ export default function DashboardHeader() {
                       href="#"
                     >
                       <div
-                        onClick="serviceDropDown()"
+                        onClick={() => onToggleSubMenu("service")}
                         className="flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
@@ -109,15 +121,20 @@ export default function DashboardHeader() {
                           <span className="text-base font-[500]">Service</span>
                         </div>
 
-                        <span id="serviceArrow">
+                        <span
+                          className={`${
+                            showSubMenu?.service ? "rotate-180" : ""
+                          }`}
+                        >
                           <FaChevronDown />
                         </span>
                       </div>
                     </div>
 
                     <ul
-                      id="serviceSubMenu"
-                      className="w-4/5 mx-auto mt-5 hidden list-disc list-inside"
+                      className={`w-4/5 mx-auto mt-5 list-disc list-inside ${
+                        showSubMenu?.service ? "block" : "hidden"
+                      }`}
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
@@ -139,7 +156,7 @@ export default function DashboardHeader() {
                   <li>
                     <div className="w-full px-3 py-4 rounded-xl block bg-[#E9F1FF] text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 cursor-pointer">
                       <div
-                        onClick="teamMemberDropDown()"
+                        onClick={() => onToggleSubMenu("teamMember")}
                         className="flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
@@ -156,8 +173,9 @@ export default function DashboardHeader() {
                     </div>
 
                     <ul
-                      id="teamMemberSubMenu"
-                      className="w-4/5 mx-auto mt-5 hidden list-disc list-inside"
+                      className={`w-4/5 mx-auto mt-5 list-disc list-inside ${
+                        showSubMenu?.teamMember ? "block" : "hidden"
+                      }`}
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
@@ -182,7 +200,7 @@ export default function DashboardHeader() {
                       href="#"
                     >
                       <div
-                        onClick="projectDropDown()"
+                        onClick={() => onToggleSubMenu("project")}
                         className="flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
@@ -190,15 +208,16 @@ export default function DashboardHeader() {
                           <span className="text-base font-[500]">Project</span>
                         </div>
 
-                        <span id="projectArrow">
+                        <span>
                           <FaChevronDown />
                         </span>
                       </div>
                     </div>
 
                     <ul
-                      id="projectSubMenu"
-                      className="w-4/5 mx-auto mt-5 hidden list-disc list-inside"
+                      className={`w-4/5 mx-auto mt-5 list-disc list-inside ${
+                        showSubMenu?.project ? "block" : "hidden"
+                      }`}
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
@@ -223,7 +242,7 @@ export default function DashboardHeader() {
                       href="#"
                     >
                       <div
-                        onClick="testimonialDropDown()"
+                        onClick={() => onToggleSubMenu("testimonial")}
                         className="flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
@@ -240,8 +259,9 @@ export default function DashboardHeader() {
                     </div>
 
                     <ul
-                      id="testimonialSubMenu"
-                      className="w-4/5 mx-auto mt-5 hidden list-disc list-inside"
+                      className={`w-4/5 mx-auto mt-5 list-disc list-inside ${
+                        showSubMenu?.testimonial ? "block" : "hidden"
+                      }`}
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
@@ -266,7 +286,7 @@ export default function DashboardHeader() {
                       href="#"
                     >
                       <div
-                        onClick="blogDropDown()"
+                        onClick={() => onToggleSubMenu("blog")}
                         className="flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
@@ -281,8 +301,9 @@ export default function DashboardHeader() {
                     </div>
 
                     <ul
-                      id="blogSubMenu"
-                      className="w-4/5 mx-auto mt-5 hidden list-disc list-inside"
+                      className={`w-4/5 mx-auto mt-5 list-disc list-inside ${
+                        showSubMenu?.blog ? "block" : "hidden"
+                      }`}
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
