@@ -47,9 +47,9 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
                     {service?.serviceName}
                   </td>
                   <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                    {service.serviceDescription
-                      ? service.serviceDescription.substring(0, 60)
-                      : service.serviceDescription}
+                    {service?.serviceDescription
+                      ? service?.serviceDescription.substring(0, 60)
+                      : service?.serviceDescription}
                   </td>
                 </tr>
               ))}

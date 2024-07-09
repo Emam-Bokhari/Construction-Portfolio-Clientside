@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function BlogsTable() {
+export default function BlogsTable({ blogsData, blogLoading }) {
   return (
     <Fragment>
       <div className="p-5 w-full 2xl:w-3/5 h-auto  bg-white rounded-xl ">
@@ -40,168 +40,36 @@ export default function BlogsTable() {
             </thead>
 
             <tbody>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  How to identify good bricks?
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Jun-02-2024
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
-                  Admin
-                </td>
-              </tr>
+              {blogsData.slice(0, 7)?.map((blog, _id) => (
+                <tr key={_id}>
+                  <td className="pb-4 align-top">
+                    <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
+                      <img
+                        className="w-8 h-10 object-cover rounded-lg"
+                        src={blog?.imageUrl}
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
+                    {blog?.title ? blog?.title.substring(0, 30) : blog?.title}
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
+                    {blog?.category}
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
+                    {blog?.description
+                      ? blog?.description.substring(0, 60)
+                      : blog?.description}
+                  </td>
+                  <td className="pl-3 pb-4  align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
+                    {blog?.publishedDate}
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] whitespace-nowrap">
+                    {blog?.author}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
