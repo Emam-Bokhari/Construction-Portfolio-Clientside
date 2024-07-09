@@ -18,7 +18,7 @@ export default function AddProject() {
                   className="text-base font-medium text-[#111111]"
                   htmlFor="projectImageUrl"
                 >
-                  Project Image Url{" "}
+                  Project Image Url
                   <sup>
                     <span className="text-red-500 font-bold">*</span>
                   </sup>

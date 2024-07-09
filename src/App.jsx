@@ -193,7 +193,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddProject />
+              <AddProject  />
             </DashboardDefaultLayout>
           }
           path="/dashboard/addProject"
@@ -201,7 +201,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageProject />
+              <ManageProject projectsData={projects} projectLoading={projectLoading} />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageProject"
