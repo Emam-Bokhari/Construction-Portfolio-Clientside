@@ -202,7 +202,6 @@ export default function BlogsTable() {
                   Admin
                 </td>
               </tr>
-              
             </tbody>
           </table>
         </div>
