@@ -9,6 +9,8 @@ import LoadingAnimation from "./components/LoadingAnimation";
 import DashboardHome from "./components/Page/DashboardPage/DashboardHome/DashboardHome";
 import AddService from "./components/Page/DashboardPage/DashboardService/AddService/AddService";
 import DashboardHeader from "./components/Dashboard/DashboardHeader";
+import ManageService from "./components/Page/DashboardPage/DashboardService/ManageService/ManageService";
+import DashboardFooter from "./components/Dashboard/DashboardFooter";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -34,6 +36,7 @@ const DashboardDefaultLayout = ({ children }) => {
     <Fragment>
       <DashboardHeader />
       {children}
+      <DashboardFooter />
     </Fragment>
   );
 };
@@ -126,6 +129,14 @@ export default function App() {
             </DashboardDefaultLayout>
           }
           path="/dashboard/addService"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <ManageService />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/manageService"
         />
         <Route element={<NotFound />} path="*" />
       </Routes>

@@ -42,7 +42,6 @@ export default function DashboardHome() {
             <TestimonialsTable />
           </div>
           </WrapStyle>
-        <DashboardFooter />
     </Fragment>
   );
 }
