@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import WrapStyle from "../../../../Dashboard/WrapStyle";
+import AddButton from "../../../../Dashboard/AddButton";
+import Searchbar from "../../../../Dashboard/Searchbar";
 
 export default function ManageTeamMember() {
   return (
@@ -12,23 +14,9 @@ export default function ManageTeamMember() {
 
           <div className="p-5 w-full  h-auto bg-white rounded-xl ">
             <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
-              <div className="flex ring-1 ring-[#EEF3F7] ring-offset-2 w-[250px]  rounded-lg">
-                <input
-                  className="p-3 w-full outline-none px-2"
-                  type="text"
-                  placeholder="Search here..."
-                />
-                <button>
-                  <i className="fa-solid fa-magnifying-glass text-xl mr-3"></i>
-                </button>
-              </div>
+              <Searchbar />
 
-              <button className="border-2 border-[#2275FC] rounded-xl w-[200px] py-3 text-[base] text-[#2275FC] font-[inter] font-medium hover:text-white hover:bg-[#2275FC] transform transition-all duration-200">
-                <span className="mr-1">
-                  <i className="fa-solid fa-plus"></i>
-                </span>
-                Add Team Member
-              </button>
+              <AddButton button="Add Team Member" />
             </div>
 
             <div className="overflow-auto">

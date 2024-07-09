@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export default function TeamMembersTable({
   teamMembersData,
@@ -12,9 +13,9 @@ export default function TeamMembersTable({
             Team Members
           </h2>
 
-          <button className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
+          <Link to="/dashboard/manageTeamMember" className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
             View All
-          </button>
+          </Link>
         </div>
 
         <div className="overflow-auto">

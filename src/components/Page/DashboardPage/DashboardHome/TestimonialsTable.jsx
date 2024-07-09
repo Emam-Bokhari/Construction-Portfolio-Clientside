@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import Ratings from "./Ratings";
+import TestimonialsRatings from "./TestimonialsRatings";
+import { Link } from "react-router-dom";
 
 export default function TestimonialsTable({
   testimonialsData,
@@ -13,9 +14,9 @@ export default function TestimonialsTable({
             Testimonials
           </h2>
 
-          <button className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
+          <Link to="/dashboard/manageTestimonial" className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
             View All
-          </button>
+          </Link>
         </div>
 
         <div className="overflow-auto">
@@ -30,11 +31,11 @@ export default function TestimonialsTable({
                     alt=""
                   />
 
-                  <div className="leading-5 space-y-1">
+                  <div className="leading-5 space-y-2">
                     <p className="text-sm font-[inter] font-[500]">
                       {testimonial?.name}
                     </p>
-                    <Ratings ratings={testimonial?.star}  />
+                    <TestimonialsRatings ratings={testimonial?.star}  />
                     <p className="text-sm font-[inter] font-normal text-[#5C6573]">
                       {testimonial?.review
                         ? testimonial?.review.substring(0, 60)

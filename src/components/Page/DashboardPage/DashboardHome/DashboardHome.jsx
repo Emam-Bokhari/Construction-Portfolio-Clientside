@@ -1,6 +1,4 @@
 import { Fragment } from "react";
-import DashboardHeader from "../../../Dashboard/DashboardHeader";
-import DashboardFooter from "../../../Dashboard/DashboardFooter";
 import ServicesTable from "./ServicesTable";
 import TotalCards from "./TotalCards";
 import TeamMembersTable from "./TeamMembersTable";

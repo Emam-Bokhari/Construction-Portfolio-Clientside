@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export default function ServicesTable({ servicesData, serviceLoading }) {
   console.log(servicesData);
@@ -10,9 +11,9 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
             Services
           </h2>
 
-          <button className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
+          <Link to="/dashboard/manageService" className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
             View All
-          </button>
+          </Link>
         </div>
 
         <div className="overflow-auto">

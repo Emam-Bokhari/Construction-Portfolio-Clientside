@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectsTable({ projectsData, projectLoading }) {
   return (
@@ -9,9 +10,9 @@ export default function ProjectsTable({ projectsData, projectLoading }) {
             Projects Gallery
           </h2>
 
-          <button className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
+          <Link to="/dashboard/manageProject" className="text-[#BDC9DB] font-[inter] font-[500] text-sm">
             View All
-          </button>
+          </Link>
         </div>
 
         <div className="overflow-auto">
