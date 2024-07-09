@@ -87,7 +87,7 @@ export default function DashboardHeader() {
 
                 <Link
                   className="w-full px-3 py-4 rounded-xl block bg-[#E9F1FF] text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 my-5"
-                  href="./index.html"
+                  to="/dashboard"
                 >
                   <div className="flex items-center gap-3">
                     <IoGridSharp className="text-2xl" />
@@ -138,7 +138,7 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="./add-service.html"
+                        to="/dashboard/addService"
                       >
                         <li>Add Service</li>
                       </Link>
@@ -147,7 +147,7 @@ export default function DashboardHeader() {
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
                         href="./service-list.html"
                       >
-                        <li>Service List</li>
+                        <li>Manage Service</li>
                       </Link>
                     </ul>
                   </li>
@@ -188,7 +188,7 @@ export default function DashboardHeader() {
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
                         href="./team-member-list.html"
                       >
-                        <li>Team Member List</li>
+                        <li>Manage Team Member</li>
                       </Link>
                     </ul>
                   </li>
@@ -230,7 +230,7 @@ export default function DashboardHeader() {
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
                         href="./add-project-list.html"
                       >
-                        <li>Project List</li>
+                        <li>Manage Project</li>
                       </Link>
                     </ul>
                   </li>
@@ -274,7 +274,7 @@ export default function DashboardHeader() {
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
                         href="./testimonial-list.html"
                       >
-                        <li>Testimonial List</li>
+                        <li>Manage Testimonial</li>
                       </Link>
                     </ul>
                   </li>
@@ -316,7 +316,7 @@ export default function DashboardHeader() {
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
                         href="./blog-list.html"
                       >
-                        <li>Blog List</li>
+                        <li>Manage Blog</li>
                       </Link>
                     </ul>
                   </li>

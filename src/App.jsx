@@ -6,7 +6,9 @@ import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
 import NotFound from "./components/Page/NotFound/NotFound";
 import LoadingAnimation from "./components/LoadingAnimation";
-import DashboardHome from "./components/Page/DashboardPage/DashboardHome";
+import DashboardHome from "./components/Page/DashboardPage/DashboardHome/DashboardHome";
+import AddService from "./components/Page/DashboardPage/DashboardService/AddService/AddService";
+import DashboardHeader from "./components/Dashboard/DashboardHeader";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -23,6 +25,15 @@ const DefaultLayout = ({ children }) => {
       <Navbar />
       {children}
       <Footer />
+    </Fragment>
+  );
+};
+
+const DashboardDefaultLayout = ({ children }) => {
+  return (
+    <Fragment>
+      <DashboardHeader />
+      {children}
     </Fragment>
   );
 };
@@ -100,7 +111,22 @@ export default function App() {
           }
           path="/contactUs"
         />
-        <Route element={<DashboardHome />} path="/dashboard" />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <DashboardHome />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <AddService />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/addService"
+        />
         <Route element={<NotFound />} path="*" />
       </Routes>
     </Fragment>

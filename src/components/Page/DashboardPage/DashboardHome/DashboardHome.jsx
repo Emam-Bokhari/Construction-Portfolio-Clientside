@@ -1,17 +1,18 @@
 import { Fragment } from "react";
-import DashboardHeader from "../../Dashboard/DashboardHeader";
-import DashboardFooter from "../../Dashboard/DashboardFooter";
+import DashboardHeader from "../../../Dashboard/DashboardHeader";
+import DashboardFooter from "../../../Dashboard/DashboardFooter";
 import ServicesTable from "./ServicesTable";
 import TotalCards from "./TotalCards";
 import TeamMembersTable from "./TeamMembersTable";
 import ProjectsTable from "./ProjectsTable";
 import BlogsTable from "./BlogsTable";
 import TestimonialsTable from "./TestimonialsTable";
-import useBlog from "../../../hooks/useBlog";
-import useProject from "../../../hooks/useProject";
-import useService from "../../../hooks/useService";
-import useTeamMember from "../../../hooks/useTeamMember";
-import useTestimonial from "../../../hooks/useTestimonial";
+import useBlog from "../../../../hooks/useBlog";
+import useProject from "../../../../hooks/useProject";
+import useService from "../../../../hooks/useService";
+import useTeamMember from "../../../../hooks/useTeamMember";
+import useTestimonial from "../../../../hooks/useTestimonial";
+import WrapStyle from "../../../Dashboard/WrapStyle";
 
 export default function DashboardHome() {
   const { blogs, blogLoading } = useBlog();
@@ -21,9 +22,7 @@ export default function DashboardHome() {
   const { testimonials, testimonialLoading } = useTestimonial();
   return (
     <Fragment>
-      <div className="bg-[#EEF3F7]">
-        <DashboardHeader />
-        <main className="ml-0 lg:ml-[300px] py-4 px-5 mt-11 lg:mt-0 min-h-screen">
+        <WrapStyle>
           <TotalCards
             totalBlogs={blogs}
             totalServices={services}
@@ -42,9 +41,8 @@ export default function DashboardHome() {
             <BlogsTable />
             <TestimonialsTable />
           </div>
-        </main>
+          </WrapStyle>
         <DashboardFooter />
-      </div>
     </Fragment>
   );
 }
