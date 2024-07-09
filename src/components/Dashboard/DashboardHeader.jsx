@@ -221,14 +221,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="./add-project.html"
+                        to="/dashboard/addProject"
                       >
                         <li>Add Project</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="./add-project-list.html"
+                        to="/dashboard/manageProject"
                       >
                         <li>Manage Project</li>
                       </Link>
@@ -265,14 +265,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="./add-testimonial.html"
+                        href="/dashboard/addTestimonial"
                       >
                         <li>Add Testimonial</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="./testimonial-list.html"
+                        href="/dashboard/manageTestimonial"
                       >
                         <li>Manage Testimonial</li>
                       </Link>
@@ -307,14 +307,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="./add-blog.html"
+                        href="/dashboard/blog"
                       >
                         <li>Add Blog</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="./blog-list.html"
+                        href="/dashboard/manageBlog"
                       >
                         <li>Manage Blog</li>
                       </Link>

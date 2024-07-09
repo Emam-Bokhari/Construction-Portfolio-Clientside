@@ -13,6 +13,8 @@ import ManageService from "./components/Page/DashboardPage/DashboardService/Mana
 import DashboardFooter from "./components/Dashboard/DashboardFooter";
 import AddTeamMember from "./components/Page/DashboardPage/TeamMember/AddTeamMember/AddTeamMember";
 import ManageTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/ManageTeamMember";
+import AddProject from "./components/Page/DashboardPage/DashboardProject/AddProject/AddProject";
+import ManageProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/ManageProject";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -155,6 +157,22 @@ export default function App() {
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTeamMember"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <AddProject />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/addProject"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <ManageProject />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/manageProject"
         />
         <Route element={<NotFound />} path="*" />
       </Routes>
