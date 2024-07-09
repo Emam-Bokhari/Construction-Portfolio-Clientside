@@ -265,14 +265,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="/dashboard/addTestimonial"
+                        to="/dashboard/addTestimonial"
                       >
                         <li>Add Testimonial</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="/dashboard/manageTestimonial"
+                        to="/dashboard/manageTestimonial"
                       >
                         <li>Manage Testimonial</li>
                       </Link>
@@ -307,14 +307,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="/dashboard/blog"
+                        to="/dashboard/addBlog"
                       >
                         <li>Add Blog</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="/dashboard/manageBlog"
+                        to="/dashboard/manageBlog"
                       >
                         <li>Manage Blog</li>
                       </Link>

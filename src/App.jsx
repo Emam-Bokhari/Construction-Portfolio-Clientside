@@ -16,6 +16,9 @@ import ManageTeamMember from "./components/Page/DashboardPage/TeamMember/ManageT
 import AddProject from "./components/Page/DashboardPage/DashboardProject/AddProject/AddProject";
 import ManageProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/ManageProject";
 import AddTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/AddTestimonial/AddTestimonial";
+import ManageTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/ManageTestimonial";
+import AddBlog from "./components/Page/DashboardPage/DashboardBlog/AddBlog/AddBlog";
+import ManageBlog from "./components/Page/DashboardPage/DashboardBlog/ManageBlog/ManageBlog";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -178,10 +181,34 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddTestimonial/>
+              <AddTestimonial />
             </DashboardDefaultLayout>
           }
           path="/dashboard/addTestimonial"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <ManageTestimonial />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/manageTestimonial"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <AddBlog />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/addBlog"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <ManageBlog />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/manageBlog"
         />
         <Route element={<NotFound />} path="*" />
       </Routes>
