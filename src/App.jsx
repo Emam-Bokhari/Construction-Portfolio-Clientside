@@ -133,6 +133,7 @@ export default function App() {
           }
           path="/contactUs"
         />
+        {/* dashboard routes */}
         <Route
           element={
             <DashboardDefaultLayout>

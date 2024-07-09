@@ -12,6 +12,7 @@ import {
   FaEnvelope,
   FaFacebook,
   FaGithub,
+  FaHome,
   FaImages,
   FaMoon,
   FaTwitter,
@@ -83,6 +84,22 @@ export default function DashboardHeader() {
               <div>
                 <p className="text-[#BDC9DB] text-[12px] font-[inter] font-bold uppercase">
                   MAIN HOME
+                </p>
+
+                <Link
+                  className="w-full px-3 py-4 rounded-xl block bg-[#E9F1FF] text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 my-5"
+                  to="/"
+                >
+                  <div className="flex items-center gap-3">
+                    <FaHome className="text-2xl" />
+                    <span className="text-base font-[500]">Home</span>
+                  </div>
+                </Link>
+              </div>
+              {/* start main home  */}
+              <div>
+                <p className="text-[#BDC9DB] text-[12px] font-[inter] font-bold uppercase">
+                  DASHBOARD HOME
                 </p>
 
                 <Link
