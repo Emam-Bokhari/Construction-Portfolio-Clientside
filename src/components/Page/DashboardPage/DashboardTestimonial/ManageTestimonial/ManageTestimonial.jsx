@@ -6,7 +6,10 @@ import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-export default function ManageTestimonial() {
+export default function ManageTestimonial({
+  testimonialsData,
+  testimonialLoading,
+}) {
   return (
     <Fragment>
       <WrapStyle>
@@ -19,8 +22,8 @@ export default function ManageTestimonial() {
             <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
               <Searchbar />
 
-              <Link to="/dashboard/addTestimonial" >
-              <AddButton button="Add Testimonial" />
+              <Link to="/dashboard/addTestimonial">
+                <AddButton button="Add Testimonial" />
               </Link>
             </div>
 
@@ -38,7 +41,7 @@ export default function ManageTestimonial() {
                       Review
                     </td>
                     <td className="text-[#111111] font-[inter] font-[700] text-base  p-3  whitespace-nowrap">
-                      star
+                      Ratings
                     </td>
                     <td className="text-[#111111] font-[inter] font-[700]  text-base  p-3  whitespace-nowrap">
                       Action
@@ -47,216 +50,50 @@ export default function ManageTestimonial() {
                 </thead>
 
                 <tbody>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3 ">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
+                  {testimonialsData?.map((testimonial, _id) => (
+                    <tr
+                      key={_id}
+                      className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200"
+                    >
+                      <td className="align-middle p-3 ">
+                        <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
+                          <img
+                            className="w-10 h-12 object-cover rounded-lg"
+                            src={testimonial?.imageUrl}
+                            alt=""
+                          />
+                        </div>
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      Emam Bokhari
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
+                        {testimonial?.name}
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis amet delectus quas repudiandae facere sequi sit
-                      doloribus nemo officia. Vitae ullam tempore asperiores
-                      esse, alias culpa maiores officia facere iure?
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
+                        {testimonial?.review}
+                      </td>
 
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      3
-                    </td>
+                      <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
+                        {testimonial?.star}
+                      </td>
 
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex  gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <FaPen/>
-                          </a>
-                        </span>
+                      <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
+                        <div className="flex  gap-3">
+                          <span className="text-[#22C7A1] font-extrabold">
+                            <a href="#">
+                              <FaPen />
+                            </a>
+                          </span>
 
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <FaTrashCan/>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3 ">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      Emam Bokhari
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis amet delectus quas repudiandae facere sequi sit
-                      doloribus nemo officia. Vitae ullam tempore asperiores
-                      esse, alias culpa maiores officia facere iure?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      3
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex  gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3 ">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      Emam Bokhari
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis amet delectus quas repudiandae facere sequi sit
-                      doloribus nemo officia. Vitae ullam tempore asperiores
-                      esse, alias culpa maiores officia facere iure?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      3
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex  gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3 ">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      Emam Bokhari
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis amet delectus quas repudiandae facere sequi sit
-                      doloribus nemo officia. Vitae ullam tempore asperiores
-                      esse, alias culpa maiores officia facere iure?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      3
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex  gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200">
-                    <td className="align-middle p-3 ">
-                      <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                        <img
-                          className="w-10 h-12 object-cover rounded-lg"
-                          src="./assets/profile.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      Emam Bokhari
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis amet delectus quas repudiandae facere sequi sit
-                      doloribus nemo officia. Vitae ullam tempore asperiores
-                      esse, alias culpa maiores officia facere iure?
-                    </td>
-
-                    <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
-                      3
-                    </td>
-
-                    <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
-                      <div className="flex  gap-3">
-                        <span className="text-[#22C7A1] font-extrabold">
-                          <a href="#">
-                            <i className="fa-regular fa-pen-to-square"></i>
-                          </a>
-                        </span>
-
-                        <span className="text-[#FF5200] font-extrabold">
-                          <a href="#">
-                            <i className="fa-solid fa-trash-can"></i>
-                          </a>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
+                          <span className="text-[#FF5200] font-extrabold">
+                            <a href="#">
+                              <FaTrashCan />
+                            </a>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

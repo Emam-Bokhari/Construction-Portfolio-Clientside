@@ -217,7 +217,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageTestimonial />
+              <ManageTestimonial testimonialsData={testimonials} testimonialLoading={testimonialLoading} />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTestimonial"
