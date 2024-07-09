@@ -22,26 +22,38 @@ export default function DashboardHome() {
   const { testimonials, testimonialLoading } = useTestimonial();
   return (
     <Fragment>
-        <WrapStyle>
-          <TotalCards
-            totalBlogs={blogs}
-            totalServices={services}
-            totalProjects={projects}
-            totalTeamMembers={teamMembers}
+      <WrapStyle>
+        <TotalCards
+          totalBlogs={blogs}
+          totalServices={services}
+          totalProjects={projects}
+          totalTeamMembers={teamMembers}
+        />
+        {/* start service,team members,projects gallery  */}
+        <div className="my-5 flex flex-col 2xl:flex-row  gap-5">
+          <ServicesTable
+            servicesData={services}
+            serviceLoading={serviceLoading}
           />
-          {/* start service,team members,projects gallery  */}
-          <div className="my-5 flex flex-col 2xl:flex-row  gap-5">
-            <ServicesTable />
-            <TeamMembersTable />
-            <ProjectsTable />
-          </div>
-          {/* end service,team members,projects gallery  */}
-          {/* start blogs and testimonials  */}
-          <div className=" flex flex-col 2xl:flex-row gap-5">
-            <BlogsTable />
-            <TestimonialsTable />
-          </div>
-          </WrapStyle>
+          <TeamMembersTable
+            teamMembersData={teamMembers}
+            teamMemberLoading={teamMemberLoading}
+          />
+          <ProjectsTable
+            projectsData={projects}
+            projectLoading={projectLoading}
+          />
+        </div>
+        {/* end service,team members,projects gallery  */}
+        {/* start blogs and testimonials  */}
+        <div className=" flex flex-col 2xl:flex-row gap-5">
+          <BlogsTable blogsData={blogs} blogLoading={blogLoading} />
+          <TestimonialsTable
+            testimonialsData={testimonials}
+            testimonialLoading={testimonialLoading}
+          />
+        </div>
+      </WrapStyle>
     </Fragment>
   );
 }

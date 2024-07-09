@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
-export default function ServicesTable() {
+export default function ServicesTable({ servicesData, serviceLoading }) {
+  console.log(servicesData);
   return (
     <Fragment>
       <div className="p-5 w-full 2xl:w-2/5 h-auto  bg-white rounded-xl ">
@@ -31,116 +32,27 @@ export default function ServicesTable() {
             </thead>
 
             <tbody>
-              
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573] whitespace-nowrap">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-              <tr>
-                <td className="pb-4 align-top">
-                  <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
-                    <img
-                      className="w-8 h-10 object-cover rounded-lg"
-                      src="./assets/profile.jpg"
-                      alt=""
-                    />
-                  </div>
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
-                  Material Supply
-                </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
-                  Lorem ipsum dolor sit amet consectetur, Lorem ipsum dolor sit
-                  amet...
-                </td>
-              </tr>
-
+              {servicesData?.slice(0, 6)?.map((service, _id) => (
+                <tr key={_id}>
+                  <td className="pb-4 align-top">
+                    <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
+                      <img
+                        className="w-8 h-10 object-cover rounded-lg"
+                        src={service.imageUrl}
+                        alt=""
+                      />
+                    </div>
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573] whitespace-nowrap">
+                    {service?.serviceName}
+                  </td>
+                  <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
+                    {service.serviceDescription
+                      ? service.serviceDescription.substring(0, 60)
+                      : service.serviceDescription}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
