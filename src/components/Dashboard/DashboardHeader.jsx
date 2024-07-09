@@ -179,14 +179,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        href="./add-team-member.html"
+                        to="/dashboard/addTeamMember"
                       >
                         <li>Add Team Member</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        href="./team-member-list.html"
+                        to="/dashboard/manageTeamMember"
                       >
                         <li>Manage Team Member</li>
                       </Link>

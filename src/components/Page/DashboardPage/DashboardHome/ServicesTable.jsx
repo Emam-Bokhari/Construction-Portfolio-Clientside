@@ -42,7 +42,7 @@ export default function ServicesTable() {
                     />
                   </div>
                 </td>
-                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573]">
+                <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-[500] text-[#5C6573] whitespace-nowrap">
                   Material Supply
                 </td>
                 <td className="pl-3 pb-4 align-middle text-sm font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
