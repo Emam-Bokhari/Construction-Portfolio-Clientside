@@ -3,6 +3,7 @@ import WrapStyle from "../../../../Dashboard/WrapStyle";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 
 export default function AddProject() {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ export default function AddProject() {
     // console.log(formData);
     if (!formData.imageUrl) {
       toast.error("Please fill image url feild!");
+      return;
     }
     try {
       axios.post("/api/v1/create-project", formData);
@@ -72,6 +74,7 @@ export default function AddProject() {
               {/* add button  */}
               <div>
                 <button className="border-2 border-[#2275FC] rounded-xl w-[230px] py-4 text-[base] text-[#2275FC] font-[inter] font-medium hover:text-white hover:bg-[#2275FC] transform transition-all duration-200">
+                  <FaPlus className="inline mr-1" />
                   Add Project
                 </button>
               </div>

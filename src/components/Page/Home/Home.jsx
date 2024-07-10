@@ -302,7 +302,7 @@ export default function Home() {
                   </div>
 
                   {/* text  */}
-                  <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D]">
+                  <h2 className="font-[titillium] font-[600] text-[20px] lg:text-[24px] text-[#0E121D] capitalize">
                     {service?.serviceName}
                   </h2>
                   <p className="font-[archivo] text-base text-[#4D5765]">
@@ -734,13 +734,13 @@ export default function Home() {
                     />
                   </Link>
                   <div className="p-5">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0E121D]">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#0E121D] ">
                       {blog?.title.length > 10
                         ? `${blog?.title.substring(0, 35)}...`
                         : blog?.title}
                     </h5>
 
-                    <p className="mb-3 font-normal text-[#4D5765]">
+                    <p className="mb-3 font-normal text-[#4D5765] ">
                       {blog?.description}
                     </p>
 

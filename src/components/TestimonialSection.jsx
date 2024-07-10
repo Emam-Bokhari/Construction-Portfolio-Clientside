@@ -86,11 +86,11 @@ export default function TestimonialSection() {
                     </div>
 
                     {/* text  */}
-                    <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D]">
+                    <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D] capitalize">
                       {testimonial?.name}
                     </h2>
 
-                    <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo]">
+                    <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo] ">
                       {testimonial?.review
                         ? testimonial?.review.substring(0, 80)
                         : testimonial?.review}
