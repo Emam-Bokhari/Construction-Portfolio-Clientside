@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { FaStar } from "react-icons/fa";
 
 export default function Star({ ratings}) {
-  console.log(ratings);
   const converts=Number(ratings)
   const stars=new Array(converts).fill(null)
   return (

@@ -7,6 +7,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function ManageService({ servicesData, serviceLoading }) {
+
   return (
     <Fragment>
       <WrapStyle>
@@ -28,8 +29,12 @@ export default function ManageService({ servicesData, serviceLoading }) {
               <table className="w-full border-separate border-spacing-y-3">
                 <thead>
                   <tr className="bg-[#F8F9FC] ">
+                    
                     <td className="text-[#111111] font-[inter] font-[700] text-base p-3   whitespace-nowrap">
                       Image
+                    </td>
+                    <td className="text-[#111111] font-[inter] font-[700] text-base pl-3 p-3  whitespace-nowrap">
+                      Service No
                     </td>
                     <td className="text-[#111111] font-[inter] font-[700] text-base pl-3 p-3  whitespace-nowrap">
                       Service Name
@@ -47,11 +52,12 @@ export default function ManageService({ servicesData, serviceLoading }) {
                 </thead>
 
                 <tbody>
-                  {servicesData?.map((service, _id) => (
+                  {servicesData?.map((service) => (
                     <tr
-                      key={_id}
+                      key={service._id}
                       className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200"
                     >
+                      
                       <td className=" align-middle p-3">
                         <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
                           <img
@@ -60,6 +66,10 @@ export default function ManageService({ servicesData, serviceLoading }) {
                             alt=""
                           />
                         </div>
+                      </td>
+
+                      <td className=" p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
+                        {service?.serviceNo}
                       </td>
 
                       <td className=" p-3 align-middle text-base font-[inter] font-[500] whitespace-nowrap text-[#5C6573]">
