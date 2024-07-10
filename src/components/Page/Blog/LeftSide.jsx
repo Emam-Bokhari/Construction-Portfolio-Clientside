@@ -204,8 +204,8 @@ export default function LeftSide() {
             </div>
           ) : (
             <div className="space-y-3 md:space-y-4 mt-3 md:mt-4">
-              {latestBlogs?.map((latestBlog, _id) => (
-                <div key={_id}>
+              {latestBlogs?.map((latestBlog) => (
+                <div key={latestBlog._id}>
                   <Link
                     to={`/blogDetails/${latestBlog._id}`}
                     className="flex items-center gap-3 p-2 "

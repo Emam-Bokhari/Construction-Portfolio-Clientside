@@ -29,7 +29,7 @@ export default function ManageTeamMember({
 
             <div className="overflow-auto">
               <table className="w-full border-separate border-spacing-y-3 ">
-                <thead>
+                <thead  >
                   <tr className="bg-[#F8F9FC] ">
                     <td className="text-[#111111] font-[inter] font-[700] text-base p-3   whitespace-nowrap">
                       Image

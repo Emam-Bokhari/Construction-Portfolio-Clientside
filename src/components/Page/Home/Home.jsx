@@ -279,9 +279,9 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
-              {services.slice(0, 3)?.map((service, _id) => (
+              {services.slice(0, 3)?.map((service) => (
                 <div
-                  key={_id}
+                  key={service._id}
                   className="bg-white p-6 space-y-3 md:space-y-4 xl:space-y-6"
                 >
                   <div className="flex items-center justify-between">
@@ -366,8 +366,8 @@ export default function Home() {
                 </Slider>
               ) : (
                 <Slider {...projectSliderSettings}>
-                  {projects?.map((project, _id) => (
-                    <div key={_id}>
+                  {projects?.map((project) => (
+                    <div key={project._id}>
                       <img
                         className="w-full h-[300px] md:h-[400px] lg:w-[350px]  object-cover"
                         src={project.imageUrl}
@@ -414,9 +414,9 @@ export default function Home() {
               </Slider>
             ) : (
               <Slider {...teamMemberSliderSettings}>
-                {teamMembers?.map((teamMember, _id) => (
+                {teamMembers?.map((teamMember) => (
                   <div
-                    key={_id}
+                    key={teamMember._id}
                     className="w-full  space-y-2 pb-4 bg-white shadow-sm"
                   >
                     {/* image  */}
@@ -428,10 +428,10 @@ export default function Home() {
                     />
 
                     {/* text  */}
-                    <h2 className="font-[titillium] text-[24px] font-[600] text-center">
+                    <h2 className="font-[titillium] text-[24px] font-[600] text-center capitalize">
                       {teamMember?.name}
                     </h2>
-                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center capitalize">
                       {teamMember?.designation}
                     </p>
 
@@ -720,9 +720,9 @@ export default function Home() {
             </div>
           ) : (
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-center">
-              {blogs.slice(0, 4)?.map((blog, _id) => (
+              {blogs.slice(0, 4)?.map((blog) => (
                 <div
-                  key={_id}
+                  key={blog._id}
                   className="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
                 >
                   <Link to={`blogDetails/${blog._id}`}>

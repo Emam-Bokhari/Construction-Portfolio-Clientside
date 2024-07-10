@@ -52,8 +52,9 @@ export default function AddService() {
 
     console.log(formData);
     try {
-      const response = await axios.post("/api/v1/create-service", formData);
-      console.log(response.data);
+      await axios.post("/api/v1/create-service", formData);
+    
+      // clear form data
       setFormData({
         iconUrl: "",
         imageUrl: "",

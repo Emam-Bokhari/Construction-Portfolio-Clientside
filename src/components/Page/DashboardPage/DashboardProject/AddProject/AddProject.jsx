@@ -1,7 +1,43 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import WrapStyle from "../../../../Dashboard/WrapStyle";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProject() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    imageUrl: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // console.log(formData);
+    if (!formData.imageUrl) {
+      toast.error("Please fill image url feild!");
+    }
+    try {
+      axios.post("/api/v1/create-project", formData);
+      // clear form data
+      setFormData({
+        imageUrl: "",
+      });
+      navigate("/dashboard/manageProject");
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Fragment>
       <WrapStyle>
@@ -11,12 +47,12 @@ export default function AddProject() {
           </h3>
 
           <div className="bg-white rounded-xl p-4 ">
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* project image url  */}
               <div>
                 <label
                   className="text-base font-medium text-[#111111]"
-                  htmlFor="projectImageUrl"
+                  htmlFor="imageUrl"
                 >
                   Project Image Url
                   <sup>
@@ -24,10 +60,11 @@ export default function AddProject() {
                   </sup>
                 </label>
                 <input
+                  value={formData.imageUrl}
+                  onChange={handleInputChange}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4 outline-none my-2"
                   type="text"
-                  name="projectImageUrl"
-                  id=""
+                  name="imageUrl"
                   placeholder="Enter Project Image Url"
                 />
               </div>

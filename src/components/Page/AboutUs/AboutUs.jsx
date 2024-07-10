@@ -129,9 +129,9 @@ export default function AboutUs() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {teamMembers?.map((teamMember, _id) => (
+              {teamMembers?.map((teamMember) => (
                 <div
-                  key={_id}
+                  key={teamMember._id}
                   className="w-full  space-y-2 bg-white shadow-sm p-4 rounded-md"
                 >
                   {/* image  */}
@@ -146,10 +146,10 @@ export default function AboutUs() {
 
                   <div>
                     {/* text  */}
-                    <h2 className="font-[titillium] text-[20px] font-[600] text-center">
+                    <h2 className="font-[titillium] text-[20px] font-[600] text-center capitalize">
                       {teamMember?.name}
                     </h2>
-                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center">
+                    <p className="font-[archivo] text-base font-[500] text-[#F68A0A] text-center capitalize">
                       {teamMember?.designation}
                     </p>
                   </div>
