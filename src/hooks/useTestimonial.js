@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useTestimonial = () => {
@@ -8,13 +9,12 @@ const useTestimonial = () => {
   const fetchTestimonialData = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/api/v1/show-all-testimonials`);
-      if (!response.ok) {
-        const errorMessage = `Fetching testimonials data failed!${response.status}`
+      const response = await axios.get(`/api/v1/show-all-testimonials`);
+      if (!response.data) {
+        const errorMessage = `Fetching testimonials data failed!$`
         throw new Error(errorMessage)
       }
-      const data=await response.json()
-      setTestimonialLoading(data)
+      setTestimonialLoading(response.data)
     } catch (err) {
         setError(err)
     } finally {

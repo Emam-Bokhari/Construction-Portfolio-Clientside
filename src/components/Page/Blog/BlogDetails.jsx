@@ -5,6 +5,7 @@ import { FaLayerGroup, FaUser } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import BlogDetailsSkeleton from "../../skeleton/BlogDetailsSkeleton";
+import axios from "axios";
 
 export default function BLogDetails() {
   const { blogId } = useParams();
@@ -15,15 +16,14 @@ export default function BLogDetails() {
     const fetchBlogDetailsData = async () => {
       try {
         setBlogDetailsLoading(true);
-        const response = await fetch(
-          `http://localhost:3000/api/v1/blog-details/${blogId}`
+        const response = await axios.get(
+          `/api/v1/blog-details/${blogId}`
         );
-        if (!response.ok) {
-          const errorMessage = `Fetching blog details is failed!${response.status}`;
+        if (!response.data) {
+          const errorMessage = `Fetching blog details is failed!`;
           throw new Error(errorMessage);
         }
-        const data = await response.json();
-        setBlogDetails(data);
+        setBlogDetails(response.data);
       } catch (err) {
         console.log(err);
       } finally {

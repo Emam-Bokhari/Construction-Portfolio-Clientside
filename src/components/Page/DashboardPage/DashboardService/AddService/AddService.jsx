@@ -32,7 +32,7 @@ export default function AddService() {
 
     console.log(formData);
     try {
-      const response=await axios.post("http://localhost:3000/api/v1/create-service",formData)
+      const response=await axios.post("/api/v1/create-service",formData)
       console.log(response.data);
       setFormData({
         iconUrl: "",

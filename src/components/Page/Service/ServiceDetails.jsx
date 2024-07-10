@@ -4,6 +4,7 @@ import { FaFilePdf } from "react-icons/fa";
 import { BsFiletypeDoc } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import ServiceDetailsSkeleton from "../../skeleton/ServiceDetailsSkeleton";
+import axios from "axios";
 
 export default function ServiceDetails() {
   const { serviceId } = useParams(); // Get serviceId from route params
@@ -14,15 +15,14 @@ export default function ServiceDetails() {
     const fetchServiceDetailsData = async () => {
       try {
         setServiceDetailsLoading(true);
-        const response = await fetch(
-          `http://localhost:3000/api/v1/service-details/${serviceId}`
+        const response = await axios.get(
+          `/api/v1/service-details/${serviceId}`
         );
-        if (!response.ok) {
-          const errorMessage = `Fetching service details is failed!${response.status}`;
+        if (!response.data) {
+          const errorMessage = `Fetching service details is failed!`;
           throw new Error(errorMessage);
         }
-        const data = await response.json();
-        setServices(data);
+        setServices(response.data);
       } catch (err) {
         console.log(err);
       } finally {

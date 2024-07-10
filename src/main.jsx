@@ -1,13 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router } from 'react-router-dom'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App.jsx";
+import "./index.css";
+import axios from "axios";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// base url
+axios.defaults.baseURL = "http://localhost:3000";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-    <App />
+      <App />
     </Router>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

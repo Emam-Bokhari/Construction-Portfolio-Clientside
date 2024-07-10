@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LatestBlogSkeleton from "../../skeleton/LatestBlogSkeleton";
+import axios from "axios";
 
 export default function LeftSide() {
   const [latestBlogs, setLatestBlogs] = useState([]);
@@ -19,15 +20,14 @@ export default function LeftSide() {
     const fetchLatestBlogsData = async () => {
       try {
         setLatestBlogLoading(true);
-        const response = await fetch(
-          `http://localhost:3000/api/v1/latest-blogs`
+        const response = await axios.get(
+          `/api/v1/latest-blogs`
         );
-        if (!response.ok) {
-          const errorMessage = `Fetching latest blogs data is failed!${response.status}`;
+        if (!response.data) {
+          const errorMessage = `Fetching latest blogs data is failed!`;
           throw new Error(errorMessage);
         }
-        const data = await response.json();
-        setLatestBlogs(data);
+        setLatestBlogs(response.data);
       } catch (err) {
         console.log(err);
       } finally {

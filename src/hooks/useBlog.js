@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useBlog = () => {
@@ -8,13 +9,13 @@ const useBlog = () => {
   const fetchBlogData = async () => {
     try {
       setBlogLoading(true);
-      const response = await fetch(`http://localhost:3000/api/v1/show-all-blogs`);
-      if (!response.ok) {
-        const errorMessage = `Fetching blog data is failed!${response.status}`;
+      const response = await axios.get(`/api/v1/show-all-blogs`);
+      if (!response.data) {
+        const errorMessage = `Fetching blog data is failed!`;
         throw new Error(errorMessage);
       }
-      const data = await response.json();
-      setBlogs(data);
+      
+      setBlogs(response.data);
     } catch (err) {
       setError(err);
     } finally {

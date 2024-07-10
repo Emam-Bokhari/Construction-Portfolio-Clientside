@@ -63,23 +63,23 @@ export default function TestimonialSection() {
           <div>
             {testimonialLoading ? (
               // skeleton
-              <Slider {...testimonialSliderSettings} >
+              <Slider {...testimonialSliderSettings}>
                 <TestimonialSkeleton />
                 <TestimonialSkeleton />
                 <TestimonialSkeleton />
               </Slider>
             ) : (
               <Slider {...testimonialSliderSettings}>
-                {testimonials?.map((testimonial, _id) => (
+                {testimonials?.map((testimonial) => (
                   <div
-                    key={_id}
+                    key={testimonial._id}
                     className="w-full space-y-2 p-4 bg-white shadow-sm"
                   >
                     {/* image  */}
                     <div className="flex justify-center">
                       <img
                         className=" w-[120px] h-[120px] object-cover rounded-full ring-2 ring-offset-2 ring-[#F68A0A]"
-                        src={testimonial.imageUrl}
+                        src={testimonial?.imageUrl}
                         loading="lazy"
                         alt=""
                       />
@@ -87,11 +87,13 @@ export default function TestimonialSection() {
 
                     {/* text  */}
                     <h2 className="font-[titillium]  text-[20px] font-[600] text-center text-[#0E121D]">
-                      {testimonial.name}
+                      {testimonial?.name}
                     </h2>
 
                     <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo]">
-                      {testimonial.review}
+                      {testimonial?.review
+                        ? testimonial?.review.substring(0, 80)
+                        : testimonial?.review}
                     </p>
                   </div>
                 ))}

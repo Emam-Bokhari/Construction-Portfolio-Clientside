@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useTeamMember = () => {
@@ -8,13 +9,12 @@ const useTeamMember = () => {
   const fetchTeamMembersData = async () => {
     try {
       setTeamMemberLoading(true);
-      const response = await fetch(`http://localhost:3000/api/v1/show-all-team-members`);
-      if (!response.ok) {
-        const errorMessage = `Fetching team members data failed!${response.status}`;
+      const response = await axios.get(`/api/v1/show-all-team-members`);
+      if (!response.data) {
+        const errorMessage = `Fetching team members data failed!`;
         throw new Error(errorMessage);
       }
-      const data = await response.json();
-      setTeamMembers(data);
+      setTeamMembers(response.data);
     } catch (err) {
       setError(err);
     } finally {
