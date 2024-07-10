@@ -3,6 +3,7 @@ import WrapStyle from "../../../../Dashboard/WrapStyle";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function AddService() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function AddService() {
     serviceNo: "",
     serviceName: "",
     serviceDescription: "",
-    serviceBenefits: "",
+    serviceBenefits: "Service Benefits",
     serviceBenefitsDescription: "",
   });
 
@@ -29,10 +30,29 @@ export default function AddService() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!formData.iconUrl) {
+      toast.error("Please fill icon url field!");
+      return;
+    } else if (!formData.imageUrl) {
+      toast.error("Please fill image url field!");
+      return;
+    } else if (!formData.serviceNo) {
+      toast.error("Please fill service number!");
+      return;
+    } else if (!formData.serviceName) {
+      toast.error("Please fill service name!");
+      return;
+    } else if (!formData.serviceDescription) {
+      toast.error("Please fill service description!");
+      return;
+    } else if (!formData.serviceBenefitsDescription) {
+      toast.error("Please fill service benefits description!");
+      return;
+    }
 
     console.log(formData);
     try {
-      const response=await axios.post("/api/v1/create-service",formData)
+      const response = await axios.post("/api/v1/create-service", formData);
       console.log(response.data);
       setFormData({
         iconUrl: "",
@@ -44,7 +64,7 @@ export default function AddService() {
         serviceBenefitsDescription: "",
       });
       navigate("/dashboard/manageService");
-      window.location.reload()
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
@@ -115,7 +135,7 @@ export default function AddService() {
                   value={formData.serviceNo}
                   onChange={handleInputChange}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4  my-2 outline-1 outline-orange-400"
-                  type="text"
+                  type="number"
                   name="serviceNo"
                   placeholder="Enter Service Number"
                 />
@@ -183,6 +203,7 @@ export default function AddService() {
                   type="text"
                   name="serviceBenefits"
                   placeholder="Enter Benefits"
+                  disabled
                 />
               </div>
 

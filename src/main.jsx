@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import axios from "axios";
+import { Toaster } from "react-hot-toast";
 
 // base url
 axios.defaults.baseURL = "http://localhost:3000";
@@ -11,7 +12,8 @@ axios.defaults.baseURL = "http://localhost:3000";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <App />
+        <App />
+        <Toaster position="top-right" />
     </Router>
   </React.StrictMode>
 );
