@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 
 export default function Delete({ id }) {
   const handleDelete = async (id) => {
-    // console.log(id);
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -16,28 +15,23 @@ export default function Delete({ id }) {
       confirmButtonText: "Yes, delete it!",
     });
 
-    if (result.isConfirmed) {
-      try {
-        const response = await axios.delete(`/api/v1/delete-blog/${id}`);
-        if (response.data.deletedCount > 0) {
+    try {
+      const response = await axios.delete(`/api/v1/delete-testimonials/${id}`);
+      if (response.data.deletedCount > 0) {
+        if (result.isConfirmed) {
           Swal.fire({
             title: "Deleted!",
-            text: "Your blog has been deleted.",
+            text: "Your testimonial has been deleted.",
             icon: "success",
-          }).then(()=>{
-            setTimeout(()=>{
-                window.location.reload()
-            },500)
-          })
+          }).then(() => {
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          });
         }
-        
-      } catch (err) {
-        Swal.fire({
-          title: "Error!",
-          text: "An error occurred while deleting the file.",
-          icon: "error",
-        });
       }
+    } catch (err) {
+      console.log(err);
     }
   };
   return (

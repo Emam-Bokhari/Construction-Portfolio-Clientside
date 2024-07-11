@@ -5,6 +5,7 @@ import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Delete from "./Action/Delete";
 
 export default function ManageTestimonial({
   testimonialsData,
@@ -79,17 +80,15 @@ export default function ManageTestimonial({
 
                       <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
                         <div className="flex  gap-3">
-                          <span className="text-[#22C7A1] font-extrabold">
-                            <a href="#">
-                              <FaPen />
-                            </a>
-                          </span>
+                          <button>
+                            <span className="text-[#22C7A1] font-extrabold">
+                              <a href="#">
+                                <FaPen />
+                              </a>
+                            </span>
+                          </button>
 
-                          <span className="text-[#FF5200] font-extrabold">
-                            <a href="#">
-                              <FaTrashCan />
-                            </a>
-                          </span>
+                          <Delete id={testimonial._id} />
                         </div>
                       </td>
                     </tr>
