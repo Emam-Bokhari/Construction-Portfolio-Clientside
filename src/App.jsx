@@ -24,6 +24,7 @@ import useProject from "./hooks/useProject";
 import useService from "./hooks/useService";
 import useTeamMember from "./hooks/useTeamMember";
 import useTestimonial from "./hooks/useTestimonial";
+import UpdateService from "./components/Page/DashboardPage/DashboardService/ManageService/UpdateService";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -175,6 +176,14 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
+              <UpdateService />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/updateService/:serviceId"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
               <AddTeamMember />
             </DashboardDefaultLayout>
           }
@@ -194,7 +203,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddProject  />
+              <AddProject />
             </DashboardDefaultLayout>
           }
           path="/dashboard/addProject"
@@ -202,7 +211,10 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageProject projectsData={projects} projectLoading={projectLoading} />
+              <ManageProject
+                projectsData={projects}
+                projectLoading={projectLoading}
+              />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageProject"
@@ -218,7 +230,10 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageTestimonial testimonialsData={testimonials} testimonialLoading={testimonialLoading} />
+              <ManageTestimonial
+                testimonialsData={testimonials}
+                testimonialLoading={testimonialLoading}
+              />
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTestimonial"
