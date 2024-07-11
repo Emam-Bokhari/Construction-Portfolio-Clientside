@@ -82,9 +82,11 @@ export default function ManageTestimonial({
                         <div className="flex  gap-3">
                           <button>
                             <span className="text-[#22C7A1] font-extrabold">
-                              <a href="#">
+                              <Link
+                                to={`/dashboard/updateTestimonial/${testimonial._id}`}
+                              >
                                 <FaPen />
-                              </a>
+                              </Link>
                             </span>
                           </button>
 

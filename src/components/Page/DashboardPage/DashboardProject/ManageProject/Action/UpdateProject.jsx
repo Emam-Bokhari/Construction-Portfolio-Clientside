@@ -119,7 +119,7 @@ export default function UpdateProject() {
                 <input
                   value={formData.imageUrl}
                   onChange={handleInputChange}
-                  defaultValue={formData.imageUrl}
+                  defaultValue={projects.imageUrl}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4 outline-none my-2"
                   type="text"
                   name="imageUrl"

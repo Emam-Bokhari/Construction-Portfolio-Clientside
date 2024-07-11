@@ -27,6 +27,7 @@ import useTestimonial from "./hooks/useTestimonial";
 import UpdateService from "./components/Page/DashboardPage/DashboardService/ManageService/Action/UpdateService";
 import UpdateTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/Action/UpdateTeamMember";
 import UpdateProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/Action/UpdateProject";
+import UpdateTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/Action/UpdateTestimonial";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -255,6 +256,14 @@ export default function App() {
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTestimonial"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <UpdateTestimonial/>
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/updateTestimonial/:testimonialId"
         />
         <Route
           element={
