@@ -5,9 +5,9 @@ import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Delete from "./Action/Delete";
 
 export default function ManageService({ servicesData, serviceLoading }) {
-
   return (
     <Fragment>
       <WrapStyle>
@@ -20,8 +20,8 @@ export default function ManageService({ servicesData, serviceLoading }) {
             <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
               <Searchbar />
 
-              <Link to="/dashboard/addService" >
-              <AddButton button="Add Service" />
+              <Link to="/dashboard/addService">
+                <AddButton button="Add Service" />
               </Link>
             </div>
 
@@ -29,7 +29,6 @@ export default function ManageService({ servicesData, serviceLoading }) {
               <table className="w-full border-separate border-spacing-y-3">
                 <thead>
                   <tr className="bg-[#F8F9FC] ">
-                    
                     <td className="text-[#111111] font-[inter] font-[700] text-base p-3   whitespace-nowrap">
                       Image
                     </td>
@@ -57,7 +56,6 @@ export default function ManageService({ servicesData, serviceLoading }) {
                       key={service._id}
                       className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200"
                     >
-                      
                       <td className=" align-middle p-3">
                         <div className="w-12 h-14 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
                           <img
@@ -90,11 +88,7 @@ export default function ManageService({ servicesData, serviceLoading }) {
                             </a>
                           </span>
 
-                          <span className="text-[#FF5200] font-extrabold">
-                            <a href="#">
-                              <FaTrashCan />
-                            </a>
-                          </span>
+                          <Delete id={service._id} />
                         </div>
                       </td>
                     </tr>
