@@ -5,6 +5,7 @@ import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Delete from "./Action/Delete";
 
 export default function ManageTeamMember({
   teamMembersData,
@@ -29,7 +30,7 @@ export default function ManageTeamMember({
 
             <div className="overflow-auto">
               <table className="w-full border-separate border-spacing-y-3 ">
-                <thead  >
+                <thead>
                   <tr className="bg-[#F8F9FC] ">
                     <td className="text-[#111111] font-[inter] font-[700] text-base p-3   whitespace-nowrap">
                       Image
@@ -123,11 +124,7 @@ export default function ManageTeamMember({
                             </a>
                           </span>
 
-                          <span className="text-[#FF5200] font-extrabold">
-                            <a href="#">
-                              <FaTrashCan />
-                            </a>
-                          </span>
+                          <Delete id={teamMember._id} />
                         </div>
                       </td>
                     </tr>
