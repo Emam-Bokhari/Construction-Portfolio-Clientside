@@ -5,6 +5,7 @@ import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
 import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Delete from "./Action/Delete";
 
 export default function ManageProject({ projectsData, projectLoading }) {
   return (
@@ -62,11 +63,7 @@ export default function ManageProject({ projectsData, projectLoading }) {
                             </a>
                           </span>
 
-                          <span className="text-[#FF5200] font-extrabold">
-                            <a href="#">
-                              <FaTrashCan />
-                            </a>
-                          </span>
+                          <Delete id={project._id} />
                         </div>
                       </td>
                     </tr>
