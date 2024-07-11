@@ -7,28 +7,13 @@ import Footer from "./components/Footer";
 import NotFound from "./components/Page/NotFound/NotFound";
 import LoadingAnimation from "./components/LoadingAnimation";
 import DashboardHome from "./components/Page/DashboardPage/DashboardHome/DashboardHome";
-import AddService from "./components/Page/DashboardPage/DashboardService/AddService/AddService";
 import DashboardHeader from "./components/Dashboard/DashboardHeader";
-import ManageService from "./components/Page/DashboardPage/DashboardService/ManageService/ManageService";
 import DashboardFooter from "./components/Dashboard/DashboardFooter";
-import AddTeamMember from "./components/Page/DashboardPage/TeamMember/AddTeamMember/AddTeamMember";
-import ManageTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/ManageTeamMember";
-import AddProject from "./components/Page/DashboardPage/DashboardProject/AddProject/AddProject";
-import ManageProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/ManageProject";
-import AddTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/AddTestimonial/AddTestimonial";
-import ManageTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/ManageTestimonial";
-import AddBlog from "./components/Page/DashboardPage/DashboardBlog/AddBlog/AddBlog";
-import ManageBlog from "./components/Page/DashboardPage/DashboardBlog/ManageBlog/ManageBlog";
 import useBlog from "./hooks/useBlog";
 import useProject from "./hooks/useProject";
 import useService from "./hooks/useService";
 import useTeamMember from "./hooks/useTeamMember";
 import useTestimonial from "./hooks/useTestimonial";
-import UpdateService from "./components/Page/DashboardPage/DashboardService/ManageService/Action/UpdateService";
-import UpdateTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/Action/UpdateTeamMember";
-import UpdateProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/Action/UpdateProject";
-import UpdateTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/Action/UpdateTestimonial";
-import UpdateBlog from "./components/Page/DashboardPage/DashboardBlog/ManageBlog/Action/UpdateBlog";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -36,6 +21,77 @@ const ContactUs = lazy(() => import("./components/Page/ContactUs/ContactUs"));
 const BlogDetails = lazy(() => import("./components/Page/Blog/BlogDetails"));
 const ServiceDetails = lazy(() =>
   import("./components/Page/Service/ServiceDetails")
+);
+const UpdateBlog = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardBlog/ManageBlog/Action/UpdateBlog"
+  )
+);
+const UpdateTestimonial = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/Action/UpdateTestimonial"
+  )
+);
+const UpdateProject = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardProject/ManageProject/Action/UpdateProject"
+  )
+);
+const UpdateTeamMember = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/TeamMember/ManageTeamMember/Action/UpdateTeamMember"
+  )
+);
+const UpdateService = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardService/ManageService/Action/UpdateService"
+  )
+);
+const AddBlog = lazy(() =>
+  import("./components/Page/DashboardPage/DashboardBlog/AddBlog/AddBlog")
+);
+const ManageTestimonial = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/ManageTestimonial"
+  )
+);
+const AddTestimonial = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardTestimonial/AddTestimonial/AddTestimonial"
+  )
+);
+const ManageProject = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardProject/ManageProject/ManageProject"
+  )
+);
+const AddProject = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardProject/AddProject/AddProject"
+  )
+);
+const ManageTeamMember = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/TeamMember/ManageTeamMember/ManageTeamMember"
+  )
+);
+const AddTeamMember = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/TeamMember/AddTeamMember/AddTeamMember"
+  )
+);
+const ManageBlog = lazy(() =>
+  import("./components/Page/DashboardPage/DashboardBlog/ManageBlog/ManageBlog")
+);
+const ManageService = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardService/ManageService/ManageService"
+  )
+);
+const AddService = lazy(() =>
+  import(
+    "./components/Page/DashboardPage/DashboardService/AddService/AddService"
+  )
 );
 
 const DefaultLayout = ({ children }) => {
@@ -142,18 +198,20 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <DashboardHome
-                servicesData={services}
-                serviceLoading={serviceLoading}
-                projectsData={projects}
-                projectLoading={projectLoading}
-                blogsData={blogs}
-                blogLoading={blogLoading}
-                teamMembersData={teamMembers}
-                teamMemberLoading={teamMemberLoading}
-                testimonialsData={testimonials}
-                testimonialLoading={testimonialLoading}
-              />
+              <Suspense fallback={<LoadingAnimation />}>
+                <DashboardHome
+                  servicesData={services}
+                  serviceLoading={serviceLoading}
+                  projectsData={projects}
+                  projectLoading={projectLoading}
+                  blogsData={blogs}
+                  blogLoading={blogLoading}
+                  teamMembersData={teamMembers}
+                  teamMemberLoading={teamMemberLoading}
+                  testimonialsData={testimonials}
+                  testimonialLoading={testimonialLoading}
+                />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard"
@@ -161,7 +219,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddService />
+              <Suspense fallback={<LoadingAnimation />}>
+                <AddService />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/addService"
@@ -169,10 +229,12 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageService
-                servicesData={services}
-                serviceLoading={serviceLoading}
-              />
+              <Suspense fallback={<LoadingAnimation />}>
+                <ManageService
+                  servicesData={services}
+                  serviceLoading={serviceLoading}
+                />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageService"
@@ -180,7 +242,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateService />
+              <Suspense fallback={<LoadingAnimation />}>
+                <UpdateService />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateService/:serviceId"
@@ -188,7 +252,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddTeamMember />
+              <Suspense fallback={<LoadingAnimation />}>
+                <AddTeamMember />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/addTeamMember"
@@ -196,10 +262,12 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageTeamMember
-                teamMembersData={teamMembers}
-                teamMemberLoading={teamMemberLoading}
-              />
+              <Suspense fallback={<LoadingAnimation />}>
+                <ManageTeamMember
+                  teamMembersData={teamMembers}
+                  teamMemberLoading={teamMemberLoading}
+                />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTeamMember"
@@ -207,7 +275,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateTeamMember />
+              <Suspense fallback={<LoadingAnimation />}>
+                <UpdateTeamMember />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateTeamMember/:teamMemberId"
@@ -215,7 +285,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddProject />
+              <Suspense fallback={<LoadingAnimation />}>
+                <AddProject />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/addProject"
@@ -223,10 +295,12 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageProject
-                projectsData={projects}
-                projectLoading={projectLoading}
-              />
+              <Suspense fallback={<LoadingAnimation />}>
+                <ManageProject
+                  projectsData={projects}
+                  projectLoading={projectLoading}
+                />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageProject"
@@ -234,7 +308,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateProject />
+              <Suspense fallback={<LoadingAnimation />}>
+                <UpdateProject />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateProject/:projectId"
@@ -242,7 +318,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddTestimonial />
+              <Suspense fallback={<LoadingAnimation />}>
+                <AddTestimonial />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/addTestimonial"
@@ -250,10 +328,12 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageTestimonial
-                testimonialsData={testimonials}
-                testimonialLoading={testimonialLoading}
-              />
+              <Suspense fallback={<LoadingAnimation />}>
+                <ManageTestimonial
+                  testimonialsData={testimonials}
+                  testimonialLoading={testimonialLoading}
+                />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTestimonial"
@@ -261,7 +341,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateTestimonial />
+              <Suspense fallback={<LoadingAnimation />}>
+                <UpdateTestimonial />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateTestimonial/:testimonialId"
@@ -269,7 +351,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <AddBlog />
+              <Suspense fallback={<LoadingAnimation />}>
+                <AddBlog />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/addBlog"
@@ -277,7 +361,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <ManageBlog blogsData={blogs} blogLoading={blogLoading} />
+              <Suspense fallback={<LoadingAnimation />}>
+                <ManageBlog blogsData={blogs} blogLoading={blogLoading} />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageBlog"
@@ -285,7 +371,9 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateBlog />
+              <Suspense fallback={<LoadingAnimation />}>
+                <UpdateBlog />
+              </Suspense>
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateBlog/:blogId"
