@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import ServiceTableSkeleton from "../../../skeleton/Dashboard/Home/ServiceTableSkeleton";
+import TeamMemberTableSkeleton from "../../../skeleton/Dashboard/Home/TeamMemberTableSkeleton";
 
 export default function ServicesTable({ servicesData, serviceLoading }) {
   return (
@@ -66,7 +67,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
         </div>
       )}
 
-      {/* <ServiceTableSkeleton /> */}
+      {/* <TeamMemberTableSkeleton /> */}
     </Fragment>
   );
 }
