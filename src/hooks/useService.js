@@ -24,14 +24,14 @@ const useService = () => {
   };
 
   useEffect(() => {
-    setServiceLoading(true)
+    setServiceLoading(true);
     fetchServiceData();
   }, []);
 
   return {
     services,
     serviceLoading,
-    error
+    error,
   };
 };
 

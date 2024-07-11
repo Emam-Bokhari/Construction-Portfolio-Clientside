@@ -31,7 +31,6 @@ export default function Blog() {
                   <BlogCardSkeleton />
                   <BlogCardSkeleton />
                   <BlogCardSkeleton />
-                  <BlogCardSkeleton />
                 </div>
               ) : (
                 <div className="space-y-3 md:space-y-4">
