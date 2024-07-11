@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Delete from "./Action/Delete";
 
 export default function ManageBlog({ blogsData, blogLoading }) {
-  
   return (
     <Fragment>
       <WrapStyle>
@@ -91,9 +90,9 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                         <div className="flex justify-center gap-3">
                           <button>
                             <span className="text-[#22C7A1] font-extrabold">
-                              <a href="#">
+                              <Link to={`/dashboard/updateBlog/${blog._id}`}>
                                 <FaPen />
-                              </a>
+                              </Link>
                             </span>
                           </button>
 

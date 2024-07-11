@@ -66,7 +66,6 @@ export default function UpdateTestimonial() {
       return;
     }
 
-   
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You can be able to revert this!",

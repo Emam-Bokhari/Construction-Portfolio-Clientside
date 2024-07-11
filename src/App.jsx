@@ -28,6 +28,7 @@ import UpdateService from "./components/Page/DashboardPage/DashboardService/Mana
 import UpdateTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/Action/UpdateTeamMember";
 import UpdateProject from "./components/Page/DashboardPage/DashboardProject/ManageProject/Action/UpdateProject";
 import UpdateTestimonial from "./components/Page/DashboardPage/DashboardTestimonial/ManageTestimonial/Action/UpdateTestimonial";
+import UpdateBlog from "./components/Page/DashboardPage/DashboardBlog/ManageBlog/Action/UpdateBlog";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -260,7 +261,7 @@ export default function App() {
         <Route
           element={
             <DashboardDefaultLayout>
-              <UpdateTestimonial/>
+              <UpdateTestimonial />
             </DashboardDefaultLayout>
           }
           path="/dashboard/updateTestimonial/:testimonialId"
@@ -280,6 +281,14 @@ export default function App() {
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageBlog"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <UpdateBlog />
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/updateBlog/:blogId"
         />
         <Route element={<NotFound />} path="*" />
       </Routes>

@@ -21,7 +21,7 @@ export default function Update() {
     linkedinSocialLink: "",
   });
 
-  //   fetch service data
+  //   fetch team member data
   useEffect(() => {
     const fetchTeamMemberData = async () => {
       try {

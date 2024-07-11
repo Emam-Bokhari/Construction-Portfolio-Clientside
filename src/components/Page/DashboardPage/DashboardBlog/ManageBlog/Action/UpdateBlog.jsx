@@ -1,12 +1,16 @@
-import { Fragment, useState } from "react";
-import WrapStyle from "../../../../Dashboard/WrapStyle";
+import { Fragment, useEffect, useState } from "react";
+import WrapStyle from "../../../../../Dashboard/WrapStyle";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 import { FaPlus } from "react-icons/fa";
 import toast from "react-hot-toast";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-export default function AddBlog() {
+export default function UpdateBlog() {
   const navigate = useNavigate();
+  const { blogId } = useParams();
+  const [blogs, setBlogs] = useState({});
+
   const [formData, setFormData] = useState({
     imageUrl: "",
     title: "",
@@ -18,17 +22,38 @@ export default function AddBlog() {
     publishedDate: "",
   });
 
+  //   fetch blog data
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.get(`/api/v1/blog-details/${blogId}`);
+        if (!response.data) {
+          const errorMessage = `Fetching blog data is failed!`;
+          throw new Error(errorMessage);
+        }
+        setBlogs(response.data);
+        setFormData({
+          ...response.data,
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchBlogData();
+  }, [blogId]);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+
     setFormData({
       ...formData,
       [name]: value,
     });
+    // console.log(name, value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(formData);
 
     if (!formData.imageUrl) {
       toast.error("Please fill image url feild!");
@@ -49,24 +74,43 @@ export default function AddBlog() {
       toast.error("Please fill published date!");
       return;
     }
-    
+
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You can be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, update it!",
+    });
+
     try {
-      axios.post("/api/v1/create-blog", formData);
-      // clear form data
-      setFormData({
-        imageUrl: "",
-        title: "",
-        category: "",
-        description: "",
-        paraOne: "",
-        paraTwo: "",
-        author: "",
-        publishedDate: "",
-      });
+      const response = await axios.patch(
+        `/api/v1/update-blog/${blogId}`,
+        formData
+      );
+      if (response.data.modifiedCount > 0) {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Updated!",
+            text: "Blog data has been updated.",
+            icon: "success",
+          }).then(() => {
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          });
+        }
+      }
+
       navigate("/dashboard/manageBlog");
-      window.location.reload();
-    } catch (err) {
-      console.log(err);
+
+      console.log("Blog updated successfully:", response.data);
+      // Optionally handle success scenario (e.g., show success message)
+    } catch (error) {
+      console.error("Error updating blog:", error);
+      // Optionally handle error scenario (e.g., show error message to user)
     }
   };
 
@@ -75,11 +119,11 @@ export default function AddBlog() {
       <WrapStyle>
         <div className="max-w-screen-xl  mx-auto">
           <h3 className="text-[#111111] font-[inter] font-bold text-2xl pb-4">
-            Add Blog
+            Update Blog
           </h3>
 
           <div className="bg-white rounded-xl p-4 ">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onClick={handleSubmit} className="space-y-4">
               {/* blog image url  */}
               <div>
                 <label
@@ -94,6 +138,7 @@ export default function AddBlog() {
                 <input
                   value={formData.imageUrl}
                   onChange={handleInputChange}
+                  defaultValue={blogs.imageUrl}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4 outline-none my-2"
                   type="text"
                   name="imageUrl"
@@ -115,6 +160,7 @@ export default function AddBlog() {
                 <input
                   value={formData.title}
                   onChange={handleInputChange}
+                  defaultValue={blogs.title}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4 outline-none my-2"
                   type="text"
                   name="title"
@@ -136,6 +182,7 @@ export default function AddBlog() {
                 <select
                   value={formData.category}
                   onChange={handleInputChange}
+                  defaultValue={blogs.category}
                   className="block border-[1px] border-[#E4E4E4] rounded-lg p-4 outline-none my-2"
                   name="category"
                 >
@@ -169,6 +216,7 @@ export default function AddBlog() {
                 <textarea
                   value={formData.description}
                   onChange={handleInputChange}
+                  defaultValue={blogs.description}
                   className="border-[1px] border-[#E4E4E4] w-full h-[220px] rounded-lg p-4  outline-none resize-none my-2"
                   name="description"
                   placeholder="Enter Blog Description"
@@ -186,6 +234,7 @@ export default function AddBlog() {
                 <textarea
                   value={formData.paraOne}
                   onChange={handleInputChange}
+                  defaultValue={blogs.paraOne}
                   className="border-[1px] border-[#E4E4E4] w-full h-[150px] rounded-lg p-4  outline-none resize-none my-2"
                   name="paraOne"
                   placeholder="Enter Blog Para One"
@@ -203,6 +252,7 @@ export default function AddBlog() {
                 <textarea
                   value={formData.paraTwo}
                   onChange={handleInputChange}
+                  defaultValue={blogs.paraTwo}
                   className="border-[1px] border-[#E4E4E4] w-full h-[150px] rounded-lg p-4  outline-none resize-none my-2"
                   name="paraTwo"
                   placeholder="Enter Blog Para Two"
@@ -223,6 +273,7 @@ export default function AddBlog() {
                 <input
                   value={formData.publishedDate}
                   onChange={handleInputChange}
+                  defaultValue={blogs.publishedDate}
                   className="block border-[1px] border-[#E4E4E4] w-full md:w-2/4 rounded-lg p-4 outline-none my-2"
                   type="date"
                   name="publishedDate"
@@ -243,6 +294,7 @@ export default function AddBlog() {
                 <input
                   value={formData.author}
                   onChange={handleInputChange}
+                  defaultValue={blogs.author}
                   className="block border-[1px] border-[#E4E4E4] w-full rounded-lg p-4 outline-none my-2"
                   type="text"
                   name="author"
@@ -257,7 +309,7 @@ export default function AddBlog() {
               <div>
                 <button className="border-2 border-[#2275FC] rounded-xl w-[230px] py-4 text-[base] text-[#2275FC] font-[inter] font-medium hover:text-white hover:bg-[#2275FC] transform transition-all duration-200">
                   <FaPlus className="inline mr-1" />
-                  Add Blog
+                  Update Blog
                 </button>
               </div>
             </form>
