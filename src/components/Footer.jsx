@@ -3,6 +3,7 @@ import logo from "../assets/logo/logo.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaClock, FaEnvelope, FaFacebook, FaGithub, FaPhoneAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -86,48 +87,48 @@ export default function Footer() {
 
                       <ul className="space-y-2 mt-3">
                         <li className="text-base font-[archivo] text-[#7d8794] font-normal ">
-                          <a
+                          <Link
                             className="hover:text-[#F68A0A] transition-all duration-300"
-                            href="#"
+                            to="/"
                           >
                             Home
-                          </a>
+                          </Link>
                         </li>
 
                         <li className="text-base font-[archivo] text-[#7d8794] font-normal hover:text-[#F68A0A] transition-all duration-300">
-                          <a
+                          <Link
                             className="hover:text-[#F68A0A] transition-all duration-300"
-                            href="#"
+                            to="/aboutUs"
                           >
                             About Us
-                          </a>
+                          </Link>
                         </li>
 
                         <li className="text-base font-[archivo] text-[#7d8794] font-normal hover:text-[#F68A0A] transition-all duration-300">
-                          <a
+                          <Link
                             className="hover:text-[#F68A0A] transition-all duration-300"
-                            href="#"
+                            to="/service"
                           >
                             Service
-                          </a>
+                          </Link>
                         </li>
 
                         <li className="text-base font-[archivo] text-[#7d8794] font-normal hover:text-[#F68A0A] transition-all duration-300">
-                          <a
+                          <Link
                             className="hover:text-[#F68A0A] transition-all duration-300"
-                            href="#"
+                            to="/blog"
                           >
                             Blog
-                          </a>
+                          </Link>
                         </li>
 
                         <li className="text-base font-[archivo] text-[#7d8794] font-normal hover:text-[#F68A0A] transition-all duration-300">
-                          <a
+                          <Link
                             className="hover:text-[#F68A0A] transition-all duration-300"
-                            href="#"
+                            to="/contactUs"
                           >
                             Contact Us
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>

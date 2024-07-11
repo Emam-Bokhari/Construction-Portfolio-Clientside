@@ -58,9 +58,11 @@ export default function ManageProject({ projectsData, projectLoading }) {
                       <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
                         <div className="flex justify-end gap-3">
                           <span className="text-[#22C7A1] font-extrabold">
-                            <a href="#">
+                            <Link
+                              to={`/dashboard/updateProject/${project._id}`}
+                            >
                               <FaPen />
-                            </a>
+                            </Link>
                           </span>
 
                           <Delete id={project._id} />

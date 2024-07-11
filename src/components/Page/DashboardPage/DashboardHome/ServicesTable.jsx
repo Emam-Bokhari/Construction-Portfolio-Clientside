@@ -20,7 +20,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
             <thead>
               <tr>
                 <td className="text-[#111111] font-[inter] font-[700] text-sm pb-3 align-top whitespace-nowrap">
-                  Image
+                  Icon
                 </td>
                 <td className="text-[#111111] font-[inter] font-[700] text-sm pl-3 pb-2 align-top whitespace-nowrap">
                   Service Name
@@ -38,7 +38,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
                     <div className="w-10 h-12 bg-[#EFF4F8] flex items-center justify-center rounded-xl">
                       <img
                         className="w-8 h-10 object-cover rounded-lg"
-                        src={service.imageUrl}
+                        src={service.iconUrl}
                         alt=""
                       />
                     </div>

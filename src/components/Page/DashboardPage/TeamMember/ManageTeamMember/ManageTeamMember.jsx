@@ -3,7 +3,6 @@ import WrapStyle from "../../../../Dashboard/WrapStyle";
 import AddButton from "../../../../Dashboard/AddButton";
 import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
-import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Delete from "./Action/Delete";
 
