@@ -3,10 +3,11 @@ import WrapStyle from "../../../../Dashboard/WrapStyle";
 import AddButton from "../../../../Dashboard/AddButton";
 import Searchbar from "../../../../Dashboard/Searchbar";
 import { FaPen } from "react-icons/fa";
-import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Delete from "./Action/Delete";
 
 export default function ManageBlog({ blogsData, blogLoading }) {
+  
   return (
     <Fragment>
       <WrapStyle>
@@ -53,9 +54,9 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                 </thead>
 
                 <tbody>
-                  {blogsData?.map((blog, _id) => (
+                  {blogsData?.map((blog) => (
                     <tr
-                      key={_id}
+                      key={blog._id}
                       className="bg-white hover:bg-[#EEF3F7] odd:bg-[#F8F9FC] cursor-default transform transition-all duration-200"
                     >
                       <td className="align-middle p-3">
@@ -88,17 +89,15 @@ export default function ManageBlog({ blogsData, blogLoading }) {
 
                       <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
                         <div className="flex justify-center gap-3">
-                          <span className="text-[#22C7A1] font-extrabold">
-                            <a href="#">
-                              <FaPen />
-                            </a>
-                          </span>
+                          <button>
+                            <span className="text-[#22C7A1] font-extrabold">
+                              <a href="#">
+                                <FaPen />
+                              </a>
+                            </span>
+                          </button>
 
-                          <span className="text-[#FF5200] font-extrabold">
-                            <a href="#">
-                              <FaTrashCan />
-                            </a>
-                          </span>
+                          <Delete id={blog._id} />
                         </div>
                       </td>
                     </tr>
