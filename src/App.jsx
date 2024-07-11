@@ -24,7 +24,8 @@ import useProject from "./hooks/useProject";
 import useService from "./hooks/useService";
 import useTeamMember from "./hooks/useTeamMember";
 import useTestimonial from "./hooks/useTestimonial";
-import UpdateService from "./components/Page/DashboardPage/DashboardService/ManageService/UpdateService";
+import UpdateService from "./components/Page/DashboardPage/DashboardService/ManageService/Action/UpdateService";
+import UpdateTeamMember from "./components/Page/DashboardPage/TeamMember/ManageTeamMember/Action/UpdateTeamMember";
 const AboutUs = lazy(() => import("./components/Page/AboutUs/AboutUs"));
 const Service = lazy(() => import("./components/Page/Service/Service"));
 const Blog = lazy(() => import("./components/Page/Blog/Blog"));
@@ -199,6 +200,14 @@ export default function App() {
             </DashboardDefaultLayout>
           }
           path="/dashboard/manageTeamMember"
+        />
+        <Route
+          element={
+            <DashboardDefaultLayout>
+              <UpdateTeamMember/>
+            </DashboardDefaultLayout>
+          }
+          path="/dashboard/updateTeamMember/:teamMemberId"
         />
         <Route
           element={

@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 export default function ServicesTable({ servicesData, serviceLoading }) {
-  console.log(servicesData);
   return (
     <Fragment>
       <div className="p-5 w-full 2xl:w-2/5 h-auto  bg-white rounded-xl ">

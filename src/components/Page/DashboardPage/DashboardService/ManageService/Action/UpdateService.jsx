@@ -1,10 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import WrapStyle from "../../../../Dashboard/WrapStyle";
 import { FaPlus } from "react-icons/fa";
 import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import WrapStyle from "../../../../../Dashboard/WrapStyle";
 
 export default function UpdateService() {
   const navigate = useNavigate();
@@ -82,12 +82,12 @@ export default function UpdateService() {
     console.log(formData);
     const result = await Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You can be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, update it!",
     });
 
     try {
@@ -98,8 +98,8 @@ export default function UpdateService() {
       if (response.data.modifiedCount > 0) {
         if (result.isConfirmed) {
           Swal.fire({
-            title: "Deleted!",
-            text: "Your service has been deleted.",
+            title: "Updated!",
+            text: "Your service has been updated.",
             icon: "success",
           }).then(() => {
             setTimeout(() => {

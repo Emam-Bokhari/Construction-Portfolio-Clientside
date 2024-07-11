@@ -119,9 +119,11 @@ export default function ManageTeamMember({
                       <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
                         <div className="flex justify-center gap-3">
                           <span className="text-[#22C7A1] font-extrabold">
-                            <a href="#">
+                            <Link
+                              to={`/dashboard/updateTeamMember/${teamMember._id}`}
+                            >
                               <FaPen />
-                            </a>
+                            </Link>
                           </span>
 
                           <Delete id={teamMember._id} />
