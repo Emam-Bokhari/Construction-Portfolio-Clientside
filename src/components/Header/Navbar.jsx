@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import Logo from "../../assets/logo/logo.png";
 import { FaDownload } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoMenuSharp } from "react-icons/io5";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
@@ -21,7 +21,7 @@ export default function Navbar() {
                 className=" w-[120px] lg:w-[208px] h-[70px] lg:h-[100px] object-contain"
                 src={Logo}
                 loading="lazy"
-                alt=""
+                alt="Logo"
               />
             </div>
             {/* Ends logo  */}
@@ -100,17 +100,12 @@ export default function Navbar() {
 
           {/* Start get a quote button */}
           <div className="flex items-center gap-3">
-            <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-3 sm:px-7 py-2 sm:py-4 flex items-center gap-1">
-              GET A QUOTE
-              <i></i>
-              <FaDownload className="hidden md:block" />
+              <Link to="https://drive.google.com/file/d/1WC5ZS8Dtvf19fQ8Xe3AUO0GyyrnvjAnE/view?usp=sharing">
+            <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-3 sm:px-7 py-2 sm:py-4 flex items-center gap-1 uppercase">
+                GET PROFILE
+                <FaDownload className="hidden md:block" />
             </button>
-            {/* <ion-icon
-              onclick="onToggleMenu(this)"
-              name="menu"
-              class="text-3xl cursor-pointer lg:hidden"
-            ></ion-icon> */}
-            {/*  */}
+              </Link>
             <button
               onClick={onToggleMenu}
               className="text-3xl cursor-pointer lg:hidden"

@@ -14,40 +14,40 @@ export default function ProjectTableSkeleton() {
           <div className="overflow-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
               <div className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2">
-                <div className="w-full h-[70px]  bg-slate-200 rounded-lg"></div>
+                <div className="w-full h-[100px]  bg-slate-200 rounded-lg"></div>
               </div>
             </div>
           </div>

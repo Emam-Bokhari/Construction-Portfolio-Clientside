@@ -6,10 +6,7 @@ import { FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Delete from "./Action/Delete";
 
-export default function ManageTeamMember({
-  teamMembersData,
-  teamMemberLoading,
-}) {
+export default function ManageTeamMember({ teamMembersData }) {
   return (
     <Fragment>
       <WrapStyle>
@@ -69,7 +66,7 @@ export default function ManageTeamMember({
                           <img
                             className="w-10 h-12 object-cover rounded-lg"
                             src={teamMember?.imageUrl}
-                            alt=""
+                            alt={teamMember?.name + " " + "Profile Image"}
                           />
                         </div>
                       </td>
@@ -83,36 +80,36 @@ export default function ManageTeamMember({
                       </td>
 
                       <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                        <a
-                          href="https://www.facebook.com/emambokhari99/"
+                        <Link
+                          to="https://www.facebook.com/emambokhari99/"
                           className="break-all"
                         >
                           {teamMember?.facebookSocialLink}
-                        </a>
+                        </Link>
                       </td>
                       <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                        <a
-                          href="https://www.facebook.com/emambokhari99/"
+                        <Link 
+                          to="https://www.facebook.com/emambokhari99/"
                           className="break-all"
                         >
                           {teamMember?.twitterSocialLink}
-                        </a>
+                        </Link>
                       </td>
                       <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                        <a
-                          href="https://www.facebook.com/emambokhari99/"
+                        <Link
+                          to="https://www.facebook.com/emambokhari99/"
                           className="break-all"
                         >
                           {teamMember?.instagramSocialLink}
-                        </a>
+                        </Link>
                       </td>
                       <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                        <a
-                          href="https://www.facebook.com/emambokhari99/"
+                        <Link
+                          to="https://www.facebook.com/emambokhari99/"
                           className="break-all"
                         >
                           {teamMember?.linkedinSocialLink}
-                        </a>
+                        </Link>
                       </td>
 
                       <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">

@@ -12,7 +12,7 @@ export default function DashboardFooter() {
               className="text-[#2377FC]"
               to="https://www.facebook.com/emambokhari99/"
             >
-              Moshfiqur Rahman
+              &nbsp;Moshfiqur Rahman&nbsp;
             </Link>
             All rights reserved.
           </span>

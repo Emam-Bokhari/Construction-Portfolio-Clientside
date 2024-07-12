@@ -55,7 +55,7 @@ export default function BlogsTable({ blogsData, blogLoading }) {
                         <img
                           className="w-8 h-10 object-cover rounded-lg"
                           src={blog?.imageUrl}
-                          alt=""
+                          alt={blog?.title + " " + "Image"}
                           loading="lazy"
                         />
                       </div>

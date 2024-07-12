@@ -13,12 +13,13 @@ export default function Banner() {
       <div
         style={backgroundImage}
         loading="lazy"
+        alt="Background Banner Image"
         className=" w-full h-[800px] bg-no-repeat bg-cover relative"
       >
         {/* text  */}
         <div className="space-y-3 md:space-y-4 top-2/4 absolute -translate-y-2/4 left-2/4 -translate-x-2/4 lg:-translate-x-0  lg:left-10 xl:left-20 2xl:left-28 ">
           <h2 className="text-[#F68A0A] font-[titillium] uppercase text-[18px] md:text-[20px] font-[600]">
-            WELCOME TO DREAMS CONSTRUCTION
+            WELCOME TO  GOLDENPEACHLTD
           </h2>
 
           <h3 className="text-white font-[titillium] text-[24px] md:text-[38px] xl:text-[48px] 2xl:text-[74px] font-[700] uppercase ">
@@ -62,7 +63,7 @@ export default function Banner() {
             className="w-[350px] xl:w-[500px] 2xl:w-[600px] h-[350px] xl:h-[500px] 2xl:h-[600px] hidden lg:block top-1/2 -translate-y-2/4 absolute right-10 xl:right-20 2xl:right-28 object-center"
             src={bannerImage}
             loading="lazy"
-            alt=""
+            alt="Banner Image"
           />
         </div>
       </div>

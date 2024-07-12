@@ -9,7 +9,7 @@ export default function CommonPageBanner({ heading, title }) {
           className="w-full h-[450px] object-cover"
           src={commonBannerImage}
           loading="lazy"
-          alt=""
+          alt="Common Banner Image"
         />
 
         {/* overlay  */}

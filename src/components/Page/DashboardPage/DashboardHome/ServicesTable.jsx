@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import ServiceTableSkeleton from "../../../skeleton/Dashboard/Home/ServiceTableSkeleton";
-import ProjectTableSkeleton from "../../../skeleton/Dashboard/Home/ProjectTableSkeleton";
 
 export default function ServicesTable({ servicesData, serviceLoading }) {
   return (
@@ -47,7 +46,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
                         <img
                           className="w-8 h-10 object-cover rounded-lg"
                           src={service.iconUrl}
-                          alt=""
+                          alt={service?.serviceName + " " + "Icon Image"}
                           loading="lazy"
                         />
                       </div>

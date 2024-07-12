@@ -61,7 +61,7 @@ export default function ManageTestimonial({
                           <img
                             className="w-10 h-12 object-cover rounded-lg"
                             src={testimonial?.imageUrl}
-                            alt=""
+                            alt={testimonial?.name + " " + "Image"}
                           />
                         </div>
                       </td>

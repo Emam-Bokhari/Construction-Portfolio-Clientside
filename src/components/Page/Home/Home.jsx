@@ -3,9 +3,11 @@ import {
   FaArrowRight,
   FaArrowUp,
   FaFacebook,
+  FaHeadset,
   FaInstagram,
   FaLinkedin,
   FaPhone,
+  FaSquare,
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -34,6 +36,7 @@ import ServiceSkeleton from "../../skeleton/ServiceSkeleton";
 import ProjectSkeleton from "../../skeleton/ProjectSkeleton";
 import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
 import BlogSkeleton from "../../skeleton/BlogSkeleton";
+import { FaSquareCheck, FaTrowelBricks } from "react-icons/fa6";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -157,7 +160,7 @@ export default function Home() {
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={aboutUsImage}
                   loading="lazy"
-                  alt=""
+                  alt="About Us Image"
                 />
               </div>
             </div>
@@ -224,11 +227,11 @@ export default function Home() {
                   {/* founder text  */}
                   <div className=" lg:border-[#C4C4C4]  lg:border-l-2 ">
                     <div className="lg:ml-5">
-                      <p className=" text-[20px] font-[titillium] font-[600]">
-                        Emam Bokhari
+                      <p className=" text-[20px] font-[titillium] font-[600] capitalize">
+                        Md. Moniruzzaman
                       </p>
-                      <span className="font-[archivo] text-base  font-normal text-[#F68A0A]">
-                        Founder of Dreams Construction
+                      <span className="font-[archivo] text-base  font-normal text-[#F68A0A] capitalize">
+                        Founder Of GoldenPeach
                       </span>
                     </div>
                   </div>
@@ -243,6 +246,7 @@ export default function Home() {
       <div
         className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20"
         loading="lazy"
+        alt="Background Effect"
       >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8">
           {/* text  */}
@@ -290,7 +294,7 @@ export default function Home() {
                       className="w-12 h-12"
                       src={service?.iconUrl}
                       loading="lazy"
-                      alt=""
+                      alt={service?.serviceName + " " + "icon"}
                     />
                     <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                       {service?.serviceNo}
@@ -338,6 +342,7 @@ export default function Home() {
         style={projectBackground}
         className="bg-no-repeat bg-cover w-full "
         loading="lazy"
+        alt="Project Background Effect"
       >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
           <div className="mt-[585px] md:mt-[280px] lg:mt-[200px]  xl:mt-40 space-y-3 md:space-y-4">
@@ -372,7 +377,7 @@ export default function Home() {
                         className="w-full h-[300px] md:h-[400px] lg:w-[350px]  object-cover"
                         src={project.imageUrl}
                         loading="lazy"
-                        alt=""
+                        alt="Project Image"
                       />
                     </div>
                   ))}
@@ -387,6 +392,7 @@ export default function Home() {
       <div
         style={teamMemberBackground}
         loading="lazy"
+        alt="Team Member Background Effect"
         className=" bg-no-repeat bg-cover w-full my-20"
       >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 space-y-3 md:space-y-4">
@@ -424,7 +430,7 @@ export default function Home() {
                       className="w-full h-[300px] lg:h-[320px] xl:h-[265px] object-cover"
                       src={teamMember?.imageUrl}
                       loading="lazy"
-                      alt=""
+                      alt={teamMember?.name + " " + "Profile Image"}
                     />
 
                     {/* text  */}
@@ -496,14 +502,14 @@ export default function Home() {
                 {/* icon 1  */}
                 <div className="flex flex-col lg:flex-row lg:items-center gap-5">
                   <div className="flex items-center gap-2 w-[250px]">
-                    <i className="fa-solid fa-square-check text-[#F68A0A] text-2xl"></i>
+                    <FaSquareCheck className="text-[#F68A0A] text-2xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       Powerfull Product Strategy
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2  w-[250px]">
-                    <i className="fa-solid fa-square-check text-[#F68A0A] text-2xl"></i>
+                    <FaSquareCheck className="text-[#F68A0A] text-2xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       Quality Control System
                     </span>
@@ -513,14 +519,14 @@ export default function Home() {
                 {/* icon 2 */}
                 <div className="flex flex-col lg:flex-row lg:items-center gap-5 ">
                   <div className="flex items-center gap-2  w-[250px]">
-                    <i className="fa-solid fa-square-check text-[#F68A0A] text-2xl"></i>
+                    <FaSquareCheck className="text-[#F68A0A] text-2xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       Professional Team Works
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2  w-[250px]">
-                    <i className="fa-solid fa-square-check text-[#F68A0A] text-2xl"></i>
+                    <FaSquareCheck className="text-[#F68A0A] text-2xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       Award Winning Projects
                     </span>
@@ -534,14 +540,14 @@ export default function Home() {
                 {/* icon  */}
                 <div className="flex flex-col lg:flex-row lg:items-center gap-5 ">
                   <div className="flex flex-col gap-5  w-[250px]">
-                    <i className="fa-solid fa-trowel-bricks text-[#F68A0A] text-5xl"></i>
+                    <FaTrowelBricks className="text-[#F68A0A] text-5xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       High Quality Materials
                     </span>
                   </div>
 
                   <div className="flex flex-col gap-5  w-[250px]">
-                    <i className="fa-solid fa-headset text-[#F68A0A] text-5xl"></i>
+                    <FaHeadset className="text-[#F68A0A] text-5xl" />
                     <span className="text-lg font-[600] font-[archivo]">
                       24/7 Communications
                     </span>
@@ -567,13 +573,13 @@ export default function Home() {
                   <div className=" lg:border-[#C4C4C4]  lg:border-l-2 ">
                     <div className="lg:ml-5">
                       <div className="flex flex-row items-center gap-3  w-[250px]">
-                        <i className="fa-solid fa-phone text-[#F68A0A] text-5xl"></i>
+                        <FaPhone className="text-[#F68A0A] text-5xl" />
                         <div>
                           <h2 className="text-sm text-[#4D5765] font-[archivo]">
                             Call Us Anytime
                           </h2>
-                          <p className="text-[24px] font-[600] font-[titillium] mt-1">
-                            +880 135 773 424
+                          <p className="text-[22px] font-[600] font-[titillium] mt-1">
+                            +880 171 584 91-17
                           </p>
                         </div>
                       </div>
@@ -590,7 +596,7 @@ export default function Home() {
                   className=" w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={whyChooseUsImage}
                   loading="lazy"
-                  alt=""
+                  alt="Why Choose Us Image"
                 />
               </div>
             </div>
@@ -609,7 +615,7 @@ export default function Home() {
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={faqImage}
                   loading="lazy"
-                  alt=""
+                  alt="Faq Image"
                 />
               </div>
             </div>
@@ -733,7 +739,7 @@ export default function Home() {
                       className="rounded-t-lg h-[200px] object-cover"
                       src={blog?.imageUrl}
                       loading="lazy"
-                      alt=""
+                      alt={blog?.title + " " + "Image"}
                     />
                   </Link>
                   <div className="p-5">
@@ -781,7 +787,7 @@ export default function Home() {
             {/* button  */}
             <div className="flex items-center gap-5">
               <Link
-                to="https://wa.me/+8801886578726"
+                to="https://wa.me/+8801715849117"
                 className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4  text-[#0E121D] uppercase flex items-center gap-3"
               >
                 REQUEST A SERVICE

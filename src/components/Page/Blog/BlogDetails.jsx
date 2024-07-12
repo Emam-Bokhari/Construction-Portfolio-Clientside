@@ -16,9 +16,7 @@ export default function BLogDetails() {
     const fetchBlogDetailsData = async () => {
       try {
         setBlogDetailsLoading(true);
-        const response = await axios.get(
-          `/api/v1/blog-details/${blogId}`
-        );
+        const response = await axios.get(`/api/v1/blog-details/${blogId}`);
         if (!response.data) {
           const errorMessage = `Fetching blog details is failed!`;
           throw new Error(errorMessage);
@@ -56,7 +54,7 @@ export default function BLogDetails() {
                       className="w-full h-[400px] object-cover rounded-t-md"
                       src={blogDetails?.imageUrl}
                       loading="lazy"
-                      alt=""
+                      alt={blogDetails?.title + " " + "Image"}
                     />
                   </div>
 

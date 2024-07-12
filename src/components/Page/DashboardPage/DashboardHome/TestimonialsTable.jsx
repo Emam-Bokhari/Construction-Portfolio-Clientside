@@ -35,7 +35,7 @@ export default function TestimonialsTable({
                     <img
                       className="w-14 h-14 object-cover rounded-full"
                       src={testimonial?.imageUrl}
-                      alt=""
+                      alt={testimonial?.name + " " + "Profile Image"}
                       loading="lazy"
                     />
 

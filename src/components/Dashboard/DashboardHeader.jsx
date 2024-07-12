@@ -59,7 +59,7 @@ export default function DashboardHeader() {
                           className=" w-16 h-16 object-contain"
                           src={logo}
                           loading="lazy"
-                          alt=""
+                          alt="Logo"
                         />
                       </div>
                       <div>
@@ -427,7 +427,7 @@ export default function DashboardHeader() {
                   <img
                     className="w-12 h-12 rounded-full object-cover"
                     src="https://placehold.co/400"
-                    alt=""
+                    alt="Admin Profile Image"
                   />
                 </div>
 

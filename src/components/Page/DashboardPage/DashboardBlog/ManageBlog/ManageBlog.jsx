@@ -6,7 +6,7 @@ import { FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Delete from "./Action/Delete";
 
-export default function ManageBlog({ blogsData, blogLoading }) {
+export default function ManageBlog({ blogsData }) {
   return (
     <Fragment>
       <WrapStyle>
@@ -63,7 +63,7 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                           <img
                             className="w-10 h-12 object-cover rounded-lg"
                             src={blog?.imageUrl}
-                            alt=""
+                            alt={blog?.title + " " + "Image"}
                           />
                         </div>
                       </td>

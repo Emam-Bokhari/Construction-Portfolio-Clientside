@@ -15,7 +15,10 @@ export default function Service() {
     <Fragment>
       <CommonPageBanner heading="Service" title="Home | Service" />
       {/* service */}
-      <div className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20">
+      <div
+        className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20"
+        alt="Background Effect Banner Image"
+      >
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8">
           {/* text  */}
           <div className="space-y-3 md:space-y-4">
@@ -34,13 +37,13 @@ export default function Service() {
 
           {/* start card  */}
           {serviceLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 " >
-              <ServiceSkeleton/>
-              <ServiceSkeleton/>
-              <ServiceSkeleton/>
-              <ServiceSkeleton/>
-              <ServiceSkeleton/>
-              <ServiceSkeleton/>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+              <ServiceSkeleton />
+              <ServiceSkeleton />
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3 md:mt-4 ">
@@ -55,7 +58,7 @@ export default function Service() {
                       className="w-12 h-12"
                       src={service?.iconUrl}
                       loading="lazy"
-                      alt=""
+                      alt={service?.serviceName + " " + "Image"}
                     />
                     <span className="text-[20px] text-[#4D5765] font-[titillium] font-[600]">
                       {service?.serviceNo}

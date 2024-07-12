@@ -35,14 +35,17 @@ export default function Blog() {
               ) : (
                 <div className="space-y-3 md:space-y-4">
                   {blogs?.map((blog) => (
-                    <div key={blog._id} className="flex flex-col xl:flex-row gap-5 p-2">
+                    <div
+                      key={blog._id}
+                      className="flex flex-col xl:flex-row gap-5 p-2"
+                    >
                       {/* image  */}
                       <div className="  flex-1">
                         <img
                           className="w-full h-[300px] md:h-[400px] xl:h-[300px]   object-cover rounded-md"
                           src={blog?.imageUrl}
                           loading="lazy"
-                          alt=""
+                          alt={blog?.title + " " + "Image"}
                         />
                       </div>
 

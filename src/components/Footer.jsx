@@ -2,7 +2,13 @@ import { Fragment } from "react";
 import logo from "../assets/logo/logo.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaClock, FaEnvelope, FaFacebook, FaGithub, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaClock,
+  FaEnvelope,
+  FaFacebook,
+  FaGithub,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -18,14 +24,16 @@ export default function Footer() {
               </h2>
 
               <p className="text-base font-[archivo] text-[#7d8794] font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                accumsan iaculis eleifend. Suspendisse placerat tempor turpis.
+                The Construction industry encompasses the planning, design and
+                execution of buildings, infrastructure and related projects.
               </p>
 
               <div>
-                <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-7 py-4">
-                  GET A QUOTE
-                </button>
+                <Link to="https://drive.google.com/file/d/1WC5ZS8Dtvf19fQ8Xe3AUO0GyyrnvjAnE/view?usp=sharing">
+                  <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-7 py-4 uppercase">
+                    GET PROFILE
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -69,11 +77,10 @@ export default function Footer() {
                         className="w-60 lg:w-full h-32 object-contain"
                         src={logo}
                         loading="lazy"
-                        alt=""
+                        alt="Logo"
                       />
                       <p className="text-base font-[archivo] text-[#7d8794] font-normal ">
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                        Lorem ipsum dolor sit amet.{" "}
+                      Modern construction focuses on sustainability with eco-friendly materials and energy-efficient systems.
                       </p>
                     </div>
                   </div>
@@ -221,7 +228,7 @@ export default function Footer() {
                       <div className="flex gap-2 items-center">
                         <FaLocationDot className=" text-[#F68A0A] text-2xl" />
                         <p className="text-base font-[600] font-[archivo] text-white">
-                          138 MacArthur Ave, United States
+                          Gulshan-1, Dhaka, Bangladesh
                         </p>
                       </div>
 
@@ -229,15 +236,17 @@ export default function Footer() {
                       <div className="flex gap-2 items-center">
                         <FaPhoneAlt className="text-[#F68A0A] text-2xl" />
                         <p className="text-base font-[600] font-[archivo] text-white">
-                          +1 201-380-2737
+                          +880 171 584 91-17
                         </p>
                       </div>
 
                       {/* gmail  */}
                       <div className="flex gap-2 items-center">
                         <FaEnvelope className=" text-[#F68A0A] text-2xl" />
-                        <p className="text-base font-[600] font-[archivo] text-white">
-                          help24/7info@kotar.com
+                        <p className="text-base font-[600] font-[archivo] text-white hover:text-[#F68812] transform duration-300">
+                          <Link to="mailto:goldenpeach35@gmail.com">
+                            goldenpeach35@gmail.com
+                          </Link>
                         </p>
                       </div>
 
@@ -268,18 +277,18 @@ export default function Footer() {
                 <h2 className="text-sm font-[archivo] text-white">
                   Developed By Moshfiqur Rahman
                 </h2>
-                <a
+                <Link
                   className="text-white"
-                  href="https://github.com/Emam-Bokhari"
+                  to="https://github.com/Emam-Bokhari"
                 >
                   <FaGithub className="text-xl" />
-                </a>
-                <a
+                </Link>
+                <Link
                   className="text-[#0866FF]"
-                  href="https://www.facebook.com/emambokhari99"
+                  to="https://www.facebook.com/emambokhari99"
                 >
-                    <FaFacebook className="text-xl" />
-                </a>
+                  <FaFacebook className="text-xl" />
+                </Link>
               </div>
             </div>
 

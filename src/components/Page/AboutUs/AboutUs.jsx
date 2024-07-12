@@ -26,7 +26,7 @@ export default function AboutUs() {
                   className="w-[550px] lg:w-full h-[450px] object-cover rounded-xl "
                   src={aboutUsImage}
                   loading="lazy"
-                  alt=""
+                  alt="About Us Image"
                 />
               </div>
             </div>
@@ -87,11 +87,11 @@ export default function AboutUs() {
                 </div>
 
                 <div>
-                  <p className=" text-[20px] font-[titillium] font-[600]">
-                    Emam Bokhari
+                  <p className=" text-[20px] font-[titillium] font-[600] capitalize">
+                    Md. Moniruzzaman
                   </p>
-                  <span className="font-[archivo] text-base  font-normal text-[#F68A0A]">
-                    Founder of Dreams Construction
+                  <span className="font-[archivo] text-base  font-normal text-[#F68A0A] capitalize">
+                    Founder Of GoldenPeach
                   </span>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function AboutUs() {
                       className="w-[80px] h-[80px] object-cover rounded-full ring-1 ring-[#F68A0A] ring-offset-2"
                       src={teamMember?.imageUrl}
                       loading="lazy"
-                      alt=""
+                      alt={teamMember?.name + " " + "Profile Image"}
                     />
                   </div>
 

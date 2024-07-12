@@ -7,7 +7,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Delete from "./Action/Delete";
 
-export default function ManageProject({ projectsData, projectLoading }) {
+export default function ManageProject({ projectsData}) {
   return (
     <Fragment>
       <WrapStyle>
@@ -50,7 +50,7 @@ export default function ManageProject({ projectsData, projectLoading }) {
                           <img
                             className="w-10 h-12 object-cover rounded-lg"
                             src={project?.imageUrl}
-                            alt=""
+                            alt="Project Image"
                           />
                         </div>
                       </td>

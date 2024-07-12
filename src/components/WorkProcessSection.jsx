@@ -9,7 +9,8 @@ export default function WorkProcessSection() {
       <div className="bg-white my-20">
         <div
          className="bg-[url('./assets/background-effects/bg-effect-how-it-works.png')] bg-no-repeat bg-cover w-full  max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8" 
-         loading="lazy" >
+         loading="lazy" 
+         alt="Background Effect" >
           <div className="flex lg:justify-between items-center gap-10 flex-col lg:flex-row">
             {/* text  */}
             <div className=" bg-[#0E121D] z-10 p-6 space-y-3 md:space-y-4  w-full lg:w-2/5">

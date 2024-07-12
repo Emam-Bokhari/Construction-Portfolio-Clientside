@@ -11,7 +11,8 @@ export default function GetFreeConsultation(){
         <Fragment>
             <div
           style={getFreeConsultationBackground}
-          loading="lazy"
+          loading="lazy" 
+          alt="Get Free Consultation Background Image"
           className=" bg-no-repeat bg-cover w-full  "
         >
           <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
@@ -41,7 +42,7 @@ export default function GetFreeConsultation(){
                   className="w-80 xl:w-96 h-60 xl:h-80 rounded-tl-[50%] 2xl:rounded-tl-[45%] rounded-bl-[50%] 2xl:rounded-bl-[45%] hidden lg:block"
                   src={getFreeConsultationImage}
                   loading="lazy"
-                  alt=""
+                  alt="Get Free Consultation Image"
                 />
               </div>
             </div>
