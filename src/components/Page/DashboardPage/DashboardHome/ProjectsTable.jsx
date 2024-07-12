@@ -33,6 +33,7 @@ export default function ProjectsTable({ projectsData, projectLoading }) {
                     className="w-full h-auto object-cover rounded-lg"
                     src={project?.imageUrl}
                     alt=""
+                    loading="lazy"
                   />
                 </div>
               ))}

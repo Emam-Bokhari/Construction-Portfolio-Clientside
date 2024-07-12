@@ -35,6 +35,7 @@ export default function TeamMembersTable({
                       className="w-14 h-14 object-cover rounded-full"
                       src={teamMember?.imageUrl}
                       alt=""
+                      loading="lazy"
                     />
                     <p className="text-sm font-[inter] font-[500]">
                       {teamMember?.name}

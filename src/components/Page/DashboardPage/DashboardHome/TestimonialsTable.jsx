@@ -29,6 +29,7 @@ export default function TestimonialsTable({
                     className="w-14 h-14 object-cover rounded-full"
                     src={testimonial?.imageUrl}
                     alt=""
+                    loading="lazy"
                   />
 
                   <div className="leading-5 space-y-2">

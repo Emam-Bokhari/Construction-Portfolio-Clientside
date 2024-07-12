@@ -48,6 +48,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
                           className="w-8 h-10 object-cover rounded-lg"
                           src={service.iconUrl}
                           alt=""
+                          loading="lazy"
                         />
                       </div>
                     </td>
