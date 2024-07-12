@@ -2,7 +2,11 @@ import { Fragment, useState } from "react";
 import logo from "../../assets/logo/logo.png";
 import { IoGridSharp, IoSettingsSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaMagnifyingGlass, FaPeopleGroup } from "react-icons/fa6";
+import {
+  FaCircleXmark,
+  FaMagnifyingGlass,
+  FaPeopleGroup,
+} from "react-icons/fa6";
 import {
   FaBars,
   FaBell,
@@ -20,6 +24,8 @@ import {
 } from "react-icons/fa";
 
 export default function DashboardHeader() {
+  const [showMenuBar, setShowMenuBar] = useState(false)
+
   const [showSubMenu, SetShowSubMenu] = useState({
     service: false,
     teamMember: false,
@@ -27,11 +33,15 @@ export default function DashboardHeader() {
     testimonial: false,
     blog: false,
   });
+
   const onToggleSubMenu = (menu) => {
     SetShowSubMenu({
       [menu]: !showSubMenu[menu],
     });
   };
+
+  
+
   return (
     <Fragment>
       <header>
@@ -39,17 +49,17 @@ export default function DashboardHeader() {
         <nav>
           <div>
             <span
-              onClick="openBar()"
+              onClick={()=>setShowMenuBar(!showMenuBar)}
               className="text-3xl cursor-pointer text-black absolute top-4 left-4"
             >
               <FaBars />
             </span>
 
-            <div className="absolute top-5 left-14">
+            <div className="absolute top-5 left-14 ">
               <h2 className="font-[inter] text-2xl font-bold">GoldenPeach</h2>
             </div>
 
-            <div className="sidebar bg-white w-[300px] duration-1000 h-screen fixed lg:left-0 left-[-300px] top-0 overflow-y-auto px-5 py-3">
+            <div className={`sidebar bg-white w-[300px] z-50 duration-1000 h-screen fixed lg:left-0 left-[-300px] top-0 overflow-y-auto px-5 py-3 ${showMenuBar?"left-[1px]":""}`}>
               <div className="flex items-center justify-between">
                 <div>
                   <Link to="/">
@@ -63,7 +73,7 @@ export default function DashboardHeader() {
                         />
                       </div>
                       <div>
-                        <h2 className="font-[inter] text-2xl font-bold">
+                        <h2 className="font-[inter] text-2xl font-bold ">
                           GoldenPeach
                         </h2>
                       </div>
@@ -71,8 +81,8 @@ export default function DashboardHeader() {
                   </Link>
                 </div>
 
-                <div onClick="openBar()" className="block lg:hidden">
-                  <i className="fa-regular fa-circle-xmark text-2xl"></i>
+                <div onClick={()=>setShowMenuBar(!showMenuBar)} className="block lg:hidden">
+                  <FaCircleXmark className="text-2xl" />
                 </div>
               </div>
 

@@ -74,7 +74,9 @@ export default function ManageTestimonial({
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573] ">
-                          {testimonial?.review}
+                          {testimonial?.review
+                            ? testimonial?.review.substring(0, 100)
+                            : testimonial?.review}
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573] ">
