@@ -3,7 +3,7 @@ import { Fragment } from "react";
 export default function BlogTableSkeleton() {
   return (
     <Fragment>
-      <div className="p-5 w-full 2xl:w-3/5 h-auto  bg-white rounded-xl ">
+      <div className="p-5 w-full 2xl:w-3/5 h-auto  bg-white rounded-xl animate-pulse">
 
         <div className="space-y-5">
 

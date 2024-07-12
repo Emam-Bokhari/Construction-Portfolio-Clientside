@@ -3,7 +3,7 @@ import { Fragment } from "react";
 export default function ProjectTableSkeleton() {
   return (
     <Fragment>
-      <div className="p-5 w-full 2xl:w-[30%] h-auto  bg-white rounded-xl ">
+      <div className="p-5 w-full 2xl:w-[30%] h-auto  bg-white rounded-xl animate-pulse">
         <div className="space-y-5">
           <div className="flex items-center justify-between ">
             <div className="h-4 w-14 rounded bg-slate-200"></div>

@@ -11,24 +11,24 @@ const useTestimonial = () => {
       setLoading(true);
       const response = await axios.get(`/api/v1/show-all-testimonials`);
       if (!response.data) {
-        const errorMessage = `Fetching testimonials data failed!$`
-        throw new Error(errorMessage)
+        const errorMessage = `Fetching testimonials data failed!$`;
+        throw new Error(errorMessage);
       }
-      setTestimonialLoading(response.data)
+      setTestimonialLoading(response.data);
     } catch (err) {
-        setError(err)
+      setError(err);
     } finally {
-        setLoading(false)
+      setLoading(false);
     }
   };
-  useEffect(()=>{
-    setLoading(true)
-    fetchTestimonialData()
-  },[])
-  return{
+  useEffect(() => {
+    setLoading(true);
+    fetchTestimonialData();
+  }, []);
+  return {
     testimonials,
     testimonialLoading,
-    error
-  }
+    error,
+  };
 };
 export default useTestimonial;
