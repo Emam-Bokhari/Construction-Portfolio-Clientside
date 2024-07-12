@@ -73,14 +73,14 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                          {blog?.title}
+                          {blog?.title?blog?.title.substring(0,100):blog?.title}
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">
                           {blog?.category}
                         </td>
                         <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
-                          {blog?.description}
+                          {blog?.description?blog?.description.substring(0,100):blog?.description}
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap text-[#5C6573]">

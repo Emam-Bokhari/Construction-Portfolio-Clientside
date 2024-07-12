@@ -6,7 +6,6 @@ import TopNavbar from "./components/Header/TopNavbar";
 import Footer from "./components/Footer";
 import NotFound from "./components/Page/NotFound/NotFound";
 import LoadingAnimation from "./components/LoadingAnimation";
-import DashboardHome from "./components/Page/DashboardPage/DashboardHome/DashboardHome";
 import DashboardHeader from "./components/Dashboard/DashboardHeader";
 import DashboardFooter from "./components/Dashboard/DashboardFooter";
 import useBlog from "./hooks/useBlog";
@@ -93,6 +92,7 @@ const AddService = lazy(() =>
     "./components/Page/DashboardPage/DashboardService/AddService/AddService"
   )
 );
+const DashboardHome=lazy(()=>import("./components/Page/DashboardPage/DashboardHome/DashboardHome"))
 
 const DefaultLayout = ({ children }) => {
   return (
