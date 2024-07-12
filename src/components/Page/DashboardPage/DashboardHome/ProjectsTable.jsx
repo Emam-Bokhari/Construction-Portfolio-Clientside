@@ -30,7 +30,7 @@ export default function ProjectsTable({ projectsData, projectLoading }) {
                   className="border-2 border-dotted border-[#E4E4E4] rounded-2xl p-2"
                 >
                   <img
-                    className="w-full h-auto object-cover rounded-lg"
+                    className="w-full h-[70px] object-cover rounded-lg"
                     src={project?.imageUrl}
                     alt="Project Image"
                     loading="lazy"

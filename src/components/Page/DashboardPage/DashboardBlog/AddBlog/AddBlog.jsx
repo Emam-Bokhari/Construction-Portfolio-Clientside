@@ -63,8 +63,13 @@ export default function AddBlog() {
         author: "",
         publishedDate: "",
       });
-      navigate("/dashboard/manageBlog");
-      window.location.reload();
+
+      setTimeout(()=>{
+        navigate("/dashboard/manageBlog");
+        window.location.reload();
+      },1000)
+
+      
     } catch (err) {
       console.log(err);
     }

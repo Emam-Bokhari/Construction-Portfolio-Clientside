@@ -33,8 +33,10 @@ export default function AddProject() {
       setFormData({
         imageUrl: "",
       });
-      navigate("/dashboard/manageProject");
-      window.location.reload();
+      setTimeout(() => {
+        navigate("/dashboard/manageProject");
+        window.location.reload();
+      }, 1000);
     } catch (err) {
       console.log(err);
     }

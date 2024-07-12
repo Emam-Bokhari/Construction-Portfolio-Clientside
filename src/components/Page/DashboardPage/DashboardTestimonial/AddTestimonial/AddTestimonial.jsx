@@ -14,6 +14,7 @@ export default function AddTestimonial() {
     review: "",
     star: "",
   });
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -21,6 +22,7 @@ export default function AddTestimonial() {
       [name]: value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(formData);
@@ -43,9 +45,15 @@ export default function AddTestimonial() {
       // clear form data
       setFormData({
         imageUrl: "",
+        name: "",
+        review: "",
+        star: "",
       });
+
+     setTimeout(()=>{
       navigate("/dashboard/manageTestimonial");
       window.location.reload();
+     },1000)
     } catch (err) {
       console.log(err);
     }

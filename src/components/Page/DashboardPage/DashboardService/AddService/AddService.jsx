@@ -64,8 +64,12 @@ export default function AddService() {
         serviceBenefits: "",
         serviceBenefitsDescription: "",
       });
-      navigate("/dashboard/manageService");
+
+      setTimeout(()=>{
+        navigate("/dashboard/manageService");
       window.location.reload();
+      },1000)
+
     } catch (err) {
       console.log(err);
     }

@@ -52,8 +52,12 @@ export default function AddTeamMember() {
         instagramSocialLink: "",
         linkedinSocialLink: "",
       });
-      navigate("/dashboard/manageTeamMember");
-      window.location.reload();
+
+      setTimeout(() => {
+        navigate("/dashboard/manageTeamMember");
+        window.location.reload();
+      }, 1000);
+      
     } catch (err) {
       console.log(err);
     }
