@@ -180,7 +180,7 @@ export default function Footer() {
                             href="#"
                           >
                             <IoIosArrowForward className=" text-[#F68A0A]" />
-                            Architecture Design
+                            Architectectural Design
                           </a>
                         </li>
 
@@ -190,7 +190,7 @@ export default function Footer() {
                             href="#"
                           >
                             <IoIosArrowForward className=" text-[#F68A0A]" />
-                            House Renovation
+                            Road Construction
                           </a>
                         </li>
 
@@ -200,7 +200,7 @@ export default function Footer() {
                             href="#"
                           >
                             <IoIosArrowForward className=" text-[#F68A0A]" />
-                            General Contracting
+                            General Construction
                           </a>
                         </li>
 
@@ -210,7 +210,7 @@ export default function Footer() {
                             href="#"
                           >
                             <IoIosArrowForward className=" text-[#F68A0A]" />
-                            Interior Designing
+                            Interior Design
                           </a>
                         </li>
                       </ul>

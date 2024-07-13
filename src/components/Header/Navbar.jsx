@@ -29,7 +29,7 @@ export default function Navbar() {
             {/* navlink */}
             <div
               className={`z-10  transition-all duration-700  lg:static absolute bg-white lg:bg-transparent lg:min-h-fit min-h-[50vh] left-0  lg:w-auto  w-full flex items-center px-5 ${
-                showMenubar ? "top-[15%] md:top-[11%]" : "top-[-100%]"
+                showMenubar ? "top-[19%] md:top-[11%]" : "top-[-100%]"
               }`}
             >
               <ul className="flex flex-col lg:flex-row lg:items-center  gap-10">

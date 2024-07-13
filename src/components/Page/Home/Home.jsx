@@ -565,7 +565,7 @@ export default function Home() {
                   <div>
                     <Link
                       to="/aboutUs"
-                      className="bg-[#F68A0A] block hover:bg-[#ee8404] transform transition-all duration-300 px-5 lg:px-7 text-sm md:text-base font-[archivo] font-[600] py-3 lg:py-4 text-white uppercase"
+                      className="bg-[#F68A0A] block hover:bg-[#ee8404] transform transition-all duration-300 text-sm md:text-base font-[archivo] w-[160px] text-center font-[600] py-3  text-white uppercase"
                     >
                       MORE ABOUT Us
                     </Link>
