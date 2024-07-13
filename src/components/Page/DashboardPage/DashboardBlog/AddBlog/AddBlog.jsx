@@ -145,18 +145,24 @@ export default function AddBlog() {
                   name="category"
                 >
                   <option value="none">None</option>
+
                   <option value="Building Construction">
                     Building Construction
                   </option>
+
                   <option value="Interior Design">Interior Design</option>
+
                   <option value="General Construction">
                     General Construction
                   </option>
+
                   <option value="Material Supply">Material Supply</option>
-                  <option value="Architecture Design">
-                    Architecture Design
+
+                  <option value="Architectural Design">
+                  Architectural Design
                   </option>
-                  <option value="House Revonation">House Revonation</option>
+
+                  <option value="Road Construction">Road Construction</option>
                 </select>
               </div>
 

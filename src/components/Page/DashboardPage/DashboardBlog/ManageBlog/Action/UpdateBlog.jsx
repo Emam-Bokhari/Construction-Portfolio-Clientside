@@ -123,7 +123,7 @@ export default function UpdateBlog() {
           </h3>
 
           <div className="bg-white rounded-xl p-4 ">
-            <form onClick={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* blog image url  */}
               <div>
                 <label

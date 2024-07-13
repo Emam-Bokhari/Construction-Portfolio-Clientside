@@ -72,7 +72,7 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                           </div>
                         </td>
 
-                        <td className="p-3 align-middle text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
+                        <td className="p-3 align-top text-base font-[inter] font-[500] whitespace-normal text-[#5C6573]">
                           {blog?.title?blog?.title.substring(0,100):blog?.title}
                         </td>
 

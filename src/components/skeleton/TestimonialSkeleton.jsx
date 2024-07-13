@@ -12,6 +12,7 @@ export default function TestimonialSkeleton() {
         <div className="h-2 bg-slate-200 rounded"></div>
         <div className="h-2 bg-slate-200 rounded"></div>
         <div className="h-2 bg-slate-200 rounded"></div>
+        <div className="h-2 bg-slate-200 rounded"></div>
       </div>
     </Fragment>
   );

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import CommonPageBanner from "../../CommonPageBanner";
-import aboutUsImage from "../../../assets/aboutUs-image/aboutus-profile.jpg";
+import aboutUsImage from "../../../assets/aboutUs-image/moniruzzaman-profile-image.jpg";
 import WorkProcessSection from "../../WorkProcessSection";
 import ProjectCompletationCount from "../../ProjectCompletationCount";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";

@@ -77,10 +77,10 @@ export default function ManageService({ servicesData, serviceLoading }) {
                           {service?.serviceName}
                         </td>
 
-                        <td className=" p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
+                        <td className=" p-3 align-top text-base font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
                           {service?.serviceDescription?service?.serviceDescription.substring(0,100):service?.serviceDescription}
                         </td>
-                        <td className=" p-3 align-middle text-base font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
+                        <td className=" p-3 align-top text-base font-[inter] font-normal whitespace-nowrap 2xl:whitespace-normal text-[#5C6573]">
                           {service?.serviceBenefitsDescription?service?.serviceBenefitsDescription.substring(0,100):service?.serviceBenefitsDescription}
                         </td>
                         <td className=" p-3 align-middle text-lg font-[inter] whitespace-nowrap">

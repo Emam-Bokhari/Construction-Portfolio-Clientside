@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import logo from "../../assets/logo/logo.png";
+import adminImage from "../../assets/aboutUs-image/moniruzzaman-profile-image.jpg"
 import { IoGridSharp, IoSettingsSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import {
@@ -436,7 +437,7 @@ export default function DashboardHeader() {
                 <div>
                   <img
                     className="w-12 h-12 rounded-full object-cover"
-                    src="https://placehold.co/400"
+                    src={adminImage}
                     alt="Admin Profile Image"
                   />
                 </div>

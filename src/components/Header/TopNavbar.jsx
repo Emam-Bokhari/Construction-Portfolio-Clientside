@@ -47,7 +47,7 @@ export default function TopNavbar() {
             <span className="text-sm font-[archivo] text-[#908C8D] hidden xl:block">
               Follow Us:
             </span>
-            <Link to="#">
+            <Link to="https://www.facebook.com/mdmoniruzzaman.titon.5?mibextid=ZbWKwL">
               <FaFacebook className="text-sm text-[#908C8D] hover:text-[#1877F2] transform transition-all duration-300" />
             </Link>
             <Link to="#">

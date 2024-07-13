@@ -90,9 +90,9 @@ export default function TestimonialSection() {
                       {testimonial?.name}
                     </h2>
 
-                    <p className="text-[#4D5765] h-12 text-center text-base font-[500] font-[archivo] ">
+                    <p className="text-[#4D5765] h-16 text-center text-base font-[500] font-[archivo] ">
                       {testimonial?.review
-                        ? testimonial?.review.substring(0, 80)
+                        ? testimonial?.review.substring(0, 100)
                         : testimonial?.review}
                     </p>
                   </div>
