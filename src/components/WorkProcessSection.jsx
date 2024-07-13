@@ -74,7 +74,7 @@ export default function WorkProcessSection() {
                         Design Build
                       </h3>
                       <p className="font-[archivo] text-base text-[#4D5765]">
-                        Sketching, prototyping, and commencing construction.
+                        Sketching, prototyping, and commencing <Link to={"/golden@peach@dashboard"} className="cursor-text" >construction</Link>.
                       </p>
                     </div>
                   </div>
