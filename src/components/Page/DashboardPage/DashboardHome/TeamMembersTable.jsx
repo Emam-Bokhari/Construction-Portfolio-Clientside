@@ -18,7 +18,7 @@ export default function TeamMembersTable({
             </h2>
 
             <Link
-              to="/dashboard/manageTeamMember"
+              to="/golden@peach@dashboard/manageTeamMember"
               className="text-[#BDC9DB] font-[inter] font-[500] text-sm"
             >
               View All

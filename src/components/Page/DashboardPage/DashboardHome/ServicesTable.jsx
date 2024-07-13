@@ -15,7 +15,7 @@ export default function ServicesTable({ servicesData, serviceLoading }) {
             </h2>
 
             <Link
-              to="/dashboard/manageService"
+              to="/golden@peach@dashboard/manageService"
               className="text-[#BDC9DB] font-[inter] font-[500] text-sm"
             >
               View All

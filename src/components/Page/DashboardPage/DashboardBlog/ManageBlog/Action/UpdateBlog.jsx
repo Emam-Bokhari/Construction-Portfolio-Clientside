@@ -104,7 +104,7 @@ export default function UpdateBlog() {
         }
       }
 
-      navigate("/dashboard/manageBlog");
+      navigate("/golden@peach@dashboard/manageBlog");
 
       console.log("Blog updated successfully:", response.data);
       // Optionally handle success scenario (e.g., show success message)

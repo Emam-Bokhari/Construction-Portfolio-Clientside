@@ -65,7 +65,7 @@ export default function AddBlog() {
       });
 
       setTimeout(()=>{
-        navigate("/dashboard/manageBlog");
+        navigate("/golden@peach@dashboard/manageBlog");
         window.location.reload();
       },1000)
 

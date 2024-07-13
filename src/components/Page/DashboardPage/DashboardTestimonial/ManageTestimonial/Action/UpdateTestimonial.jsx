@@ -95,7 +95,7 @@ export default function UpdateTestimonial() {
         }
       }
 
-      navigate("/dashboard/manageTestimonial");
+      navigate("/golden@peach@dashboard/manageTestimonial");
 
       console.log("Testimonial updated successfully:", response.data);
       // Optionally handle success scenario (e.g., show success message)

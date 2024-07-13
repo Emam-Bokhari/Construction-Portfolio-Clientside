@@ -15,7 +15,7 @@ export default function BlogsTable({ blogsData, blogLoading }) {
             </h2>
 
             <Link
-              to="/dashboard/manageBlog"
+              to="/golden@peach@dashboard/manageBlog"
               className="text-[#BDC9DB] font-[inter] font-[500] text-sm"
             >
               View All

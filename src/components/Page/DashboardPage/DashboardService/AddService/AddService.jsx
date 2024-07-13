@@ -66,7 +66,7 @@ export default function AddService() {
       });
 
       setTimeout(()=>{
-        navigate("/dashboard/manageService");
+        navigate("/golden@peach@dashboard/manageService");
       window.location.reload();
       },1000)
 

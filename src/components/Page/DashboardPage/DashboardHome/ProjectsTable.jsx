@@ -15,7 +15,7 @@ export default function ProjectsTable({ projectsData, projectLoading }) {
             </h2>
 
             <Link
-              to="/dashboard/manageProject"
+              to="/golden@peach@dashboard/manageProject"
               className="text-[#BDC9DB] font-[inter] font-[500] text-sm"
             >
               View All

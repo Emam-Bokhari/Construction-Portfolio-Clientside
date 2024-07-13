@@ -19,7 +19,7 @@ export default function TestimonialsTable({
             </h2>
 
             <Link
-              to="/dashboard/manageTestimonial"
+              to="/golden@peach@dashboard/manageTestimonial"
               className="text-[#BDC9DB] font-[inter] font-[500] text-sm"
             >
               View All

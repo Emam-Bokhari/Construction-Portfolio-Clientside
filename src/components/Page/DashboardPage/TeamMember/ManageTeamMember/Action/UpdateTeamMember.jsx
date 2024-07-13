@@ -99,7 +99,7 @@ export default function Update() {
         }
       }
 
-      navigate("/dashboard/manageTeamMember");
+      navigate("/golden@peach@dashboard/manageTeamMember");
 
       console.log("Team member updated successfully:", response.data);
       // Optionally handle success scenario (e.g., show success message)

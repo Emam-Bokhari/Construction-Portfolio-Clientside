@@ -109,7 +109,7 @@ export default function UpdateService() {
         }
       }
 
-      navigate("/dashboard/manageService");
+      navigate("/golden@peach@dashboard/manageService");
 
       console.log("Service updated successfully:", response.data);
       // Optionally handle success scenario (e.g., show success message)

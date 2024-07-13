@@ -26,7 +26,7 @@ export default function ManageTeamMember({
               <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
                 <Searchbar />
 
-                <Link to="/dashboard/addTeamMember">
+                <Link to="/golden@peach@dashboard/addTeamMember">
                   <AddButton button="Add Team Member" />
                 </Link>
               </div>
@@ -123,7 +123,7 @@ export default function ManageTeamMember({
                           <div className="flex justify-center gap-3">
                             <span className="text-[#22C7A1] font-extrabold">
                               <Link
-                                to={`/dashboard/updateTeamMember/${teamMember._id}`}
+                                to={`/golden@peach@dashboard/updateTeamMember/${teamMember._id}`}
                               >
                                 <FaPen />
                               </Link>

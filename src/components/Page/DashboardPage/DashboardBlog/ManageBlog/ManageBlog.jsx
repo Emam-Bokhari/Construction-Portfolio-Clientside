@@ -23,7 +23,7 @@ export default function ManageBlog({ blogsData, blogLoading }) {
               <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
                 <Searchbar />
 
-                <Link to="/dashboard/addBlog">
+                <Link to="/golden@peach@dashboard/addBlog">
                   <AddButton button={"Add Blog"} />
                 </Link>
               </div>
@@ -94,7 +94,7 @@ export default function ManageBlog({ blogsData, blogLoading }) {
                           <div className="flex justify-center gap-3">
                             <button>
                               <span className="text-[#22C7A1] font-extrabold">
-                                <Link to={`/dashboard/updateBlog/${blog._id}`}>
+                                <Link to={`/golden@peach@dashboard/updateBlog/${blog._id}`}>
                                   <FaPen />
                                 </Link>
                               </span>

@@ -214,7 +214,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard"
+          path="/golden@peach@dashboard"
         />
         <Route
           element={
@@ -224,7 +224,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/addService"
+          path="/golden@peach@dashboard/addService"
         />
         <Route
           element={
@@ -237,7 +237,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/manageService"
+          path="/golden@peach@dashboard/manageService"
         />
         <Route
           element={
@@ -247,7 +247,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/updateService/:serviceId"
+          path="/golden@peach@dashboard/updateService/:serviceId"
         />
         <Route
           element={
@@ -257,7 +257,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/addTeamMember"
+          path="/golden@peach@dashboard/addTeamMember"
         />
         <Route
           element={
@@ -270,7 +270,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/manageTeamMember"
+          path="/golden@peach@dashboard/manageTeamMember"
         />
         <Route
           element={
@@ -280,7 +280,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/updateTeamMember/:teamMemberId"
+          path="/golden@peach@dashboard/updateTeamMember/:teamMemberId"
         />
         <Route
           element={
@@ -290,7 +290,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/addProject"
+          path="/golden@peach@dashboard/addProject"
         />
         <Route
           element={
@@ -303,7 +303,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/manageProject"
+          path="/golden@peach@dashboard/manageProject"
         />
         <Route
           element={
@@ -313,7 +313,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/updateProject/:projectId"
+          path="/golden@peach@dashboard/updateProject/:projectId"
         />
         <Route
           element={
@@ -323,7 +323,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/addTestimonial"
+          path="/golden@peach@dashboard/addTestimonial"
         />
         <Route
           element={
@@ -336,7 +336,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/manageTestimonial"
+          path="/golden@peach@dashboard/manageTestimonial"
         />
         <Route
           element={
@@ -346,7 +346,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/updateTestimonial/:testimonialId"
+          path="/golden@peach@dashboard/updateTestimonial/:testimonialId"
         />
         <Route
           element={
@@ -356,7 +356,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/addBlog"
+          path="/golden@peach@dashboard/addBlog"
         />
         <Route
           element={
@@ -366,7 +366,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/manageBlog"
+          path="/golden@peach@dashboard/manageBlog"
         />
         <Route
           element={
@@ -376,7 +376,7 @@ export default function App() {
               </Suspense>
             </DashboardDefaultLayout>
           }
-          path="/dashboard/updateBlog/:blogId"
+          path="/golden@peach@dashboard/updateBlog/:blogId"
         />
         <Route element={<NotFound />} path="*" />
       </Routes>

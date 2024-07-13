@@ -26,7 +26,7 @@ export default function ManageTestimonial({
               <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
                 <Searchbar />
 
-                <Link to="/dashboard/addTestimonial">
+                <Link to="/golden@peach@dashboard/addTestimonial">
                   <AddButton button="Add Testimonial" />
                 </Link>
               </div>
@@ -88,7 +88,7 @@ export default function ManageTestimonial({
                             <button>
                               <span className="text-[#22C7A1] font-extrabold">
                                 <Link
-                                  to={`/dashboard/updateTestimonial/${testimonial._id}`}
+                                  to={`/golden@peach@dashboard/updateTestimonial/${testimonial._id}`}
                                 >
                                   <FaPen />
                                 </Link>

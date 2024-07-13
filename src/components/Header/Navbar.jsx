@@ -85,7 +85,7 @@ export default function Navbar() {
                 </li>
                 <li className="text-sm font-[titillium] text-[#4C4D4E] hover:text-[#F68A0A] transform transition-all duration-200 font-[600]">
                   <NavLink
-                    to="/dashboard"
+                    to="/golden@peach@dashboard"
                     className={({ isActive }) =>
                       isActive ? "text-[#F68A0A]" : ""
                     }

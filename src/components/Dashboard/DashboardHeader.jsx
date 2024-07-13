@@ -115,7 +115,7 @@ export default function DashboardHeader() {
 
                 <Link
                   className="w-full px-3 py-4 rounded-xl block bg-[#E9F1FF] text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 my-5"
-                  to="/dashboard"
+                  to="/golden@peach@dashboard"
                 >
                   <div className="flex items-center gap-3">
                     <IoGridSharp className="text-2xl" />
@@ -166,14 +166,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        to="/dashboard/addService"
+                        to="/golden@peach@dashboard/addService"
                       >
                         <li>Add Service</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        to="/dashboard/manageService"
+                        to="/golden@peach@dashboard/manageService"
                       >
                         <li>Manage Service</li>
                       </Link>
@@ -207,14 +207,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        to="/dashboard/addTeamMember"
+                        to="/golden@peach@dashboard/addTeamMember"
                       >
                         <li>Add Team Member</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        to="/dashboard/manageTeamMember"
+                        to="/golden@peach@dashboard/manageTeamMember"
                       >
                         <li>Manage Team Member</li>
                       </Link>
@@ -249,14 +249,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        to="/dashboard/addProject"
+                        to="/golden@peach@dashboard/addProject"
                       >
                         <li>Add Project</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        to="/dashboard/manageProject"
+                        to="/golden@peach@dashboard/manageProject"
                       >
                         <li>Manage Project</li>
                       </Link>
@@ -293,14 +293,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        to="/dashboard/addTestimonial"
+                        to="/golden@peach@dashboard/addTestimonial"
                       >
                         <li>Add Testimonial</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        to="/dashboard/manageTestimonial"
+                        to="/golden@peach@dashboard/manageTestimonial"
                       >
                         <li>Manage Testimonial</li>
                       </Link>
@@ -335,14 +335,14 @@ export default function DashboardHeader() {
                     >
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300"
-                        to="/dashboard/addBlog"
+                        to="/golden@peach@dashboard/addBlog"
                       >
                         <li>Add Blog</li>
                       </Link>
 
                       <Link
                         className="block text-[#111111] hover:text-[#2E7EFD] transition-all duration-300 mt-3"
-                        to="/dashboard/manageBlog"
+                        to="/golden@peach@dashboard/manageBlog"
                       >
                         <li>Manage Blog</li>
                       </Link>

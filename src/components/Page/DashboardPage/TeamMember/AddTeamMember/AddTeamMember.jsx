@@ -54,7 +54,7 @@ export default function AddTeamMember() {
       });
 
       setTimeout(() => {
-        navigate("/dashboard/manageTeamMember");
+        navigate("/golden@peach@dashboard/manageTeamMember");
         window.location.reload();
       }, 1000);
       

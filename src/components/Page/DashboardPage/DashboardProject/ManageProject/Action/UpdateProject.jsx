@@ -85,7 +85,7 @@ export default function UpdateProject() {
         }
       }
 
-      navigate("/dashboard/manageProject");
+      navigate("/golden@peach@dashboard/manageProject");
 
       console.log("Project updated successfully:", response.data);
       // Optionally handle success scenario (e.g., show success message)

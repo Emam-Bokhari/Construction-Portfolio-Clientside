@@ -51,7 +51,7 @@ export default function AddTestimonial() {
       });
 
      setTimeout(()=>{
-      navigate("/dashboard/manageTestimonial");
+      navigate("/golden@peach@dashboard/manageTestimonial");
       window.location.reload();
      },1000)
     } catch (err) {

@@ -23,7 +23,7 @@ export default function ManageService({ servicesData, serviceLoading }) {
               <div className="flex flex-col md:flex-row gap-3 md:items-center md:justify-between md:mb-5">
                 <Searchbar />
 
-                <Link to="/dashboard/addService">
+                <Link to="/golden@peach@dashboard/addService">
                   <AddButton button="Add Service" />
                 </Link>
               </div>
@@ -87,7 +87,7 @@ export default function ManageService({ servicesData, serviceLoading }) {
                           <div className="flex justify-center gap-3">
                             <span className="text-[#22C7A1] font-extrabold">
                               <Link
-                                to={`/dashboard/updateService/${service._id}`}
+                                to={`/golden@peach@dashboard/updateService/${service._id}`}
                               >
                                 <FaPen />
                               </Link>

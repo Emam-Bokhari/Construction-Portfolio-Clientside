@@ -34,7 +34,7 @@ export default function AddProject() {
         imageUrl: "",
       });
       setTimeout(() => {
-        navigate("/dashboard/manageProject");
+        navigate("/golden@peach@dashboard/manageProject");
         window.location.reload();
       }, 1000);
     } catch (err) {
