@@ -47,21 +47,21 @@ export default function TopNavbar() {
             <span className="text-sm font-[archivo] text-[#908C8D] hidden xl:block">
               Follow Us:
             </span>
-            <Link to="https://www.facebook.com/mdmoniruzzaman.titon.5?mibextid=ZbWKwL">
+            <a href="https://www.facebook.com/mdmoniruzzaman.titon.5?mibextid=ZbWKwL">
               <FaFacebook className="text-sm text-[#908C8D] hover:text-[#1877F2] transform transition-all duration-300" />
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="#">
               <FaTwitter className=" text-sm text-[#908C8D] hover:text-[#1DA1F2] transform transition-all duration-300" />
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="#">
               <FaLinkedin className="text-sm text-[#908C8D] hover:text-[#0077B5] transform transition-all duration-300" />
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="#">
               <FaInstagram className="text-sm text-[#908C8D] hover:text-[#e56969] transform transition-all duration-300" />
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="#">
               <FaYoutube className=" text-sm text-[#908C8D] hover:text-[#FF0000] transform transition-all duration-300" />
-            </Link>
+            </a>
           </div>
           {/* Ends social icon  */}
         </div>

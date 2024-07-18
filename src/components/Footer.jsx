@@ -277,18 +277,18 @@ export default function Footer() {
                 <h2 className="text-sm font-[archivo] text-white">
                   Developed By Moshfiqur Rahman
                 </h2>
-                <Link
+                <a
                   className="text-white"
-                  to="https://github.com/Emam-Bokhari"
+                  href="https://github.com/Emam-Bokhari"
                 >
                   <FaGithub className="text-xl" />
-                </Link>
-                <Link
+                </a>
+                <a
                   className="text-[#0866FF]"
-                  to="https://www.facebook.com/emambokhari99"
+                  href="https://www.facebook.com/emambokhari99"
                 >
                   <FaFacebook className="text-xl" />
-                </Link>
+                </a>
               </div>
             </div>
 

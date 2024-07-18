@@ -446,32 +446,32 @@ export default function Home() {
                     {/* social icons  */}
                     <div className="flex items-center justify-center gap-3">
                       {/* facebook  */}
-                      <Link to={teamMember?.facebookSocialLink}>
+                      <a href={teamMember?.facebookSocialLink}>
                         <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1877F2] transform transition-all duration-300 text-black hover:text-white">
                           <FaFacebook className="text-base" />
                         </div>
-                      </Link>
+                      </a>
 
                       {/* twitter */}
-                      <Link to={teamMember?.twitterSocialLink}>
+                      <a href={teamMember?.twitterSocialLink}>
                         <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#1DA1F2] transform transition-all duration-300 text-black hover:text-white">
                           <FaTwitter className="text-base" />
                         </div>
-                      </Link>
+                      </a>
 
                       {/* instagram  */}
-                      <Link to={teamMember?.instagramSocialLink}>
+                      <a href={teamMember?.instagramSocialLink}>
                         <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#e56969] transform transition-all duration-300 text-black hover:text-white">
                           <FaInstagram className="text-base" />
                         </div>
-                      </Link>
+                      </a>
 
                       {/* linkedin  */}
-                      <Link to={teamMember?.linkedinSocialLink}>
+                      <a href={teamMember?.linkedinSocialLink}>
                         <div className="bg-[#E4E4E4] w-6 h-6 rounded-full flex justify-center items-center hover:bg-[#0077B5] transform transition-all duration-300 text-black hover:text-white">
                           <FaLinkedin className="text-base" />
                         </div>
-                      </Link>
+                      </a>
                     </div>
                     {/* end social icon  */}
                   </div>

@@ -362,33 +362,33 @@ export default function DashboardHeader() {
 
                 <div className="flex items-center gap-3">
                   {/* facebook */}
-                  <Link
-                    to="https://www.facebook.com/emambokhari99/"
+                  <a
+                    href="https://www.facebook.com/emambokhari99/"
                     className="border-[1px] border-[#E4E4E4] w-10 h-10 flex items-center justify-center rounded-lg text-lg text-[#BDC9DB] hover:text-[#2275FC] transition-all duration-300"
                   >
                     <FaFacebook />
-                  </Link>
+                  </a>
                   {/* github */}
-                  <Link
-                    to="https://github.com/Emam-Bokhari"
+                  <a
+                    href="https://github.com/Emam-Bokhari"
                     className="border-[1px] border-[#E4E4E4] w-10 h-10 flex items-center justify-center rounded-lg text-lg text-[#BDC9DB] hover:text-[#2275FC] transition-all duration-300"
                   >
                     <FaGithub />
-                  </Link>
+                  </a>
                   {/* whats app  */}
-                  <Link
-                    to="https://wa.me/+08801315773424"
+                  <a
+                    href="https://wa.me/+08801315773424"
                     className="border-[1px] border-[#E4E4E4] w-10 h-10 flex items-center justify-center rounded-lg text-lg text-[#BDC9DB] hover:text-[#2275FC] transition-all duration-300"
                   >
                     <FaWhatsapp />
-                  </Link>
+                  </a>
                   {/* twitter  */}
-                  <Link
+                  <a
                     href="#"
                     className="border-[1px] border-[#E4E4E4] w-10 h-10 flex items-center justify-center rounded-lg text-lg text-[#BDC9DB] hover:text-[#2275FC] transition-all duration-300"
                   >
                     <FaTwitter />
-                  </Link>
+                  </a>
                 </div>
               </div>
               {/* end connect us  */}

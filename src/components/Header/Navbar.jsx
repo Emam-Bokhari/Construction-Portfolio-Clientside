@@ -90,12 +90,12 @@ export default function Navbar() {
 
           {/* Start get a quote button */}
           <div className="flex items-center gap-3">
-              <Link to="https://drive.google.com/file/d/1WC5ZS8Dtvf19fQ8Xe3AUO0GyyrnvjAnE/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1WC5ZS8Dtvf19fQ8Xe3AUO0GyyrnvjAnE/view?usp=sharing">
             <button className="bg-[#F68A0A] hover:bg-[#ee8404] transform transition-all duration-300 text-white text-sm font-[archivo] font-[500] px-3 sm:px-7 py-2 sm:py-4 flex items-center gap-1 uppercase">
                 GET PROFILE
                 <FaDownload className="hidden md:block" />
             </button>
-              </Link>
+              </a>
             <button
               onClick={onToggleMenu}
               className="text-3xl cursor-pointer lg:hidden"

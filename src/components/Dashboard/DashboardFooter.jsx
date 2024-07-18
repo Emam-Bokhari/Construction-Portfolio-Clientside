@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+
 
 export default function DashboardFooter() {
   return (
@@ -8,12 +8,12 @@ export default function DashboardFooter() {
         <div className="py-5 flex justify-center text-center ml-0 lg:ml-[300px] ">
           <span className="font-[inter] text-[12px] md:text-sm font-normal">
             Copyright &copy; 2024 GoldenPeach. Develop by
-            <Link
+            <a
               className="text-[#2377FC]"
-              to="https://www.facebook.com/emambokhari99/"
+              href="https://www.facebook.com/emambokhari99/"
             >
               &nbsp;Moshfiqur Rahman&nbsp;
-            </Link>
+            </a>
             All rights reserved.
           </span>
         </div>

@@ -87,36 +87,36 @@ export default function ManageTeamMember({
                         </td>
 
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                          <Link
-                            to="https://www.facebook.com/emambokhari99/"
+                          <a
+                            href="https://www.facebook.com/emambokhari99/"
                             className="break-all"
                           >
                             {teamMember?.facebookSocialLink}
-                          </Link>
+                          </a>
                         </td>
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                          <Link
-                            to="https://www.facebook.com/emambokhari99/"
+                          <a
+                            href="https://www.facebook.com/emambokhari99/"
                             className="break-all"
                           >
                             {teamMember?.twitterSocialLink}
-                          </Link>
+                          </a>
                         </td>
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                          <Link
-                            to="https://www.facebook.com/emambokhari99/"
+                          <a
+                            href="https://www.facebook.com/emambokhari99/"
                             className="break-all"
                           >
                             {teamMember?.instagramSocialLink}
-                          </Link>
+                          </a>
                         </td>
                         <td className="p-3 align-middle text-base font-[inter] font-normal whitespace-normal text-[#5C6573]">
-                          <Link
-                            to="https://www.facebook.com/emambokhari99/"
+                          <a
+                            href="https://www.facebook.com/emambokhari99/"
                             className="break-all"
                           >
                             {teamMember?.linkedinSocialLink}
-                          </Link>
+                          </a>
                         </td>
 
                         <td className="p-3 align-middle text-lg font-[inter] whitespace-nowrap">
