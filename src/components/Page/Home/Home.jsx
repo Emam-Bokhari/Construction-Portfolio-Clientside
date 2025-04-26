@@ -36,6 +36,7 @@ import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
 import BlogSkeleton from "../../skeleton/BlogSkeleton";
 import { FaSquareCheck, FaTrowelBricks } from "react-icons/fa6";
 import FAQSection from "./FaqSection";
+import OurClient from "../../OurClient.jsx";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -243,7 +244,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* service section */}
       <div
         className="bg-[url('./assets/background-effects/bg-effect-service.png')] bg-no-repeat bg-cover w-full my-20"
@@ -389,7 +389,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* team member section */}
       <div
         style={teamMemberBackground}
@@ -482,7 +481,6 @@ export default function Home() {
           {/* ends cards  */}
         </div>
       </div>
-
       {/* why choose us section */}
       <div className="bg-white w-full my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8 space-y-3 md:space-x-4">
@@ -605,12 +603,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Faq section */}
-      <FAQSection/>
+      <FAQSection />
+      <OurClient></OurClient>
       <TestimonialSection />
-      <ContactUsSection />
 
+      <ContactUsSection />
       {/* blog section */}
       <div className=" bg-white w-full my-20">
         <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-8 space-y-3 md:space-y-4">
@@ -667,7 +665,9 @@ export default function Home() {
                     </h5>
 
                     <p className="mb-3 font-normal text-[#4D5765] ">
-                      {blog?.description?blog?.description.substring(0,100):blog?.description}
+                      {blog?.description
+                        ? blog?.description.substring(0, 100)
+                        : blog?.description}
                     </p>
 
                     <Link
@@ -684,7 +684,6 @@ export default function Home() {
           )}
         </div>
       </div>
-
       {/* call center service section */}
       <div className="bg-[#F8F8F8] w-full">
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 ">
@@ -719,7 +718,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* scroll to top button */}
       <div className="fixed bottom-10 right-10 z-10">
         <button

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Fragment, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Page/Home/Home";
