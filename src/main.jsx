@@ -6,7 +6,7 @@ import "./index.css";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 
-// base url
+// base url 100
 axios.defaults.baseURL = "https://construction-portfolio-server.vercel.app";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
