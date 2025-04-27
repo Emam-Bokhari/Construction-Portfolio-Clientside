@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import TestimonialSkeleton from "./skeleton/TestimonialSkeleton";
+import OurClients from "./OurClients";
 
 export default function TestimonialSection() {
   // fetch data
@@ -46,6 +47,7 @@ export default function TestimonialSection() {
   return (
     <Fragment>
       <div className="bg-[#F8F8F8] w-full my-20">
+        <OurClients></OurClients>
         <div className="max-w-screen-xl mx-auto p-8 md:p-16 lg:p-8 space-y-3 md:space-y-4">
           <div className="flex items-center gap-3 justify-center">
             <hr className="border-[1px] border-[#F68A0A] w-12" />

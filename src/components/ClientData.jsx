@@ -44,11 +44,11 @@ export default function ClientData() {
   return (
     <Fragment>
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {clientData.map((client) => (
             <div
               key={client.id}
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#F68A0A]"
+              className="group relative bg-white rounded overflow-hidden  transition-all duration-300 border-2 border-transparent hover:border-[#F68A0A]"
             >
               <div className="aspect-square overflow-hidden">
                 <img

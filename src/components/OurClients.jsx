@@ -11,13 +11,13 @@ export default function OurClients() {
           <div className="flex items-center gap-3 justify-center">
             <hr className="border-[1px] border-[#F68A0A] w-12" />
             <h2 className="text-base font-[titillium] font-[600] text-[#F68A0A] uppercase">
-              Our Client
+              Clientele
             </h2>
             <hr className="border-[1px] border-[#F68A0A] w-12" />
           </div>
 
           <h3 className="text-[36px] lg:text-[48px] font-[titillium] font-[700] text-[#0E121D] text-center">
-            Real Happy Customers, Real Stories
+            Trusted by Bangladesh{"'"}s Premier Organizations
           </h3>
 
           {/* start cards  */}
