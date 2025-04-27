@@ -5,39 +5,39 @@ export default function ClientData() {
   const clientData = [
     {
       id: 1,
-      name: "BIWTA",
+      name: "Local Government Engineering Dept.",
+      image:
+        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745749492/LGED-Logo_fuitdm.png",
+    },
+    {
+      id: 2,
+      name: "Bangladesh Inland Water Transport Authority",
       image:
         "https://res.cloudinary.com/daxjf1buu/image/upload/v1745748657/unnamed_xnni7a.png",
     },
     {
-      id: 2,
-      name: "LGED",
-      image:
-        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745748837/lged_df62fq.jpg",
-    },
-    {
       id: 3,
-      name: "Casey Kim",
+      name: "Bangladesh Army",
       image:
-        "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745749034/army_eew4nf.png",
     },
     {
       id: 4,
-      name: "Riley Chen",
+      name: "Public Works Department",
       image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745749668/PWD_Logo_ahfykp.png",
     },
     {
       id: 5,
-      name: "Taylor Smith",
+      name: "Nibondhon boi",
       image:
-        "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745749375/boi_znbrl8.jpg",
     },
     {
       id: 6,
-      name: "Morgan Lee",
+      name: "Nibondhon boi",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80",
+        "https://res.cloudinary.com/daxjf1buu/image/upload/v1745749279/boi2_gav2sl.jpg",
     },
   ];
 
