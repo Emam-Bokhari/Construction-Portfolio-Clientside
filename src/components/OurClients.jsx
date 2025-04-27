@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ClientData from "./ClientData";
 
-export default function OurClient() {
+export default function OurClients() {
   return (
     <Fragment>
       <div className="bg-[#F8F8F8] w-full my-20">
@@ -20,6 +21,7 @@ export default function OurClient() {
           </h3>
 
           {/* start cards  */}
+          <ClientData></ClientData>
 
           {/* ends cards */}
         </div>

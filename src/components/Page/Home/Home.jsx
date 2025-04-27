@@ -36,7 +36,7 @@ import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
 import BlogSkeleton from "../../skeleton/BlogSkeleton";
 import { FaSquareCheck, FaTrowelBricks } from "react-icons/fa6";
 import FAQSection from "./FaqSection";
-import OurClient from "../../OurClient.jsx";
+import OurClients from "../../OurClients";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -605,7 +605,7 @@ export default function Home() {
       </div>
       {/* Faq section */}
       <FAQSection />
-      <OurClient></OurClient>
+      <OurClients></OurClients>
       <TestimonialSection />
 
       <ContactUsSection />
