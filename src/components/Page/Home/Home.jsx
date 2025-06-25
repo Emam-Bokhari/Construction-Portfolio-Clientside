@@ -36,6 +36,7 @@ import TeamMemberSkeleton from "../../skeleton/TeamMemberSkeleton";
 import BlogSkeleton from "../../skeleton/BlogSkeleton";
 import { FaSquareCheck, FaTrowelBricks } from "react-icons/fa6";
 import FAQSection from "./FaqSection";
+import OurClient from "../../OurClient";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -390,6 +391,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* our client section */}
+      <OurClient />
+
       {/* team member section */}
       <div
         style={teamMemberBackground}
@@ -607,7 +611,7 @@ export default function Home() {
       </div>
 
       {/* Faq section */}
-      <FAQSection/>
+      <FAQSection />
       <TestimonialSection />
       <ContactUsSection />
 
@@ -667,7 +671,9 @@ export default function Home() {
                     </h5>
 
                     <p className="mb-3 font-normal text-[#4D5765] ">
-                      {blog?.description?blog?.description.substring(0,100):blog?.description}
+                      {blog?.description
+                        ? blog?.description.substring(0, 100)
+                        : blog?.description}
                     </p>
 
                     <Link
