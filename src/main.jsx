@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 
 // base url
 // axios.defaults.baseURL = "https://construction-portfolio-server.vercel.app";
-axios.defaults.baseURL = "https://construction-portfolio-serverside.vercel.app";
+axios.defaults.baseURL = "https://construction-portfolio-serverside-c.vercel.app";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
